@@ -123,8 +123,8 @@ feed:
         enable: true
         output: "feed.json"
 
-search:
-  path: search.xml
-  field: all
-  content: true
-  format: striptags
+#search:
+#  path: search.xml
+#  field: all
+#  content: true
+#  format: striptags
