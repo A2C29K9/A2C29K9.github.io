@@ -1,0 +1,15 @@
+<html>
+  <head>
+
+    <!-- ... -->
+
+    <link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%= full_url_for(`/rss.xml}`) %>" />
+    <link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="<%= full_url_for(`/atom.xml`) %>" />
+    <link rel="alternate" type="application/json" title="<%= config.title %>" href="<%= full_url_for(`/feed.json`) %>" />
+  </head>
+  <body>
+
+    <!-- ... -->
+
+  </body>
+</html>

@@ -107,3 +107,24 @@ deploy:
   repo: git@github.com:cypress0522/cypress0522.github.io.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
   branch: gh-pages
   message: [message]
+
+feed:
+    limit: 20
+    order_by: "-date"
+    tag_dir: "tag"
+    category_dir: "category"
+    rss:
+        enable: true
+        output: "rss.xml"
+    atom:
+        enable: true
+        output: "atom.xml"
+    jsonFeed:
+        enable: true
+        output: "feed.json"
+
+search:
+  path: search.xml
+  field: all
+  content: true
+  format: striptags
