@@ -1,0 +1,36 @@
+pipeline {
+  agent any
+  stages {
+    stage('阶段 1-1') {
+      steps {
+        checkout([
+          $class: 'GitSCM',
+          branches: [[name: env.GIT_BUILD_REF]],
+          userRemoteConfigs: [[
+            url: env.GIT_REPO_URL,
+            credentialsId: env.CREDENTIALS_ID
+          ]]])
+        }
+      }
+      stage('执行安装') {
+        steps {
+          sh 'echo 安装步骤'
+          sh '''npm ci
+npm run build'''
+        }
+      }
+      stage('发布') {
+        steps {
+          dir('./public') {
+            sh '''git init
+git add .
+git commit -m "up"
+git remote add pages https://${USER}:${TOKRN}@${HTTP_URL}
+git push pages master:pages -f
+ls -a'''
+          }
+
+        }
+      }
+    }
+  }
