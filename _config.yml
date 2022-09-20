@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: cypress - 小柏树
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
-language: en
+author: 简律纯
+language: zh-CN
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://example.com
+url: https://cypress.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -105,5 +105,5 @@ theme: next
 deploy:
   type: git
   repo: git@github.com:cypress0522/cypress0522.github.io.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
-  branch: [branch]
+  branch: gh-pages
   message: [message]
