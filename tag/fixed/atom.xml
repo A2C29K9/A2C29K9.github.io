@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://cypress.github.io</id>
+    <title>Cypress - 小柏树 • Posts by &#34;fixed&#34; tag</title>
+    <link href="https://cypress.github.io" />
+    <updated>2022-08-04T16:00:00.000Z</updated>
+    <category term="徐州站" />
+    <category term="Dice" />
+    <category term="AI" />
+    <category term="FIXED" />
+    <category term="颜色" />
+    <entry>
+        <id>https://cypress.github.io/2022/08/05/Midido/</id>
+        <title>Midido 一个更非人性化的手搓midi库</title>
+        <link rel="alternate" href="https://cypress.github.io/2022/08/05/Midido/"/>
+        <content type="html">&lt;div class=&#34;note success&#34;&gt;&lt;p&gt;&lt;strong&gt;Midido&lt;/strong&gt;&lt;br&gt;简单实现用lua输出midi的库。&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;使用《署名—非商业性使用—相同方式共享 4.0 协议国际版》（CC BY-NC-SA 4.0）进行授权。&lt;br&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9sZWdhbGNvZGUuemgtSGFucw==&#34;&gt;https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-Hans&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Midido To-do list&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;描述&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;状态&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;wiki&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;用法wiki&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;x&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Keyboards’ pack&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;键位包&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;敬请期待&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;songs’ e.g.&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;歌曲工程示例&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;x&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2 id=&#34;一、基本信息&#34;&gt;&lt;a href=&#34;#一、基本信息&#34; class=&#34;headerlink&#34; title=&#34;一、基本信息&#34;&gt;&lt;/a&gt;一、基本信息&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;作者： 简律纯&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;联系方式：qq:a2c29k9&lt;/li&gt;
+&lt;li&gt;版本：v1.0&lt;/li&gt;
+&lt;li&gt;更新日期：暂无&lt;/li&gt;
+&lt;li&gt;关键词：暂无&lt;/li&gt;
+&lt;li&gt;许可协议：CC BY-NC-SA 4.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;二、详细介绍&#34;&gt;&lt;a href=&#34;#二、详细介绍&#34; class=&#34;headerlink&#34; title=&#34;二、详细介绍&#34;&gt;&lt;/a&gt;二、详细介绍&lt;/h2&gt;&lt;h3 id=&#34;1-简介&#34;&gt;&lt;a href=&#34;#1-简介&#34; class=&#34;headerlink&#34; title=&#34;1.简介&#34;&gt;&lt;/a&gt;1.简介&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;最初是一个设想，毕竟我是写音乐的，主要负责作曲编曲，鸽了快一年后很多粉丝不耐烦了，于是我开始整一些或许大学用得上的东西^比如一个bot ，高考那几天突发奇想，我或许可以教粉丝朋友一起写音乐？那就先从midi序列开始吧！&lt;del&gt;（也可以名正言顺咕咕咕，同时压榨劳动力）&lt;/del&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;2-一些教训&#34;&gt;&lt;a href=&#34;#2-一些教训&#34; class=&#34;headerlink&#34; title=&#34;2.一些教训&#34;&gt;&lt;/a&gt;2.一些教训&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;1.之前试过onebot ZBP插件里的timidity，也是手搓midi，但是仍然需要安装ffmpeg和timidity环境，且受到一定的系统环境影响——尽管成功写出了midi文件，但是对于其他那些使用非Windows系统（大家其实更愿意用Macbook）的人（主要是我的作曲家编曲家朋友）来说安装十分困难。&lt;br&gt;zbp关于midi的插件介绍：&lt;br&gt;&lt;img data-src=&#34;https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-07-30/1659158099-11773-5d706d6c091bc400.jpg&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2.于是我开始注意到简化使用指令的重要性，并在此机缘巧合下找到了 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYXV0b3BpYW5vLmNuLw==&#34;&gt;AutoPiano&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt;。&lt;br&gt;我并不在意它的关于编写输出音乐的任何逻辑或是别的什么，我找到了站长，并向他提出了几个问题——就比如，键盘谱是如何想出来的。&lt;br&gt;下图为孤勇者唱谱：&lt;br&gt;&lt;img data-src=&#34;https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-07-30/1659157938-716855-img20220730131141.jpg&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;3.综上，这未尝不是一个很好的开端，至少我明白了手搓midi的原理，以及一些更切合实际的东西，就比如简化指令。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;三、TO-DO-LIST&#34;&gt;&lt;a href=&#34;#三、TO-DO-LIST&#34; class=&#34;headerlink&#34; title=&#34;三、TO-DO LIST&#34;&gt;&lt;/a&gt;三、TO-DO LIST&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;  编写用法wiki&lt;br&gt;用法非常复杂，这脚本就算是raw了，我需要讲清楚如何写出一段音阶（最简单的一段中音区 C D E F G A B midi片段）；如何写出一段chord（和弦），并在此和弦基础上继续写主旋律；如何变换调式调性（F# -&amp;gt; Ab）；如何修改速度等等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;  编写最基础的简化指令包，虽然目前写好的raw版本是功能最全的，但是其编写midi的方式（我目前主要靠写lua脚本再 &lt;code&gt;loadLua()&lt;/code&gt; 或者使用basicFunction1.0（啊现在应该叫FuncLib2.0）内注释掉的 &lt;code&gt;load()()&lt;/code&gt; 来写midi）过于硬核，所以需要一个诸如 &lt;code&gt;midi:0333-1 0333-2&lt;/code&gt; 或是 &lt;code&gt;midi:E5 E5 E5 C5&lt;/code&gt; 这样的简单易用指令。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;  一个音源键位包，或者一个键位函数包，用于简化脚本写midi时的打谱环节。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;四、脚本输出实例试听&#34;&gt;&lt;a href=&#34;#四、脚本输出实例试听&#34; class=&#34;headerlink&#34; title=&#34;四、脚本输出实例试听&#34;&gt;&lt;/a&gt;四、脚本输出实例试听&lt;/h2&gt;&lt;p&gt;C大调音阶：&lt;br&gt;[upl-file uuid=e45d0254-ca7a-498c-b00d-069b2de5a74b size=257B]c-major-scale.zip[/upl-file]&lt;br&gt;Am和弦：&lt;br&gt;[upl-file uuid=d2589143-51ab-4ff7-aa9f-96734e60d4b3 size=321B]chord-example.zip[/upl-file]&lt;br&gt;时值变化：&lt;br&gt;[upl-file uuid=d9db9d92-396a-48c2-918c-2ecf3ef37e26 size=260B]duration-example.zip[/upl-file]&lt;/p&gt;
+&lt;h2 id=&#34;五、最后&#34;&gt;&lt;a href=&#34;#五、最后&#34; class=&#34;headerlink&#34; title=&#34;五、最后&#34;&gt;&lt;/a&gt;五、最后&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;脚本将会在简化指令版写完发布，愿大家都能名正言顺的咕咕咕，也愿大家都热爱生活，热爱音乐！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;script src=&#34;https://utteranc.es/client.js&#34;
+        repo=&#34;cypress0522/cypress0522.github.io&#34;
+        issue-term=&#34;pathname&#34;
+        theme=&#34;github-light&#34;
+        crossorigin=&#34;anonymous&#34;
+        async&gt;
+&lt;/script&gt;
+</content>
+        <category term="Dice" />
+        <category term="FIXED" />
+        <updated>2022-08-04T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://cypress.github.io/2022/08/05/print-fixed/</id>
+        <title>改写print</title>
+        <link rel="alternate" href="https://cypress.github.io/2022/08/05/print-fixed/"/>
+        <content type="html">&lt;div class=&#34;note success&#34;&gt;&lt;p&gt;&lt;strong&gt;print fixed&lt;/strong&gt;&lt;br&gt;简单实现改写print，将print内容写入文件生成日志。&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-------------------------------------------------------------------------------&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- Print 改写. @简律纯 @gexi&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-------------------------------------------------------------------------------&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;writeToFile = &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( str )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;local&lt;/span&gt; filename = &lt;span class=&#34;string&#34;&gt;&amp;quot;print.log&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;not&lt;/span&gt; fileLogOut &lt;span class=&#34;keyword&#34;&gt;then&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        fileLogOut = &lt;span class=&#34;built_in&#34;&gt;io&lt;/span&gt;.&lt;span class=&#34;built_in&#34;&gt;open&lt;/span&gt;(filename, &lt;span class=&#34;string&#34;&gt;&amp;quot;w&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        fileLogOut = &lt;span class=&#34;built_in&#34;&gt;io&lt;/span&gt;.&lt;span class=&#34;built_in&#34;&gt;open&lt;/span&gt;(filename, &lt;span class=&#34;string&#34;&gt;&amp;quot;a&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    fileLogOut:&lt;span class=&#34;built_in&#34;&gt;write&lt;/span&gt;(&lt;span class=&#34;built_in&#34;&gt;os&lt;/span&gt;.&lt;span class=&#34;built_in&#34;&gt;date&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;%H:%M:%S&amp;quot;&lt;/span&gt;,&lt;span class=&#34;built_in&#34;&gt;os&lt;/span&gt;.&lt;span class=&#34;built_in&#34;&gt;time&lt;/span&gt;())..&lt;span class=&#34;string&#34;&gt;&amp;quot; &amp;quot;&lt;/span&gt;..str..&lt;span class=&#34;string&#34;&gt;&amp;quot;\n&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    fileLogOut:&lt;span class=&#34;built_in&#34;&gt;close&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;babe_tostring&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(...)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;local&lt;/span&gt; num = &lt;span class=&#34;built_in&#34;&gt;select&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;#&amp;quot;&lt;/span&gt;, ...);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;local&lt;/span&gt; args = &amp;#123; ... &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;local&lt;/span&gt; outs = &amp;#123;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; i = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, num &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; i &amp;gt; &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;then&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            outs[#outs + &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;] = &lt;span class=&#34;string&#34;&gt;&amp;quot;\t&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        outs[#outs + &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;] = &lt;span class=&#34;built_in&#34;&gt;tostring&lt;/span&gt;(args[i]);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;table&lt;/span&gt;.&lt;span class=&#34;built_in&#34;&gt;concat&lt;/span&gt;(outs);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;local&lt;/span&gt; just_print = &lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;local&lt;/span&gt; babe_output = &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(...)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    just_print(...);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;local&lt;/span&gt; str = babe_tostring(...);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; writeToFile &lt;span class=&#34;keyword&#34;&gt;then&lt;/span&gt; writeToFile(str) &lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt; = babe_output&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+
+&lt;script src=&#34;https://utteranc.es/client.js&#34;
+        repo=&#34;cypress0522/cypress0522.github.io&#34;
+        issue-term=&#34;pathname&#34;
+        theme=&#34;github-light&#34;
+        crossorigin=&#34;anonymous&#34;
+        async&gt;
+&lt;/script&gt;
+</content>
+        <category term="FIXED" />
+        <updated>2022-08-04T16:00:00.000Z</updated>
+    </entry>
+</feed>

@@ -1,0 +1,981 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://cypress.github.io</id>
+    <title>Cypress - 小柏树 • Posts by &#34;颜色&#34; tag</title>
+    <link href="https://cypress.github.io" />
+    <updated>2022-08-15T16:00:00.000Z</updated>
+    <category term="徐州站" />
+    <category term="Dice" />
+    <category term="AI" />
+    <category term="FIXED" />
+    <category term="颜色" />
+    <entry>
+        <id>https://cypress.github.io/2022/08/16/lua-colors.howto/</id>
+        <title>lua-colors</title>
+        <link rel="alternate" href="https://cypress.github.io/2022/08/16/lua-colors.howto/"/>
+        <content type="html">&lt;div class=&#34;note primary&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/cypress0522/lua-colors&#34;&gt;&lt;img data-src=&#34;/img/colors.png&#34; alt=&#34;lua-colors&#34;&gt;&lt;/a&gt;&lt;br&gt;&lt;strong&gt;lua-colors&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;用lua解释色彩原理.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+
+&lt;p&gt;颜色通常在软件中通过其在RGB（红-绿-蓝）颜色空间中的坐标进行编码。 不幸的是，RGB色彩空间非常不直观，另外某些颜色协调的原则在RGB中不容易表达出来。 HSL（色相-饱和度-亮度）色彩空间解决了这两个问题。这个库允许你在HSL色彩空间中处理颜色，计算协调的图案，然后转换为RGB。 (你可以在 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy53b3JxeC5jb20vY29sb3IvY29sb3Jfd2hlZWwuaHRt&#34;&gt;worqx.com&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; 看到更多关于色彩协调的相关内容)&lt;/p&gt;
+&lt;h2 id=&#34;HSL-色彩空间&#34;&gt;&lt;a href=&#34;#HSL-色彩空间&#34; class=&#34;headerlink&#34; title=&#34;HSL 色彩空间&#34;&gt;&lt;/a&gt;HSL 色彩空间&lt;/h2&gt;&lt;p&gt;颜色在HSL中由三个值编码：色相，饱和度和亮度。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;亮度(Lightness)&lt;/strong&gt; 正好与颜色的亮暗相反。 白色亮度为1，黑色亮度为0。 其他颜色介于它们之间。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;饱和度(Saturation)&lt;/strong&gt; 代表颜色的强度，它显示颜色与灰色的距离。 以下是不同饱和度和亮度的红色渐变：&lt;/p&gt;
+&lt;table&gt;
+ &lt;tr&gt;&amp;nbsp;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td colspan=&#39;11&#39; style=&#39;text-align:center&#39;&gt;Lightness&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;&amp;nbsp&lt;/td&gt;&lt;td&gt;&amp;nbsp&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.0&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.1&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.2&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.3&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.4&lt;/td&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.5&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.6&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.7&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.8&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.9&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;1.0&lt;/td&gt;
+&lt;/tr&gt;
+ &lt;tr&gt;
+  &lt;td rowspan=&#39;11&#39; style=&#39;vertical-align:center&#39;&gt;Saturation&lt;/td&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.0&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #000000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #191919;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #333333;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #4c4c4c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #666666;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #999999;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b2b2b2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cbcbcb;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e5e5e5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #fefefe;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.1&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #000000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #1c1616;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #382d2d;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #544444;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #705b5b;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c7272;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a38e8e;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #baaaaa;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d1c6c6;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e8e2e2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #fefefe;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.2&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #000000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #1e1414;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #3d2828;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #5b3d3d;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #7a5151;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #996666;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ad8484;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #c1a3a3;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d6c1c1;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #eae0e0;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #fffefe;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.3&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #000000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #211111;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #422323;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #633535;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #844747;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a55959;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b77a7a;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #c99b9b;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #dbbcbc;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #eddddd;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #feffff;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.4&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #000000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #230f0f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #471e1e;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #6b2d2d;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #8e3d3d;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b24c4c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #c17070;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d19393;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e0b7b7;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #efdbdb;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #fffefe;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.5&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #000000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #260c0c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #4c1919;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #722626;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #993232;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bf3f3f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cc6565;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d88c8c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e5b2b2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f2d8d8;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #fffefe;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.6&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #000000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #280a0a;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #511414;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #7a1e1e;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #a32828;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cc3232;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d65b5b;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e08484;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #eaadad;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f4d6d6;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #fffefe;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.7&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #000000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #2b0707;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #560f0f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #821616;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #ad1e1e;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d82626;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e05151;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e87c7c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #efa8a8;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f7d3d3;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #fefefe;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.8&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #000000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #2d0505;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #5b0a0a;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #890f0f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #b71414;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e51919;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ea4747;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ef7575;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f4a3a3;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f9d1d1;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #fffefe;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.9&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #000000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #300202;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #600505;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #910707;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #c10a0a;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f20c0c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f43d3d;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f76d6d;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f99e9e;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #fccece;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #fffefe;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;1.0&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #000000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #330000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #660000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #990000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; color: #ffffff; background: #cc0000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ff0000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ff3232;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #fe6666;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ff9898;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ffcbcb;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #fffefe;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;色相/色调(Hue)&lt;/strong&gt; 是颜色的“color”：它让“绿色”与“红色”不同。色相 也可以表示为介于 0 和 1 之间的数字，但此库使用从 0 到 360 的值。&lt;br&gt;与亮度和饱和度不同，hue __loops__：色相360实际上与 0（红色）相同。&lt;/p&gt;
+&lt;table&gt;
+
+ &lt;tr&gt;&lt;td colspan=&#39;11&#39; style=&#39;text-align:center&#39;&gt;Saturation&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;1.0&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.9&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.8&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.7&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.6&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.5&lt;/td&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.4&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.3&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.2&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.1&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0.0&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+  &lt;td rowspan=&#39;37&#39; width=&#39;100px&#39; style=&#39;vertical-align:center&#39;&gt;Hue&lt;/td&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ff0000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f20c0c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e51919;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d82626;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cc3232;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bf3f3f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b24c4c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a55959;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #996565;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c7272;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;10&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ff2a00;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f2330c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e53b19;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d84326;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cc4c32;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bf553f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b25d4c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a56559;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #996e65;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c7672;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;20&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ff5500;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f2590c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e55d19;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d86126;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cc6632;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bf6a3f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b26e4c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a57259;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #997665;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c7b72;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;30&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ff7f00;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f27f0c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e57f19;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d87f26;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cc7f32;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bf7f3f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b27f4c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a57f59;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #997f65;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c7f72;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;40&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ffaa00;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f2a50c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e5a119;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d89d26;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cc9932;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bf943f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b2904c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a58c59;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #998865;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c8372;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;50&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ffd400;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f2cc0c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e5c319;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d8bb26;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ccb232;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bfaa3f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b2a14c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a59959;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #999065;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c8872;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;60&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #feff00;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f2f20c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e5e519;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d8d826;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cbcc32;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bfbf3f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b2b24c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a5a559;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #999965;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c8c72;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;70&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d4ff00;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cbf20c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #c3e519;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bad826;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b2cc32;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a9bf3f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a1b24c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #99a559;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #909965;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #888c72;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;80&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a9ff00;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a5f20c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a1e519;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #9dd826;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #98cc32;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #94bf3f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #90b24c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8ca559;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #889965;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #838c72;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;90&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7fff00;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7ff20c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7fe519;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7fd826;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7fcc32;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7fbf3f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7fb24c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7fa559;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f9965;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f8c72;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;100&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #54ff00;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #59f20c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #5de519;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #61d826;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #65cc32;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #6abf3f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #6eb24c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #72a559;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #769965;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7b8c72;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;110&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #2aff00;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #33f20c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3be519;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #44d826;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4ccc32;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #55bf3f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #5db24c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #65a559;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #6e9965;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #768c72;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;120&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #00ff00;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #0cf20c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #19e519;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #26d826;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #32cc32;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3fbf3f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4cb24c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #59a559;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #659965;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #728c72;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;130&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #00ff2a;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #0cf233;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #19e53b;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #26d844;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #32cc4c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3fbf55;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4cb25d;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #59a565;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #65996e;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #728c76;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;140&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #00ff55;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #0cf259;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #19e55d;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #26d861;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #32cc66;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3fbf6a;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4cb26e;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #59a572;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #659977;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #728c7b;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;150&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #00ff7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #0cf27f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #19e57f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #26d87f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #32cc7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3fbf7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4cb27f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #59a57f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #65997f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #728c7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;160&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #00ffaa;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #0cf2a5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #19e5a1;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #26d89d;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #32cc99;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3fbf94;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4cb290;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #59a58c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #659988;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #728c83;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;170&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #00ffd4;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #0cf2cc;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #19e5c3;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #26d8bb;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #32ccb2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3fbfaa;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4cb2a1;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #59a599;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #659990;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #728c88;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;180&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #00feff;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #0cf2f2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #19e5e5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #26d8d8;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #32cbcc;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3fbfbf;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4cb2b2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #59a5a5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #659999;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #728c8c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;190&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #00d4ff;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #0ccbf2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #19c3e5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #26bad8;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #32b2cc;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3fa9bf;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4ca1b2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #5999a5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #659099;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #72888c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;200&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #00a9ff;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #0ca5f2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #19a1e5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #269dd8;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3298cc;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3f94bf;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4c90b2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #598ca5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #658899;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #72838c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;210&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #007fff;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #0c7ff2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #197fe5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #267fd8;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #327fcc;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3f7fbf;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4c7fb2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #597fa5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #657f99;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #727f8c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;220&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #0054ff;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #0c59f2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #195de5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #2661d8;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3265cc;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3f6abf;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4c6eb2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #5972a5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #657699;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #727b8c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;230&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #002aff;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #0c33f2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #193be5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #2644d8;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #324ccc;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3f55bf;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4c5db2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #5965a5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #656e99;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #72768c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;240&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #0000ff;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #0c0cf2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #1919e5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #2626d8;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3232cc;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3f3fbf;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4c4cb2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #5959a5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #656599;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #72728c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;250&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #2a00ff;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #320cf2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #3b19e5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4326d8;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #4c32cc;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #543fbf;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #5d4cb2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #6559a5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #6e6599;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #76728c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;260&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #5500ff;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #590cf2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #5d19e5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #6126d8;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #6632cc;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #6a3fbf;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #6e4cb2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7259a5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #776599;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7b728c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;270&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f00ff;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f0cf2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f19e5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f26d8;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f32cc;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f3fbf;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f4cb2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f59a5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f6599;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f728c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;280&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #aa00ff;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a50cf2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a119e5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #9d26d8;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #9932cc;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #943fbf;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #904cb2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c59a5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #886599;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #83728c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;290&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d400ff;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cb0cf2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #c319e5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ba26d8;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b232cc;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a93fbf;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a14cb2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #9959a5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #906599;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #88728c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;300&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ff00fe;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f20cf2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e519e5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d826d8;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cc32cb;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bf3fbf;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b24cb2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a559a5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #996599;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c728c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;310&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ff00d4;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f20ccb;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e519c3;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d826ba;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cc32b2;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bf3fa9;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b24ca1;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a55998;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #996590;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c7287;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;320&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ff00a9;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f20ca5;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e519a1;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d8269d;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cc3298;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bf3f94;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b24c90;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a5598c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #996588;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c7283;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;330&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ff007f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f20c7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e5197f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d8267f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cc327f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bf3f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b24c7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a5597f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #99657f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c727f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;340&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ff0054;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f20c59;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e5195d;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d82661;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cc3265;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bf3f6a;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b24c6e;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a55972;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #996576;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c727b;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;350&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ff002a;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f20c33;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e5193b;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d82644;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cc324c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bf3f55;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b24c5d;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a55965;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #99656e;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c7276;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray;&#34;&gt;360&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #ff0000;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #f20c0c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #e51919;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #d82626;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #cc3232;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #bf3f3f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #b24c4c;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #a55959;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #996565;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #8c7272;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td style=&#34;width:40px; text-align: right; border: 1px solid gray; background: #7f7f7f;&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;使用颜色进行-HSL-计算&#34;&gt;&lt;a href=&#34;#使用颜色进行-HSL-计算&#34; class=&#34;headerlink&#34; title=&#34;使用颜色进行 HSL 计算&#34;&gt;&lt;/a&gt;使用颜色进行 HSL 计算&lt;/h2&gt;&lt;p&gt;在HSL空间中创建颜色并将其转换为RGB。&lt;/p&gt;
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;local&lt;/span&gt; colors = &lt;span class=&#34;built_in&#34;&gt;require&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;colors&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;c = colors.new(&lt;span class=&#34;number&#34;&gt;130&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;.8&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;0.3&lt;/span&gt;) &lt;span class=&#34;comment&#34;&gt;-- 绿色，相当饱和，有点暗&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- =tostring(c)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #0f8923&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;table&gt;
+ &lt;tr&gt;&lt;td width=&#34;100&#34;&gt;&lt;/td&gt;&lt;td width=&#34;160&#34; style=&#34;background: #0f8923&#34;&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;你也可以通过它的RGB代码创建这些颜色：&lt;/p&gt;
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;local&lt;/span&gt; colors = &lt;span class=&#34;built_in&#34;&gt;require&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;colors&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;c = colors.new(&lt;span class=&#34;string&#34;&gt;&amp;quot;#0f8923&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- =tostring(c)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #0f8923&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;当强制转换为字符串时，颜色将转换为其 RGB 形式：&lt;/p&gt;
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;=c&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #0f8923&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td width=&#34;100&#34;&gt;&lt;/td&gt;&lt;td width=&#34;160&#34; style=&#34;background: #0f8923&#34;&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;查看 HSL ：&lt;/p&gt;
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(c.H, c.S, c.L)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- 130     0.8     0.3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;改变饱和度：&lt;/p&gt;
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;=c:desaturate_by(&lt;span class=&#34;number&#34;&gt;.5&lt;/span&gt;) &lt;span class=&#34;comment&#34;&gt;-- 将饱和度设置为饱和度*.5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #2d6b38&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td width=&#34;100&#34;&gt;&lt;/td&gt;&lt;td width=&#34;160&#34; style=&#34;background: #2d6b38&#34;&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+    
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;=c:desaturate_to(&lt;span class=&#34;number&#34;&gt;.5&lt;/span&gt;) &lt;span class=&#34;comment&#34;&gt;-- 将饱和度设置为 .5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #267233&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td width=&#34;100&#34;&gt;&lt;/td&gt;&lt;td width=&#34;160&#34; style=&#34;background: #267233&#34;&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;改变亮度：&lt;/p&gt;
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;=c:lighten_by(&lt;span class=&#34;number&#34;&gt;.5&lt;/span&gt;) &lt;span class=&#34;comment&#34;&gt;-- 将亮度设置为亮度*.5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #14b72f&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td width=&#34;100&#34;&gt;&lt;/td&gt;&lt;td width=&#34;160&#34; style=&#34;background: #14b72f&#34;&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;=c:lighten_to(&lt;span class=&#34;number&#34;&gt;.5&lt;/span&gt;) &lt;span class=&#34;comment&#34;&gt;-- 将亮度设置为 .5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #19e53b&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td width=&#34;100&#34;&gt;&lt;/td&gt;&lt;td width=&#34;160&#34; style=&#34;background: #19e53b&#34;&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;改变色相：&lt;/p&gt;
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;=c:hue_offset(&lt;span class=&#34;number&#34;&gt;180&lt;/span&gt;) &lt;span class=&#34;comment&#34;&gt;-- 色调偏移 180&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #890f75&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td width=&#34;100&#34;&gt;&lt;/td&gt;&lt;td width=&#34;160&#34; style=&#34;background: #890f75&#34;&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;构建配色方案&#34;&gt;&lt;a href=&#34;#构建配色方案&#34; class=&#34;headerlink&#34; title=&#34;构建配色方案&#34;&gt;&lt;/a&gt;构建配色方案&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;要构建配色方案，我们通常从颜色开始，选择一种或多种匹配的颜色，然后从中获取阴影和色调。你可以在[worqx.com](http://www.worqx.com/color/combinations.htm)找到有关颜色组合的一些东西。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;对于 &lt;strong&gt;单色&lt;/strong&gt; 配色方案，我们只使用一开始的颜色以及它的色相和阴影：&lt;/p&gt;
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;tints = c:tints(&lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;) &lt;span class=&#34;comment&#34;&gt;-- 生成色相&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; i,t &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;ipairs&lt;/span&gt;(tints) &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(t) &lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #16c934&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #3ee95a&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #7ef091&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #bef7c8&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #ffffff&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;table&gt;
+ &lt;tr&gt;
+  &lt;td width=&#34;100&#34;&gt;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #16c934&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #3ee95a&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #7ef091&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #bef7c8&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #ffffff&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;shades = c:shades(&lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;) &lt;span class=&#34;comment&#34;&gt;-- 生成阴影&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; i,s &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;ipairs&lt;/span&gt;(shades) &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(s) &lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #0c6e1c&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #095215&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #06370e&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #031b07&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #000000&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;table&gt;
+ &lt;tr&gt;
+  &lt;td width=&#34;100&#34;&gt;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #0c6e1c&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #095215&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #06370e&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #031b07&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #000000&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;对于&lt;strong&gt;懒人&lt;/strong&gt;方案，我们可以轻松得出懒人想要的颜色及其色调和阴影：&lt;/p&gt;
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ctints = c:complementary():tints(&lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;) &lt;span class=&#34;comment&#34;&gt;-- 制作五种颜色的互补色&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; i,t &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;ipairs&lt;/span&gt;(ctints) &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(t) &lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #c916ac&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #e93ecd&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #f07edd&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #f7beee&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #fffff&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;table&gt;
+  &lt;td width=&#34;100&#34;&gt;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #16c934&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #3ee95a&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #7ef091&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #bef7c8&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #ffffff&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+  &lt;td width=&#34;100&#34;&gt;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #c916ac&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #e93ecd&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #f07edd&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #f7beee&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #ffffff&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;但是，为了减少对比度，我们可以坚持使用&lt;strong&gt;相邻&lt;/strong&gt;的颜色：例如，起始颜色的 +/- 60度：&lt;/p&gt;
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;n1, n2 = c:neighbors(&lt;span class=&#34;number&#34;&gt;60&lt;/span&gt;)  &lt;span class=&#34;comment&#34;&gt;-- 获得上下60个相邻的颜色&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; i,t &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;ipairs&lt;/span&gt;(n1:tints()) &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(t) &lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #16c98e&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #3ee9b0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #7ef0ca&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #bef7e4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #ffffff&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; i,t &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;ipairs&lt;/span&gt;(n2:tints()) &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(t) &lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #52c916&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #77e93e&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #a4f07e&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #d1f7be&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #ffffff&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;table&gt;
+  &lt;td width=&#34;100&#34;&gt;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #16c934&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #3ee95a&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #7ef091&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #bef7c8&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #ffffff&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+  &lt;td width=&#34;100&#34;&gt;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #16acc9&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #3ecde9&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #7eddf0&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #beeef7&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #ffffff&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+  &lt;td width=&#34;100&#34;&gt;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #acc916&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #cde93e&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #ddf07e&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #eef7be&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #ffffff&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;或者，我们也可以生成一个拆分的互补配色方案：&lt;/p&gt;
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; i,t &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;ipairs&lt;/span&gt;(c1:tints()) &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(t) &lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #8e16c9&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #b03ee9&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #ca7ef0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #e4bef7&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #ffffff&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; i,t &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;ipairs&lt;/span&gt;(c2:tints()) &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(t) &lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #c91652&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #e93e77&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #f07ea4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #f7bed1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;-- #ffffff&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;table&gt;
+  &lt;td width=&#34;100&#34;&gt;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #16c934&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #3ee95a&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #7ef091&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #bef7c8&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #ffffff&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+  &lt;td width=&#34;100&#34;&gt;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #8e16c9&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #b03ee9&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #ca7ef0&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #e4bef7&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #ffffff&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+  &lt;td width=&#34;100&#34;&gt;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #c91652&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #e93e77&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #f07ea4&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #f7bed1&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #ffffff&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+
+
+&lt;p&gt;或者三色混合：&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;t1, t2 &amp;#x3D; c:triadic()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;for i,t in ipairs(t1:tints()) do print(t) end&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-- #3416c9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-- #5a3ee9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-- #917ef0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-- #c8bef7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-- #ffffff&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;for i,t in ipairs(t2:tints()) do print(t) end&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-- #c93416&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-- #e95a3e&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-- #f0917e&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-- #f7c8be&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;-- #ffffff&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;table&gt;
+  &lt;td width=&#34;100&#34;&gt;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #16c934&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #3ee95a&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #7ef091&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #bef7c8&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #ffffff&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+  &lt;td width=&#34;100&#34;&gt;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #3416c9&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #5a3ee9&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #917ef0&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #c8bef7&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #ffffff&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+  &lt;td width=&#34;100&#34;&gt;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #c93416&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #e95a3e&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #f0917e&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #f7c8be&#34;&gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td width=&#34;80&#34; style=&#34;border:1px solid grey; background: #ffffff&#34;&gt;&amp;nbsp;&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;script src=&#34;https://utteranc.es/client.js&#34;
+        repo=&#34;cypress0522/cypress0522.github.io&#34;
+        issue-term=&#34;pathname&#34;
+        theme=&#34;github-light&#34;
+        crossorigin=&#34;anonymous&#34;
+        async&gt;
+&lt;/script&gt;</content>
+        <category term="颜色" />
+        <updated>2022-08-15T16:00:00.000Z</updated>
+    </entry>
+</feed>
