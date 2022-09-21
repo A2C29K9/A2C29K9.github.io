@@ -4,9 +4,9 @@
     <title>Cypress - 小柏树 • Posts by &#34;lua&#34; category</title>
     <link href="https://cypress.github.io" />
     <updated>2022-08-16T16:00:00.000Z</updated>
+    <category term="Dice" />
     <category term="徐州站" />
     <category term="FIXED" />
-    <category term="Dice" />
     <category term="AI" />
     <category term="颜色" />
     <entry>
@@ -1230,8 +1230,8 @@
         async&gt;
 &lt;/script&gt;
 </content>
-        <category term="FIXED" />
         <category term="Dice" />
+        <category term="FIXED" />
         <updated>2022-08-04T16:00:00.000Z</updated>
     </entry>
     <entry>

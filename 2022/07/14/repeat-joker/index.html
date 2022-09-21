@@ -638,25 +638,6 @@ document.addEventListener('pjax:success', () => {
   </script>
 
 
-<script data-pjax>
-if (document.querySelectorAll('.pdf-container').length) {
-  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/pdfobject@2.2.5/pdfobject.min.js', () => {
-    document.querySelectorAll('.pdf-container').forEach(element => {
-      PDFObject.embed(element.dataset.target, element, {
-        pdfOpenParams: {
-          navpanes : 0,
-          toolbar  : 0,
-          statusbar: 0,
-          pagemode : 'thumbs',
-          view     : 'FitH'
-        },
-        PDFJS_URL: '/lib/pdf/web/viewer.html',
-        height   : element.dataset.height
-      });
-    });
-  }, window.PDFObject);
-}
-</script>
 
 <script data-pjax>
 var mermaidElements = document.querySelectorAll('.mermaid');
