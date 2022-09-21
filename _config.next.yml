@@ -321,12 +321,12 @@ tagcloud:
 # Share your recent schedule to others via calendar page.
 calendar:
   calendar_id: hsiangnianian@gmail.com # Your Google account E-Mail
-  api_key: AIzaSyAeLGpN96pWfRw6hokqp0r6IBcROHK8KIs
+  api_key: 'AIzaSyAeLGpN96pWfRw6hokqp0r6IBcROHK8KIs'
   orderBy: startTime
   showLocation: true
   offsetMax: 72 # Time Range
   offsetMin: 4 # Time Range
-  showDeleted: false
+  showDeleted: true
   singleEvents: true
   maxResults: 250
 
@@ -338,7 +338,7 @@ calendar:
 
 # Preconnect CDN for fonts and plugins.
 # For more information: https://www.w3.org/TR/resource-hints/#preconnect
-preconnect: false
+preconnect: true
 
 # Set the text alignment in posts / pages.
 text_align:
@@ -347,7 +347,7 @@ text_align:
   mobile: justify
 
 # Reduce padding / margin indents on devices with narrow width.
-mobile_layout_economy: false
+mobile_layout_economy: true
 
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
 android_chrome_color: "#222"
@@ -363,7 +363,7 @@ codeblock:
     dark: prism-dark
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true
     # Available values: default | flat | mac
     style:
 
@@ -583,8 +583,8 @@ comments:
 # Disqus
 # For more information: https://disqus.com
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: cypress-github-io
   count: true
 
 # DisqusJS
