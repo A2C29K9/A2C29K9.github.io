@@ -107,7 +107,7 @@ deploy:
   type: git
   repo: git@github.com:cypress0522/cypress0522.github.io.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
   branch: gh-pages
-  message: {{ now('YYYY-MM-DD HH:mm:ss') }})
+  message: YYYY-MM-DD HH:mm:ss
 
 feed:
     limit: 20
