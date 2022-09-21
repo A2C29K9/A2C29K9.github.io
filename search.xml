@@ -23,88 +23,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Colorful-Error-Repo</title>
-    <url>/2022/08/17/Colorful-Error-Repo/</url>
-    <content><![CDATA[<details class="note "><summary><p>secondary</p>
-</summary>
-<p><strong>Colorful-Error-Repo</strong></p>
-<blockquote>
-<p>简单的自定义报错回复模板.</p>
-</blockquote>
-
-</details>
-
-
-<h1 id="❡Colorful-Error-Repo-来点不一样的报错吧"><a href="#❡Colorful-Error-Repo-来点不一样的报错吧" class="headerlink" title="❡Colorful-Error-Repo:来点不一样的报错吧"></a><a href="">❡</a>Colorful-Error-Repo:来点不一样的报错吧</h1><blockquote>
-<p>使用《署名—禁止演绎 4.0 协议国际版》（CC BY-ND 4.0）进行授权。<br><span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5kLzQuMC9sZWdhbGNvZGUuemgtSGFucw==">https://creativecommons.org/licenses/by-nd/4.0/legalcode.zh-Hans<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
-<blockquote>
-<p>续之前的弦：<span class="exturl" data-url="aHR0cHM6Ly9mb3J1bS5rb2tvbmEudGVjaC9kLzExNjgtemhpLWxpbmctamlhby1iZW4tc2kteGlhbmctdG91LW5pYW5nLXppLWppYW4tZ2VuZy1sYW4tZGUtcGFuLWR1YW4tYmFvLWN1by1iaW5nLXppLWRpbmcteWktaHVpLWZ1">骰娘自检/判断报错并自定义回复<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
-<hr>
-<h2 id="一、基本信息"><a href="#一、基本信息" class="headerlink" title="一、基本信息"></a>一、基本信息</h2><ul>
-<li>作者： 简律纯</li>
-<li>联系方式：qq:a2c29k9</li>
-<li>版本：v1.0</li>
-<li>更新日期：暂无</li>
-<li>关键词：暂无</li>
-<li>许可协议：CC BY-ND 4.0</li>
-</ul>
-<hr>
-<h2 id="二-、需求"><a href="#二-、需求" class="headerlink" title="二 、需求"></a>二 、需求</h2><ul>
-<li><input disabled="" type="checkbox"> 更多的lua报错类型列表</li>
-<li><input disabled="" type="checkbox"> 更多时间</li>
-</ul>
-<hr>
-<h2 id="三、准备"><a href="#三、准备" class="headerlink" title="三、准备"></a>三、准备</h2><p>1.暂时用了手册内色子整理的常见报错信息说明[^1]。</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span> <span class="string">&#x27;%s&#x27;</span> <span class="keyword">not</span> found:</span><br><span class="line">	no field <span class="built_in">package</span>.<span class="built_in">preload</span>[<span class="string">&#x27;%s&#x27;</span>]</span><br><span class="line">	no file </span><br><span class="line"><span class="comment">-- 没有把被引用的lua或dll文件放在指定位置（多见于require与loadLua）</span></span><br><span class="line"><span class="comment">-- 解决方式：把所需文件放入Dice存档目录/plugin/或Diceki/lua/，dll文件或require对象必须置于后者</span></span><br><span class="line">attempt to call a <span class="literal">nil</span> value (global <span class="string">&#x27;%s&#x27;</span>)</span><br><span class="line"><span class="comment">-- 将空变量%s用作函数（global表示被调用的是全局变量，local表示本地变量，method表示索引方法）</span></span><br><span class="line">attempt to index a <span class="literal">nil</span> value (global <span class="string">&#x27;%s&#x27;</span>)</span><br><span class="line"><span class="comment">-- 对空变量%s使用索引（只有table等结构可以索引，形如msg.fromMsg）</span></span><br><span class="line">attempt to concatenate a <span class="literal">nil</span> value (<span class="keyword">local</span> <span class="string">&#x27;%s&#x27;</span>)</span><br><span class="line"><span class="comment">-- 使用..连接字符串时连接了一个空变量%s</span></span><br><span class="line">bad argument #<span class="number">1</span> to <span class="string">&#x27;%s&#x27;</span> (<span class="built_in">string</span> expected, got <span class="literal">nil</span>)</span><br><span class="line"><span class="comment">-- 函数%s的第1个参数类型错误，要求类型为string，但实际传入的参数为nil。特别地，got nil表示输入参数为nil或缺少参数</span></span><br><span class="line">value expected</span><br><span class="line"><span class="comment">-- 要求参数，但没有传入</span></span><br><span class="line">attempt to perform arithmetic on a <span class="literal">nil</span> value (global <span class="string">&#x27;%s&#x27;</span>)</span><br><span class="line"><span class="comment">-- 将一个空变量%s当做数字表示</span></span><br><span class="line">bad argument #<span class="number">5</span> to <span class="string">&#x27;format&#x27;</span>(number has no integer representation)</span><br><span class="line"><span class="comment">-- 函数format的第5个参数类型错误，要求是整数，但传入是小数，或者是其余类型不能化为整数</span></span><br><span class="line"><span class="string">&#x27;&#125;&#x27;</span> expected (to <span class="built_in">close</span> <span class="string">&#x27;&#123;&#x27;</span> at line <span class="number">169</span>) near <span class="string">&#x27;%s&#x27;</span></span><br><span class="line"><span class="comment">-- 脚本第169行的左花括号缺少配对的右花括号。此错误也可以由表格内缺少逗号分隔、括号外的中文等原因造成</span></span><br><span class="line"><span class="string">&#x27;end&#x27;</span> expected (to <span class="built_in">close</span> <span class="string">&#x27;function&#x27;</span> at line <span class="number">240</span>) near &lt;eof&gt;</span><br><span class="line"><span class="comment">-- 脚本第240行的function缺少收尾的end，&lt;eof&gt;表示文件结束（找到文件末也没找到）</span></span><br><span class="line"><span class="string">&#x27;then&#x27;</span> expected near <span class="string">&#x27;end&#x27;</span></span><br><span class="line"><span class="comment">-- if then end逻辑结构缺少then</span></span><br><span class="line">unexpected symbol near <span class="string">&#x27;%s&#x27;</span></span><br><span class="line"><span class="comment">-- 符号%s边有无法识读的符号，比如中文字符</span></span><br><span class="line">attempt to get length of a <span class="literal">nil</span> value (<span class="keyword">local</span> <span class="string">&#x27;tab&#x27;</span>)</span><br><span class="line"><span class="comment">-- 对空变量tab作取长度运算（#）</span></span><br><span class="line">attempt to add a <span class="string">&#x27;string&#x27;</span> with a <span class="string">&#x27;string&#x27;</span></span><br><span class="line"><span class="comment">-- 对(不能化为数字的)字符串用加法&#x27;+&#x27;（字符串只能用连接&#x27;..&#x27;）</span></span><br><span class="line">attempt to compare number with <span class="built_in">string</span></span><br><span class="line"><span class="comment">-- 对数字和(不能化为数字的)字符串用比较运算符</span></span><br><span class="line"><span class="built_in">error</span> loading <span class="built_in">module</span> <span class="string">&#x27;%s&#x27;</span> from file</span><br><span class="line"><span class="comment">-- 使用require &quot;%s&quot;时加载出错</span></span><br><span class="line">no visible label <span class="string">&#x27;%s&#x27;</span> <span class="keyword">for</span> &lt;<span class="keyword">goto</span>&gt; at line </span><br><span class="line"><span class="comment">-- 在循环结构中跳转不存在的节点</span></span><br><span class="line">invalid option <span class="string">&#x27;%s&#x27;</span></span><br><span class="line"><span class="comment">-- 传入的参数不是string或不在给定的字符串列表中</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="四、引用清单"><a href="#四、引用清单" class="headerlink" title="四、引用清单"></a>四、引用清单</h2><p>[^1]：<span class="exturl" data-url="aHR0cHM6Ly92MmRvY3Mua29rb25hLnRlY2gvemgvbGF0ZXN0L0RldmVsb3BfTWFudWFsLmh0bWwjaWQyMg==">https://v2docs.kokona.tech/zh/latest/Develop_Manual.html#id22<i class="fa fa-external-link-alt"></i></span></p>
-<script src="https://utteranc.es/client.js"
-        repo="cypress0522/cypress0522.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Lua</category>
-      </categories>
-      <tags>
-        <tag>Dice</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在dice里关于ai的应用</title>
-    <url>/2022/07/06/ai-reply/</url>
-    <content><![CDATA[<div class="note primary"><p>一个失败品…</p>
-</div>
-
-<blockquote>
-<p>使用《署名—非商业性使用—相同方式共享 4.0 协议国际版》（CC BY-NC-SA 4.0）进行授权。<br><span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9sZWdhbGNvZGUuemgtSGFucw==">https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-Hans<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
-<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>非常无聊，于是用正则以及dice的lua回复写了一个调用ai实例，总结了两个ai，青云客与思知。</p>
-<p>使用方法：<br>调用青云客:setUserConf(getDiceQQ(),’ai’,1)<br>调用思知:setUserConf(getDiceQQ(),’ai’,2)</p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">.reply set</span><br><span class="line">Regex=(.*)</span><br><span class="line">Lua=</span><br><span class="line"><span class="keyword">if</span> getUserConf(getDiceQQ(),<span class="string">&#x27;ai&#x27;</span>) == <span class="number">1</span> <span class="keyword">then</span></span><br><span class="line">url = <span class="string">&quot;http://api.qingyunke.com/api.php?key=free&amp;appid=0&amp;msg=&quot;</span> .. msg.fromMsg</span><br><span class="line">	res,data = http.get(url)</span><br><span class="line">	json = <span class="built_in">require</span>(<span class="string">&quot;json&quot;</span>)</span><br><span class="line">	j = json.decode(data)</span><br><span class="line"><span class="keyword">return</span> j.content</span><br><span class="line"><span class="keyword">elseif</span> getUserConf(getDiceQQ(),<span class="string">&#x27;ai&#x27;</span>) == <span class="number">2</span> <span class="keyword">then</span></span><br><span class="line">url = <span class="string">&quot;https://api.ownthink.com/bot?spoken=&quot;</span> .. msg.fromMsg</span><br><span class="line">	res,data = http.get(url)</span><br><span class="line">	json = <span class="built_in">require</span>(<span class="string">&quot;json&quot;</span>)</span><br><span class="line">	j = json.decode(data)</span><br><span class="line"><span class="keyword">return</span> j.data.info.text</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
-<script src="https://utteranc.es/client.js"
-        repo="cypress0522/cypress0522.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Lua</category>
-      </categories>
-      <tags>
-        <tag>Dice</tag>
-        <tag>AI</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Midido 一个更非人性化的手搓midi库</title>
     <url>/2022/08/05/Midido/</url>
     <content><![CDATA[<div class="note success"><p><strong>Midido</strong><br>简单实现用lua输出midi的库。</p>
@@ -186,8 +104,61 @@
         <category>Lua</category>
       </categories>
       <tags>
-        <tag>Dice</tag>
         <tag>FIXED</tag>
+        <tag>Dice</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Colorful-Error-Repo</title>
+    <url>/2022/08/17/Colorful-Error-Repo/</url>
+    <content><![CDATA[<details class="note "><summary><p>secondary</p>
+</summary>
+<p><strong>Colorful-Error-Repo</strong></p>
+<blockquote>
+<p>简单的自定义报错回复模板.</p>
+</blockquote>
+
+</details>
+
+
+<h1 id="❡Colorful-Error-Repo-来点不一样的报错吧"><a href="#❡Colorful-Error-Repo-来点不一样的报错吧" class="headerlink" title="❡Colorful-Error-Repo:来点不一样的报错吧"></a><a href="">❡</a>Colorful-Error-Repo:来点不一样的报错吧</h1><blockquote>
+<p>使用《署名—禁止演绎 4.0 协议国际版》（CC BY-ND 4.0）进行授权。<br><span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5kLzQuMC9sZWdhbGNvZGUuemgtSGFucw==">https://creativecommons.org/licenses/by-nd/4.0/legalcode.zh-Hans<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<blockquote>
+<p>续之前的弦：<span class="exturl" data-url="aHR0cHM6Ly9mb3J1bS5rb2tvbmEudGVjaC9kLzExNjgtemhpLWxpbmctamlhby1iZW4tc2kteGlhbmctdG91LW5pYW5nLXppLWppYW4tZ2VuZy1sYW4tZGUtcGFuLWR1YW4tYmFvLWN1by1iaW5nLXppLWRpbmcteWktaHVpLWZ1">骰娘自检/判断报错并自定义回复<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<hr>
+<h2 id="一、基本信息"><a href="#一、基本信息" class="headerlink" title="一、基本信息"></a>一、基本信息</h2><ul>
+<li>作者： 简律纯</li>
+<li>联系方式：qq:a2c29k9</li>
+<li>版本：v1.0</li>
+<li>更新日期：暂无</li>
+<li>关键词：暂无</li>
+<li>许可协议：CC BY-ND 4.0</li>
+</ul>
+<hr>
+<h2 id="二-、需求"><a href="#二-、需求" class="headerlink" title="二 、需求"></a>二 、需求</h2><ul>
+<li><input disabled="" type="checkbox"> 更多的lua报错类型列表</li>
+<li><input disabled="" type="checkbox"> 更多时间</li>
+</ul>
+<hr>
+<h2 id="三、准备"><a href="#三、准备" class="headerlink" title="三、准备"></a>三、准备</h2><p>1.暂时用了手册内色子整理的常见报错信息说明[^1]。</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span> <span class="string">&#x27;%s&#x27;</span> <span class="keyword">not</span> found:</span><br><span class="line">	no field <span class="built_in">package</span>.<span class="built_in">preload</span>[<span class="string">&#x27;%s&#x27;</span>]</span><br><span class="line">	no file </span><br><span class="line"><span class="comment">-- 没有把被引用的lua或dll文件放在指定位置（多见于require与loadLua）</span></span><br><span class="line"><span class="comment">-- 解决方式：把所需文件放入Dice存档目录/plugin/或Diceki/lua/，dll文件或require对象必须置于后者</span></span><br><span class="line">attempt to call a <span class="literal">nil</span> value (global <span class="string">&#x27;%s&#x27;</span>)</span><br><span class="line"><span class="comment">-- 将空变量%s用作函数（global表示被调用的是全局变量，local表示本地变量，method表示索引方法）</span></span><br><span class="line">attempt to index a <span class="literal">nil</span> value (global <span class="string">&#x27;%s&#x27;</span>)</span><br><span class="line"><span class="comment">-- 对空变量%s使用索引（只有table等结构可以索引，形如msg.fromMsg）</span></span><br><span class="line">attempt to concatenate a <span class="literal">nil</span> value (<span class="keyword">local</span> <span class="string">&#x27;%s&#x27;</span>)</span><br><span class="line"><span class="comment">-- 使用..连接字符串时连接了一个空变量%s</span></span><br><span class="line">bad argument #<span class="number">1</span> to <span class="string">&#x27;%s&#x27;</span> (<span class="built_in">string</span> expected, got <span class="literal">nil</span>)</span><br><span class="line"><span class="comment">-- 函数%s的第1个参数类型错误，要求类型为string，但实际传入的参数为nil。特别地，got nil表示输入参数为nil或缺少参数</span></span><br><span class="line">value expected</span><br><span class="line"><span class="comment">-- 要求参数，但没有传入</span></span><br><span class="line">attempt to perform arithmetic on a <span class="literal">nil</span> value (global <span class="string">&#x27;%s&#x27;</span>)</span><br><span class="line"><span class="comment">-- 将一个空变量%s当做数字表示</span></span><br><span class="line">bad argument #<span class="number">5</span> to <span class="string">&#x27;format&#x27;</span>(number has no integer representation)</span><br><span class="line"><span class="comment">-- 函数format的第5个参数类型错误，要求是整数，但传入是小数，或者是其余类型不能化为整数</span></span><br><span class="line"><span class="string">&#x27;&#125;&#x27;</span> expected (to <span class="built_in">close</span> <span class="string">&#x27;&#123;&#x27;</span> at line <span class="number">169</span>) near <span class="string">&#x27;%s&#x27;</span></span><br><span class="line"><span class="comment">-- 脚本第169行的左花括号缺少配对的右花括号。此错误也可以由表格内缺少逗号分隔、括号外的中文等原因造成</span></span><br><span class="line"><span class="string">&#x27;end&#x27;</span> expected (to <span class="built_in">close</span> <span class="string">&#x27;function&#x27;</span> at line <span class="number">240</span>) near &lt;eof&gt;</span><br><span class="line"><span class="comment">-- 脚本第240行的function缺少收尾的end，&lt;eof&gt;表示文件结束（找到文件末也没找到）</span></span><br><span class="line"><span class="string">&#x27;then&#x27;</span> expected near <span class="string">&#x27;end&#x27;</span></span><br><span class="line"><span class="comment">-- if then end逻辑结构缺少then</span></span><br><span class="line">unexpected symbol near <span class="string">&#x27;%s&#x27;</span></span><br><span class="line"><span class="comment">-- 符号%s边有无法识读的符号，比如中文字符</span></span><br><span class="line">attempt to get length of a <span class="literal">nil</span> value (<span class="keyword">local</span> <span class="string">&#x27;tab&#x27;</span>)</span><br><span class="line"><span class="comment">-- 对空变量tab作取长度运算（#）</span></span><br><span class="line">attempt to add a <span class="string">&#x27;string&#x27;</span> with a <span class="string">&#x27;string&#x27;</span></span><br><span class="line"><span class="comment">-- 对(不能化为数字的)字符串用加法&#x27;+&#x27;（字符串只能用连接&#x27;..&#x27;）</span></span><br><span class="line">attempt to compare number with <span class="built_in">string</span></span><br><span class="line"><span class="comment">-- 对数字和(不能化为数字的)字符串用比较运算符</span></span><br><span class="line"><span class="built_in">error</span> loading <span class="built_in">module</span> <span class="string">&#x27;%s&#x27;</span> from file</span><br><span class="line"><span class="comment">-- 使用require &quot;%s&quot;时加载出错</span></span><br><span class="line">no visible label <span class="string">&#x27;%s&#x27;</span> <span class="keyword">for</span> &lt;<span class="keyword">goto</span>&gt; at line </span><br><span class="line"><span class="comment">-- 在循环结构中跳转不存在的节点</span></span><br><span class="line">invalid option <span class="string">&#x27;%s&#x27;</span></span><br><span class="line"><span class="comment">-- 传入的参数不是string或不在给定的字符串列表中</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="四、引用清单"><a href="#四、引用清单" class="headerlink" title="四、引用清单"></a>四、引用清单</h2><p>[^1]：<span class="exturl" data-url="aHR0cHM6Ly92MmRvY3Mua29rb25hLnRlY2gvemgvbGF0ZXN0L0RldmVsb3BfTWFudWFsLmh0bWwjaWQyMg==">https://v2docs.kokona.tech/zh/latest/Develop_Manual.html#id22<i class="fa fa-external-link-alt"></i></span></p>
+<script src="https://utteranc.es/client.js"
+        repo="cypress0522/cypress0522.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Lua</category>
+      </categories>
+      <tags>
+        <tag>Dice</tag>
       </tags>
   </entry>
   <entry>
@@ -455,6 +426,35 @@
       </tags>
   </entry>
   <entry>
+    <title>在dice里关于ai的应用</title>
+    <url>/2022/07/06/ai-reply/</url>
+    <content><![CDATA[<div class="note primary"><p>一个失败品…</p>
+</div>
+
+<blockquote>
+<p>使用《署名—非商业性使用—相同方式共享 4.0 协议国际版》（CC BY-NC-SA 4.0）进行授权。<br><span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9sZWdhbGNvZGUuemgtSGFucw==">https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-Hans<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>非常无聊，于是用正则以及dice的lua回复写了一个调用ai实例，总结了两个ai，青云客与思知。</p>
+<p>使用方法：<br>调用青云客:setUserConf(getDiceQQ(),’ai’,1)<br>调用思知:setUserConf(getDiceQQ(),’ai’,2)</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">.reply set</span><br><span class="line">Regex=(.*)</span><br><span class="line">Lua=</span><br><span class="line"><span class="keyword">if</span> getUserConf(getDiceQQ(),<span class="string">&#x27;ai&#x27;</span>) == <span class="number">1</span> <span class="keyword">then</span></span><br><span class="line">url = <span class="string">&quot;http://api.qingyunke.com/api.php?key=free&amp;appid=0&amp;msg=&quot;</span> .. msg.fromMsg</span><br><span class="line">	res,data = http.get(url)</span><br><span class="line">	json = <span class="built_in">require</span>(<span class="string">&quot;json&quot;</span>)</span><br><span class="line">	j = json.decode(data)</span><br><span class="line"><span class="keyword">return</span> j.content</span><br><span class="line"><span class="keyword">elseif</span> getUserConf(getDiceQQ(),<span class="string">&#x27;ai&#x27;</span>) == <span class="number">2</span> <span class="keyword">then</span></span><br><span class="line">url = <span class="string">&quot;https://api.ownthink.com/bot?spoken=&quot;</span> .. msg.fromMsg</span><br><span class="line">	res,data = http.get(url)</span><br><span class="line">	json = <span class="built_in">require</span>(<span class="string">&quot;json&quot;</span>)</span><br><span class="line">	j = json.decode(data)</span><br><span class="line"><span class="keyword">return</span> j.data.info.text</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<script src="https://utteranc.es/client.js"
+        repo="cypress0522/cypress0522.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Lua</category>
+      </categories>
+      <tags>
+        <tag>Dice</tag>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>chat-ActObjectValue:help</title>
     <url>/2022/06/16/chat-AOV-help/</url>
     <content><![CDATA[<div class="note warning"><p><strong>WARNING</strong><br>这是关于<a href="https://cypress0522.github.io/2022/06/11/chat-ActObjectValue/"><strong>chat-ActObjectValue</strong></a>的隐藏更新页面，你不应该在这里进行任何操作！</p>
@@ -505,6 +505,39 @@
 <h2 id="关于5-8更新内容的示例"><a href="#关于5-8更新内容的示例" class="headerlink" title="关于5.8更新内容的示例"></a>关于5.8更新内容的示例</h2><p>5.8重点更新了记录的查看方式，新增了 <code>start_crrt</code>配置。</p>
 <p>使用命令 <code>#setUserConf &lt;骰娘QQ&gt; start_crrt &lt;值&gt; </code>进行更改，其更改将会改变 <code>#help log</code>的返回内容：<br><code>start_crrt</code> 默认为0，这时查看日志会显示最新的一条。<br><img data-src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-07/1651953020-849510-29e7e2d45c34a60b.png"><br>当 <code>start_crrt</code>修改为1至5范围内的数字，会显示最近的2至6条记录。<br><img data-src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-07/1651953344-615701-574c97559bc3ae34.png"><br>设置范围6至30时会显示对应数量的记录，但不是在群里，bot会私发给指令发出者。<br><img data-src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-07/1651953608-811583-315f836bf1e21646.png"><br><img data-src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-07/1651953634-841540-1a024626f1fb6728.png"></p>
 <h2 id="如何安装使用？"><a href="#如何安装使用？" class="headerlink" title="如何安装使用？"></a>如何安装使用？</h2><p>1.解压安装包<br>2.将安装包内文件与文件夹全部放入plugin文件夹<br>3.使用命令<code>.system load</code></p>
+<script src="https://utteranc.es/client.js"
+        repo="cypress0522/cypress0522.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Lua</category>
+      </categories>
+      <tags>
+        <tag>Dice</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>chat-ActObjectValue 2.0</title>
+    <url>/2022/06/18/chat-ActObjectValue-2.0/</url>
+    <content><![CDATA[<details class="note "><summary><p>secondary</p>
+</summary>
+<p><strong>NOTICE</strong><br>2.0 或许在明天就出了？</p>
+
+</details>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>说句实话在昨天2.0也只是个创建了一个空文件夹的存在，但是今天突然就写完了，并且写得彻彻底底的，总之能用便是了！</p>
+</blockquote>
+<p>只需要两步即可完成操作</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="添加回复命令"><a href="#添加回复命令" class="headerlink" title="添加回复命令"></a>添加回复命令</h3><p>在开始之前，你需要对自己家的骰娘输入以下命，其中，<code>require &quot;catchError&quot;</code>是必须的库，其他可根据需要添加。</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">.reply set</span><br><span class="line">Prefix=#</span><br><span class="line">Lua=</span><br><span class="line"><span class="built_in">require</span> <span class="string">&quot;catchError&quot;</span></span><br><span class="line"><span class="built_in">require</span> <span class="string">&quot;basicFunction&quot;</span></span><br><span class="line"><span class="keyword">return</span> <span class="built_in">load</span>(<span class="string">&quot;return &quot;</span>..<span class="built_in">string</span>.<span class="built_in">gsub</span>(msg.fromMsg,<span class="number">2</span>))()</span><br></pre></td></tr></table></figure>
+
+<p>好的，目前你已经完成了三分之二了！<br>接下来让我们完成最后一步操作。</p>
+<h3 id="安装库"><a href="#安装库" class="headerlink" title="安装库"></a>安装库</h3><p>1.下载<span class="exturl" data-url="aHR0cHM6Ly9naXJodWIuY29tL2N5cHJlc3MwNTIy">catchError<i class="fa fa-external-link-alt"></i></span><br>2.将lua库丢进<code>Diceki\lua\</code>文件夹下<br>3.在聊天窗口使用<code>.system load</code>命令</p>
 <script src="https://utteranc.es/client.js"
         repo="cypress0522/cypress0522.github.io"
         issue-term="pathname"
@@ -593,36 +626,28 @@
       </tags>
   </entry>
   <entry>
-    <title>chat-ActObjectValue 2.0</title>
-    <url>/2022/06/18/chat-ActObjectValue-2.0/</url>
-    <content><![CDATA[<details class="note "><summary><p>secondary</p>
-</summary>
-<p><strong>NOTICE</strong><br>2.0 或许在明天就出了？</p>
+    <title>改写print</title>
+    <url>/2022/08/05/print-fixed/</url>
+    <content><![CDATA[<div class="note success"><p><strong>print fixed</strong><br>简单实现改写print，将print内容写入文件生成日志。</p>
+</div>
 
-</details>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="comment">-------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">-- Print 改写. @简律纯 @gexi</span></span><br><span class="line"><span class="comment">-------------------------------------------------------------------------------</span></span><br><span class="line">writeToFile = <span class="function"><span class="keyword">function</span> <span class="params">( str )</span></span></span><br><span class="line">    <span class="keyword">local</span> filename = <span class="string">&quot;print.log&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> fileLogOut <span class="keyword">then</span></span><br><span class="line">        fileLogOut = <span class="built_in">io</span>.<span class="built_in">open</span>(filename, <span class="string">&quot;w&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        fileLogOut = <span class="built_in">io</span>.<span class="built_in">open</span>(filename, <span class="string">&quot;a&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    fileLogOut:<span class="built_in">write</span>(<span class="built_in">os</span>.<span class="built_in">date</span>(<span class="string">&quot;%H:%M:%S&quot;</span>,<span class="built_in">os</span>.<span class="built_in">time</span>())..<span class="string">&quot; &quot;</span>..str..<span class="string">&quot;\n&quot;</span>)</span><br><span class="line">    fileLogOut:<span class="built_in">close</span>()</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">babe_tostring</span><span class="params">(...)</span></span></span><br><span class="line">    <span class="keyword">local</span> num = <span class="built_in">select</span>(<span class="string">&quot;#&quot;</span>, ...);</span><br><span class="line">    <span class="keyword">local</span> args = &#123; ... &#125;;</span><br><span class="line">    <span class="keyword">local</span> outs = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> i = <span class="number">1</span>, num <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">if</span> i &gt; <span class="number">1</span> <span class="keyword">then</span></span><br><span class="line">            outs[#outs + <span class="number">1</span>] = <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        outs[#outs + <span class="number">1</span>] = <span class="built_in">tostring</span>(args[i]);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">table</span>.<span class="built_in">concat</span>(outs);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> just_print = <span class="built_in">print</span>;</span><br><span class="line"><span class="keyword">local</span> babe_output = <span class="function"><span class="keyword">function</span><span class="params">(...)</span></span></span><br><span class="line">    just_print(...);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">local</span> str = babe_tostring(...);</span><br><span class="line">    <span class="keyword">if</span> writeToFile <span class="keyword">then</span> writeToFile(str) <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">print</span> = babe_output</span><br></pre></td></tr></table></figure>
 
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>说句实话在昨天2.0也只是个创建了一个空文件夹的存在，但是今天突然就写完了，并且写得彻彻底底的，总之能用便是了！</p>
-</blockquote>
-<p>只需要两步即可完成操作</p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="添加回复命令"><a href="#添加回复命令" class="headerlink" title="添加回复命令"></a>添加回复命令</h3><p>在开始之前，你需要对自己家的骰娘输入以下命，其中，<code>require &quot;catchError&quot;</code>是必须的库，其他可根据需要添加。</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">.reply set</span><br><span class="line">Prefix=#</span><br><span class="line">Lua=</span><br><span class="line"><span class="built_in">require</span> <span class="string">&quot;catchError&quot;</span></span><br><span class="line"><span class="built_in">require</span> <span class="string">&quot;basicFunction&quot;</span></span><br><span class="line"><span class="keyword">return</span> <span class="built_in">load</span>(<span class="string">&quot;return &quot;</span>..<span class="built_in">string</span>.<span class="built_in">gsub</span>(msg.fromMsg,<span class="number">2</span>))()</span><br></pre></td></tr></table></figure>
 
-<p>好的，目前你已经完成了三分之二了！<br>接下来让我们完成最后一步操作。</p>
-<h3 id="安装库"><a href="#安装库" class="headerlink" title="安装库"></a>安装库</h3><p>1.下载<span class="exturl" data-url="aHR0cHM6Ly9naXJodWIuY29tL2N5cHJlc3MwNTIy">catchError<i class="fa fa-external-link-alt"></i></span><br>2.将lua库丢进<code>Diceki\lua\</code>文件夹下<br>3.在聊天窗口使用<code>.system load</code>命令</p>
 <script src="https://utteranc.es/client.js"
         repo="cypress0522/cypress0522.github.io"
         issue-term="pathname"
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script>]]></content>
+</script>
+]]></content>
       <categories>
         <category>技术</category>
         <category>Lua</category>
       </categories>
       <tags>
-        <tag>Dice</tag>
+        <tag>FIXED</tag>
       </tags>
   </entry>
   <entry>
@@ -1596,31 +1621,6 @@
       </categories>
       <tags>
         <tag>颜色</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>改写print</title>
-    <url>/2022/08/05/print-fixed/</url>
-    <content><![CDATA[<div class="note success"><p><strong>print fixed</strong><br>简单实现改写print，将print内容写入文件生成日志。</p>
-</div>
-
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="comment">-------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">-- Print 改写. @简律纯 @gexi</span></span><br><span class="line"><span class="comment">-------------------------------------------------------------------------------</span></span><br><span class="line">writeToFile = <span class="function"><span class="keyword">function</span> <span class="params">( str )</span></span></span><br><span class="line">    <span class="keyword">local</span> filename = <span class="string">&quot;print.log&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> fileLogOut <span class="keyword">then</span></span><br><span class="line">        fileLogOut = <span class="built_in">io</span>.<span class="built_in">open</span>(filename, <span class="string">&quot;w&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        fileLogOut = <span class="built_in">io</span>.<span class="built_in">open</span>(filename, <span class="string">&quot;a&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    fileLogOut:<span class="built_in">write</span>(<span class="built_in">os</span>.<span class="built_in">date</span>(<span class="string">&quot;%H:%M:%S&quot;</span>,<span class="built_in">os</span>.<span class="built_in">time</span>())..<span class="string">&quot; &quot;</span>..str..<span class="string">&quot;\n&quot;</span>)</span><br><span class="line">    fileLogOut:<span class="built_in">close</span>()</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">babe_tostring</span><span class="params">(...)</span></span></span><br><span class="line">    <span class="keyword">local</span> num = <span class="built_in">select</span>(<span class="string">&quot;#&quot;</span>, ...);</span><br><span class="line">    <span class="keyword">local</span> args = &#123; ... &#125;;</span><br><span class="line">    <span class="keyword">local</span> outs = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> i = <span class="number">1</span>, num <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">if</span> i &gt; <span class="number">1</span> <span class="keyword">then</span></span><br><span class="line">            outs[#outs + <span class="number">1</span>] = <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        outs[#outs + <span class="number">1</span>] = <span class="built_in">tostring</span>(args[i]);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">table</span>.<span class="built_in">concat</span>(outs);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> just_print = <span class="built_in">print</span>;</span><br><span class="line"><span class="keyword">local</span> babe_output = <span class="function"><span class="keyword">function</span><span class="params">(...)</span></span></span><br><span class="line">    just_print(...);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">local</span> str = babe_tostring(...);</span><br><span class="line">    <span class="keyword">if</span> writeToFile <span class="keyword">then</span> writeToFile(str) <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">print</span> = babe_output</span><br></pre></td></tr></table></figure>
-
-
-<script src="https://utteranc.es/client.js"
-        repo="cypress0522/cypress0522.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Lua</category>
-      </categories>
-      <tags>
-        <tag>FIXED</tag>
       </tags>
   </entry>
   <entry>
