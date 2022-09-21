@@ -5,7 +5,7 @@
 # Site
 title: Cypress - 小柏树
 subtitle: 🌳💕🎁✔
-description: ''
+description: '今天浇水了吗？'
 keywords:
 author: 简律纯
 language: zh-CN
@@ -30,6 +30,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - lib/**/*
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -47,7 +48,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: 
   tab_replace: ''
   wrap: true
   hljs: false
@@ -123,8 +124,19 @@ feed:
         enable: true
         output: "feed.json"
 
-#search:
-#  path: search.xml
-#  field: all
-#  content: true
-#  format: striptags
+## Live2D看板娘
+live2d:
+  enable: true
+  pluginModelPath: assets/
+  model:
+    #模板目录，在node_modules里
+    use: live2d-widget-model-tororo #hijiki
+  display:
+    position: left
+    width: 200
+    height: 200
+  mobile:
+    # 在手机端显示
+    show: true
+  rect:
+    opacity:0.7
