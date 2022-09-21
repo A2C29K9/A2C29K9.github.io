@@ -107,7 +107,7 @@ deploy:
   type: git
   repo: git@github.com:cypress0522/cypress0522.github.io.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
   branch: gh-pages
-  message: [message]
+  message: '简律纯又又又又熬夜了'
 
 feed:
     limit: 20
