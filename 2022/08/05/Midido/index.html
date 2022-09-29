@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cypress.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.3.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="Midido简单实现用lua输出midi的库。    使用《署名—非商业性使用—相同方式共享 4.0 协议国际版》（CC BY-NC-SA 4.0）进行授权。https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-nc-sa&#x2F;4.0&#x2F;legalcode.zh-Hans     Midido To-do list 描述 状态    wiki 用法wiki x   Keyboa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Midido 一个更非人性化的手搓midi库">
+<meta property="og:url" content="https://cypress.github.io/2022/08/05/Midido/index.html">
+<meta property="og:site_name" content="Cypress - 小柏树">
+<meta property="og:description" content="Midido简单实现用lua输出midi的库。    使用《署名—非商业性使用—相同方式共享 4.0 协议国际版》（CC BY-NC-SA 4.0）进行授权。https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-nc-sa&#x2F;4.0&#x2F;legalcode.zh-Hans     Midido To-do list 描述 状态    wiki 用法wiki x   Keyboa">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-07-30/1659158099-11773-5d706d6c091bc400.jpg">
+<meta property="og:image" content="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-07-30/1659157938-716855-img20220730131141.jpg">
+<meta property="article:published_time" content="2022-08-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-05T04:22:05.579Z">
+<meta property="article:author" content="简律纯">
+<meta property="article:tag" content="FIXED">
+<meta property="article:tag" content="Dice">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-07-30/1659158099-11773-5d706d6c091bc400.jpg">
+
+
+<link rel="canonical" href="https://cypress.github.io/2022/08/05/Midido/">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>Midido 一个更非人性化的手搓midi库 | Cypress - 小柏树</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Cypress - 小柏树</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">🌳💕🎁✔</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/feed.json" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">一、基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.</span> <span class="nav-text">二、详细介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="nav-number">2.1.</span> <span class="nav-text">1.简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%B8%80%E4%BA%9B%E6%95%99%E8%AE%AD"><span class="nav-number">2.2.</span> <span class="nav-text">2.一些教训</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81TO-DO-LIST"><span class="nav-number">3.</span> <span class="nav-text">三、TO-DO LIST</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E8%84%9A%E6%9C%AC%E8%BE%93%E5%87%BA%E5%AE%9E%E4%BE%8B%E8%AF%95%E5%90%AC"><span class="nav-number">4.</span> <span class="nav-text">四、脚本输出实例试听</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E6%9C%80%E5%90%8E"><span class="nav-number">5.</span> <span class="nav-text">五、最后</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="简律纯"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">简律纯</p>
+  <div class="site-description" itemprop="description">今天浇水了吗？</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button site-overview-item animated">
+    <a onclick="Chatra('openChat', true);"><i class="fa fa-comment"></i>
+    来嗑瓜子？
+  </a>
+  </div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2N5cHJlc3MwNTIy" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cypress0522"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmhzaWFuZ25pYW5pYW5Ab3V0bG9vay5jb20=" title="E-Mail → mailto:hsiangnianian@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9jeXByZXNzMDUyMi5naXRodWIuaW8vc3NKU0tGSkRK" title="https:&#x2F;&#x2F;cypress0522.github.io&#x2F;ssJSKFJDJ">ssJSKFJDJ</span>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cypress.github.io/2022/08/05/Midido/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="简律纯">
+      <meta itemprop="description" content="今天浇水了吗？">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cypress - 小柏树">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Midido 一个更非人性化的手搓midi库<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL2N5cHJlc3MwNTIyL2N5cHJlc3MwNTIyLmdpdGh1Yi5pby90cmVlL21hc3Rlci9zb3VyY2UvX3Bvc3RzL01pZGlkby5tZA==" title="编辑"><i class="fa fa-pen-nib"></i></span>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-08-05 00:00:00 / 修改时间：12:22:05" itemprop="dateCreated datePublished" datetime="2022-08-05T00:00:00+08:00">2022-08-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/Lua/" itemprop="url" rel="index"><span itemprop="name">Lua</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <div class="note success"><p><strong>Midido</strong><br>简单实现用lua输出midi的库。</p>
+</div>
+
+<blockquote>
+<p>使用《署名—非商业性使用—相同方式共享 4.0 协议国际版》（CC BY-NC-SA 4.0）进行授权。<br><span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9sZWdhbGNvZGUuemgtSGFucw==">https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-Hans<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">Midido To-do list</th>
+<th align="center">描述</th>
+<th align="center">状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">wiki</td>
+<td align="center">用法wiki</td>
+<td align="center">x</td>
+</tr>
+<tr>
+<td align="left">Keyboards’ pack</td>
+<td align="center">键位包</td>
+<td align="center">敬请期待</td>
+</tr>
+<tr>
+<td align="left">songs’ e.g.</td>
+<td align="center">歌曲工程示例</td>
+<td align="center">x</td>
+</tr>
+</tbody></table>
+<h2 id="一、基本信息"><a href="#一、基本信息" class="headerlink" title="一、基本信息"></a>一、基本信息</h2><blockquote>
+<ul>
+<li>作者： 简律纯</li>
+</ul>
+</blockquote>
+<ul>
+<li>联系方式：qq:a2c29k9</li>
+<li>版本：v1.0</li>
+<li>更新日期：暂无</li>
+<li>关键词：暂无</li>
+<li>许可协议：CC BY-NC-SA 4.0</li>
+</ul>
+<h2 id="二、详细介绍"><a href="#二、详细介绍" class="headerlink" title="二、详细介绍"></a>二、详细介绍</h2><h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h3><blockquote>
+<p>最初是一个设想，毕竟我是写音乐的，主要负责作曲编曲，鸽了快一年后很多粉丝不耐烦了，于是我开始整一些或许大学用得上的东西^比如一个bot ，高考那几天突发奇想，我或许可以教粉丝朋友一起写音乐？那就先从midi序列开始吧！<del>（也可以名正言顺咕咕咕，同时压榨劳动力）</del></p>
+</blockquote>
+<h3 id="2-一些教训"><a href="#2-一些教训" class="headerlink" title="2.一些教训"></a>2.一些教训</h3><blockquote>
+<p>1.之前试过onebot ZBP插件里的timidity，也是手搓midi，但是仍然需要安装ffmpeg和timidity环境，且受到一定的系统环境影响——尽管成功写出了midi文件，但是对于其他那些使用非Windows系统（大家其实更愿意用Macbook）的人（主要是我的作曲家编曲家朋友）来说安装十分困难。<br>zbp关于midi的插件介绍：<br><img src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-07-30/1659158099-11773-5d706d6c091bc400.jpg"></p>
+</blockquote>
+<blockquote>
+<p>2.于是我开始注意到简化使用指令的重要性，并在此机缘巧合下找到了 <span class="exturl" data-url="aHR0cHM6Ly93d3cuYXV0b3BpYW5vLmNuLw==">AutoPiano<i class="fa fa-external-link-alt"></i></span>。<br>我并不在意它的关于编写输出音乐的任何逻辑或是别的什么，我找到了站长，并向他提出了几个问题——就比如，键盘谱是如何想出来的。<br>下图为孤勇者唱谱：<br><img src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-07-30/1659157938-716855-img20220730131141.jpg"></p>
+</blockquote>
+<blockquote>
+<p>3.综上，这未尝不是一个很好的开端，至少我明白了手搓midi的原理，以及一些更切合实际的东西，就比如简化指令。</p>
+</blockquote>
+<h2 id="三、TO-DO-LIST"><a href="#三、TO-DO-LIST" class="headerlink" title="三、TO-DO LIST"></a>三、TO-DO LIST</h2><ul>
+<li><p><input disabled="" type="checkbox">  编写用法wiki<br>用法非常复杂，这脚本就算是raw了，我需要讲清楚如何写出一段音阶（最简单的一段中音区 C D E F G A B midi片段）；如何写出一段chord（和弦），并在此和弦基础上继续写主旋律；如何变换调式调性（F# -&gt; Ab）；如何修改速度等等。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  编写最基础的简化指令包，虽然目前写好的raw版本是功能最全的，但是其编写midi的方式（我目前主要靠写lua脚本再 <code>loadLua()</code> 或者使用basicFunction1.0（啊现在应该叫FuncLib2.0）内注释掉的 <code>load()()</code> 来写midi）过于硬核，所以需要一个诸如 <code>midi:0333-1 0333-2</code> 或是 <code>midi:E5 E5 E5 C5</code> 这样的简单易用指令。</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox">  一个音源键位包，或者一个键位函数包，用于简化脚本写midi时的打谱环节。</p>
+</li>
+</ul>
+<h2 id="四、脚本输出实例试听"><a href="#四、脚本输出实例试听" class="headerlink" title="四、脚本输出实例试听"></a>四、脚本输出实例试听</h2><p>C大调音阶：<br>[upl-file uuid=e45d0254-ca7a-498c-b00d-069b2de5a74b size=257B]c-major-scale.zip[/upl-file]<br>Am和弦：<br>[upl-file uuid=d2589143-51ab-4ff7-aa9f-96734e60d4b3 size=321B]chord-example.zip[/upl-file]<br>时值变化：<br>[upl-file uuid=d9db9d92-396a-48c2-918c-2ecf3ef37e26 size=260B]duration-example.zip[/upl-file]</p>
+<h2 id="五、最后"><a href="#五、最后" class="headerlink" title="五、最后"></a>五、最后</h2><blockquote>
+<p>脚本将会在简化指令版写完发布，愿大家都能名正言顺的咕咕咕，也愿大家都热爱生活，热爱音乐！</p>
+</blockquote>
+<script src="https://utteranc.es/client.js"
+        repo="cypress0522/cypress0522.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="简律纯 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/rss.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/feed.json">
+          <span class="icon">
+            <i class="fa fa-cubes"></i>
+          </span>
+
+          <span class="label">API</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-atom"></i>
+          </span>
+
+          <span class="label">Atom</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/FIXED/" rel="tag"># FIXED</a>
+              <a href="/tags/Dice/" rel="tag"># Dice</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/05/print-fixed/" rel="prev" title="改写print">
+                  <i class="fa fa-chevron-left"></i> 改写print
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/08/15/table-module/" rel="next" title="table-module">
+                  table-module <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">简律纯</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">17k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">15 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">powered by <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL2N5cHJlc3MwNTIy">Hsiang Nianian</span> & <span class="exturl" data-url="aHR0cHM6Ly9jeXByZXNzMDUyMi5naXRodWIuaW8vc3NKU0tGSkRK">ssJSKFJDJ.</span> for 你这个小笨蛋
+  </div>
+  <div class="addthis_inline_share_toolbox">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-632b0f03a8645d61" async="async"></script>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+  <script data-pjax>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : ,
+      el    : 'wpac-rating',
+      color : '#fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+<script src="/js/local-search.js"></script>
+
+  <script>
+    (function(d, w, c) {
+      w.ChatraID = 'WLxyWdyg92L9ycfuj';
+      var s = d.createElement('script');
+      w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+      };
+      s.async = true;
+      s.src = 'https://call.chatra.io/chatra.js';
+      if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+  </script>
+
+
+
+
+  <script>
+    NProgress.configure({
+      showSpinner: true
+    });
+    NProgress.start();
+    document.addEventListener('readystatechange', () => {
+      if (document.readyState === 'interactive') {
+        NProgress.inc(0.8);
+      }
+      if (document.readyState === 'complete') {
+        NProgress.done();
+      }
+    });
+    document.addEventListener('pjax:send', () => {
+      NProgress.start();
+    });
+    document.addEventListener('pjax:success', () => {
+      NProgress.done();
+    });
+  </script>
+
+  
+
+
+
+    <div class="pjax">
+
+  
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css">
+
+<script>
+NexT.utils.loadComments('.gitalk-container', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'cfef1f6c1295644402b7',
+      clientSecret: '7e17bdc083ac49295c1a520d634334c3a2f62d82',
+      repo        : 'cypress0522.github.io',
+      owner       : 'cypress0522',
+      admin       : ['cypress0522'],
+      id          : '16cad78c7571f387a146134fb3d0bce5',
+      proxy       : 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render(document.querySelector('.gitalk-container'));
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":200,"height":200},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cypress.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.3.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="secondary  目前正在努力ing…利用 error()与 pcall()进行lua自定义报错    前言 使用《署名—非商业性使用—相同方式共享4.0 协议国际版》（CC BY-NC-SA 4.0）进行授权https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-nc-sa&#x2F;4.0&#x2F;legalcode.zh-Hans作者：简律纯联系方式：qq:A2C29K9更新日期：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="unlimited-errors">
+<meta property="og:url" content="https://cypress.github.io/2022/06/23/unlimited-errors/index.html">
+<meta property="og:site_name" content="Cypress - 小柏树">
+<meta property="og:description" content="secondary  目前正在努力ing…利用 error()与 pcall()进行lua自定义报错    前言 使用《署名—非商业性使用—相同方式共享4.0 协议国际版》（CC BY-NC-SA 4.0）进行授权https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-nc-sa&#x2F;4.0&#x2F;legalcode.zh-Hans作者：简律纯联系方式：qq:A2C29K9更新日期：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-28/1653713607-498189-screenshot-2022-05-28-12-41-00-92.jpg">
+<meta property="og:image" content="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-28/1653713518-807281-74092e56946e00a4.png">
+<meta property="og:image" content="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-28/1653713557-476439-432aa460c37a0fe9.png">
+<meta property="og:image" content="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-28/1653713564-665112-3aa06a678e8679f3.png">
+<meta property="og:image" content="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-28/1653713588-190887-7b41211a21a97483.png">
+<meta property="article:published_time" content="2022-06-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-09-21T13:46:26.869Z">
+<meta property="article:author" content="简律纯">
+<meta property="article:tag" content="Dice">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-28/1653713607-498189-screenshot-2022-05-28-12-41-00-92.jpg">
+
+
+<link rel="canonical" href="https://cypress.github.io/2022/06/23/unlimited-errors/">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>unlimited-errors | Cypress - 小柏树</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Cypress - 小柏树</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">🌳💕🎁✔</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/feed.json" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B"><span class="nav-number">2.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.1.</span> <span class="nav-text">1. 准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%B5%8B%E8%AF%95"><span class="nav-number">2.2.</span> <span class="nav-text">2.第一次测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BF%AE%E6%94%B9"><span class="nav-number">2.3.</span> <span class="nav-text">3.修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B5%8B%E8%AF%95"><span class="nav-number">2.4.</span> <span class="nav-text">4.第二次测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B5%8B%E8%AF%95"><span class="nav-number">2.5.</span> <span class="nav-text">5.第三次测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="简律纯"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">简律纯</p>
+  <div class="site-description" itemprop="description">今天浇水了吗？</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button site-overview-item animated">
+    <a onclick="Chatra('openChat', true);"><i class="fa fa-comment"></i>
+    来嗑瓜子？
+  </a>
+  </div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2N5cHJlc3MwNTIy" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cypress0522"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmhzaWFuZ25pYW5pYW5Ab3V0bG9vay5jb20=" title="E-Mail → mailto:hsiangnianian@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9jeXByZXNzMDUyMi5naXRodWIuaW8vc3NKU0tGSkRK" title="https:&#x2F;&#x2F;cypress0522.github.io&#x2F;ssJSKFJDJ">ssJSKFJDJ</span>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cypress.github.io/2022/06/23/unlimited-errors/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="简律纯">
+      <meta itemprop="description" content="今天浇水了吗？">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cypress - 小柏树">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          unlimited-errors<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL2N5cHJlc3MwNTIyL2N5cHJlc3MwNTIyLmdpdGh1Yi5pby90cmVlL21hc3Rlci9zb3VyY2UvX3Bvc3RzL3VubGltaXRlZC1lcnJvcnMubWQ=" title="编辑"><i class="fa fa-pen-nib"></i></span>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-06-23 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-23T00:00:00+08:00">2022-06-23</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-09-21 21:46:26" itemprop="dateModified" datetime="2022-09-21T21:46:26+08:00">2022-09-21</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/Lua/" itemprop="url" rel="index"><span itemprop="name">Lua</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <details class="note "><summary><p>secondary</p>
+</summary>
+<p><strong>目前正在努力ing…</strong><br>利用 <code>error()</code>与 <code>pcall()</code>进行lua自定义报错</p>
+
+</details>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>使用《署名—非商业性使用—相同方式共享4.0 协议国际版》（CC BY-NC-SA 4.0）进行授权<span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9sZWdhbGNvZGUuemgtSGFucw==">https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-Hans<i class="fa fa-external-link-alt"></i></span><br>作者：简律纯<br>联系方式：qq:A2C29K9<br>更新日期：2022/5/28</p>
+</blockquote>
+<div class="note warning"><p><strong>WARNING ⚠️</strong><br>本帖是作为利用basicFunction自带的chat指令并结合修改chat指令内tryCatch部分的函数名来进行报错排查的示例帖。</p>
+<blockquote>
+<p>简言之让报错更好看一点，更容易理解一点。</p>
+</blockquote>
+</div>
+
+<p>taboo前些日子（好久了）评论了<span class="exturl" data-url="aHR0cHM6Ly9mb3J1bS5rb2tvbmEudGVjaC9kLzExNDctemhpLWxpbmctamlhby1iZW4ta3VvLXpoYW4taGFuLXNodS1rdS1jaGkteHUtemhvdS1nZW5n">basicFunction<i class="fa fa-external-link-alt"></i></span> 的tryCatch函数，他说，</p>
+<blockquote>
+<p>骰娘自检可以安排到行程上了</p>
+</blockquote>
+<p>虽然和写tryCatch的初衷完全不一样，但是返校后在考试过程中突然发现这会是一个很不错的想法，于是单独写一篇帖子介绍它。</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h3><p>首先我们在basicFunction的chat指令函数里的tryCatch部分写上这些代码，图片中的抓取报错函数示例是 <code>read_file()</code>函数，输入的参数是path，文件路径；返回值为文件内容。<br><img src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-28/1653713607-498189-screenshot-2022-05-28-12-41-00-92.jpg"><br>这段代码的意思是如果报错信息里有nil这个字符串那返回自定义报错回复内容，否则返回read_file函数的返回内容。</p>
+<h3 id="2-第一次测试"><a href="#2-第一次测试" class="headerlink" title="2.第一次测试"></a>2.第一次测试</h3><p>接着输入 <code>#basicFunction:tryCatch</code>，不带任何参数，它等效于 <code>#basicFunction:read_file</code>接着的确报错了，但是因为 <code>read_file()</code>函数的path参数为空，报错信息中有nil字符串，于是被替换成了预先写好的自定义报错回复内容。<br>接着我使用 <code>#basicFunction:read_file myDiary.txt</code> 查看了此文件，由于这个文件并不存在，于是krypton返回了read_file里写好的自定义回复。<br><img src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-28/1653713518-807281-74092e56946e00a4.png"></p>
+<h3 id="3-修改"><a href="#3-修改" class="headerlink" title="3.修改"></a>3.修改</h3><p>那么我们使用 <code>#basicFunction:write_file myDiary.txt [内容]</code>来创建这个文件并且写下点什么<del>烂人诅咒</del><br><img src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-28/1653713557-476439-432aa460c37a0fe9.png"></p>
+<h3 id="4-第二次测试"><a href="#4-第二次测试" class="headerlink" title="4.第二次测试"></a>4.第二次测试</h3><p>已经写好了此文件，我们再用 <code>#basicFunction:read_file myDiary.txt</code>查看一下，来确保有此文件并且写入了内容。<br><img src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-28/1653713564-665112-3aa06a678e8679f3.png"></p>
+<h3 id="5-第三次测试"><a href="#5-第三次测试" class="headerlink" title="5.第三次测试"></a>5.第三次测试</h3><p>一切顺利，这时候我们再输入正确的指令来试试抓取报错<br><img src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-28/1653713588-190887-7b41211a21a97483.png"><br>因为这次输入了参数，即 <code>#basicFunction:tryCatch myDiary.txt</code>等效于 <code>#basicFunction:read_file myDiary.txt</code>，所以顺理成章的返回了里面的文本内容。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>附上tryCatch函数的内容，如下:</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-----------------------------------------------------[15]:</span></span><br><span class="line"><span class="comment">-- 功能：监听错误报告如有则反馈</span></span><br><span class="line"><span class="comment">-- 参数：函数名</span></span><br><span class="line"><span class="comment">-- 返回：错误信息</span></span><br><span class="line"><span class="comment">-- 说明：lua有两个函数可以捕获异常，分别是pcall(fun[,arg1,...])和xpcall(fun,errfun,[,arg1,...])，对比这两个函数,xpcall多了异常处理，这里仅采用pcall()做示例</span></span><br><span class="line">tryCatch = <span class="function"><span class="keyword">function</span><span class="params">(fun,arg1,arg2,arg3,arg4,arg5)</span></span></span><br><span class="line">  <span class="keyword">local</span> ret,errMessage=<span class="built_in">pcall</span>(fun,arg1,arg2,arg3,arg4,arg5);</span><br><span class="line">  wrong=ret <span class="keyword">and</span> <span class="string">&quot;false&quot;</span> <span class="keyword">or</span> <span class="string">&quot;true&quot;</span></span><br><span class="line">  <span class="comment">--print(&quot;是否错误:\n&quot;..错误..&quot; \n\n出错信息:\n&quot; .. (errMessage or &quot;无&quot;));</span></span><br><span class="line">  <span class="keyword">if</span> wrong==<span class="string">&quot;true&quot;</span> <span class="keyword">then</span><span class="comment">--错误提示</span></span><br><span class="line">    <span class="keyword">local</span> ret,errMessage=<span class="built_in">pcall</span>(fun,arg1,arg2,arg3,arg4,arg5)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;\n错误详情：\n&quot;</span>..errMessage</span><br><span class="line">  <span class="keyword">else</span><span class="comment">--无错误正常执行</span></span><br><span class="line">    ret,back=<span class="built_in">pcall</span>(fun,arg1,arg2,arg3,arg4,arg5);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;没有错误发生，返回值如下:\n&quot;</span>..back</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+
+<script src="https://utteranc.es/client.js"
+        repo="cypress0522/cypress0522.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="简律纯 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/rss.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/feed.json">
+          <span class="icon">
+            <i class="fa fa-cubes"></i>
+          </span>
+
+          <span class="label">API</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-atom"></i>
+          </span>
+
+          <span class="label">Atom</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Dice/" rel="tag"># Dice</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/06/18/chat-ActObjectValue-2.0/" rel="prev" title="chat-ActObjectValue 2.0">
+                  <i class="fa fa-chevron-left"></i> chat-ActObjectValue 2.0
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/06/24/reborn/" rel="next" title="reborn 重开模拟器">
+                  reborn 重开模拟器 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">简律纯</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">17k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">15 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">powered by <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL2N5cHJlc3MwNTIy">Hsiang Nianian</span> & <span class="exturl" data-url="aHR0cHM6Ly9jeXByZXNzMDUyMi5naXRodWIuaW8vc3NKU0tGSkRK">ssJSKFJDJ.</span> for 你这个小笨蛋
+  </div>
+  <div class="addthis_inline_share_toolbox">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-632b0f03a8645d61" async="async"></script>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+  <script data-pjax>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : ,
+      el    : 'wpac-rating',
+      color : '#fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+<script src="/js/local-search.js"></script>
+
+  <script>
+    (function(d, w, c) {
+      w.ChatraID = 'WLxyWdyg92L9ycfuj';
+      var s = d.createElement('script');
+      w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+      };
+      s.async = true;
+      s.src = 'https://call.chatra.io/chatra.js';
+      if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+  </script>
+
+
+
+
+  <script>
+    NProgress.configure({
+      showSpinner: true
+    });
+    NProgress.start();
+    document.addEventListener('readystatechange', () => {
+      if (document.readyState === 'interactive') {
+        NProgress.inc(0.8);
+      }
+      if (document.readyState === 'complete') {
+        NProgress.done();
+      }
+    });
+    document.addEventListener('pjax:send', () => {
+      NProgress.start();
+    });
+    document.addEventListener('pjax:success', () => {
+      NProgress.done();
+    });
+  </script>
+
+  
+
+
+
+    <div class="pjax">
+
+  
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css">
+
+<script>
+NexT.utils.loadComments('.gitalk-container', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'cfef1f6c1295644402b7',
+      clientSecret: '7e17bdc083ac49295c1a520d634334c3a2f62d82',
+      repo        : 'cypress0522.github.io',
+      owner       : 'cypress0522',
+      admin       : ['cypress0522'],
+      id          : 'ceb70691f91f33b4a6d11569f016680f',
+      proxy       : 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render(document.querySelector('.gitalk-container'));
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":200,"height":200},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

@@ -8,16 +8,16 @@
         <pubDate>Fri, 05 Aug 2022 00:00:00 +0800</pubDate>
         <lastBuildDate>Fri, 05 Aug 2022 00:00:00 +0800</lastBuildDate>
         <category>徐州站</category>
-        <category>Dice</category>
         <category>FIXED</category>
+        <category>Dice</category>
         <category>AI</category>
         <category>颜色</category>
         <item>
             <guid isPermalink="true">https://cypress.github.io/2022/08/05/Midido/</guid>
             <title>Midido 一个更非人性化的手搓midi库</title>
             <link>https://cypress.github.io/2022/08/05/Midido/</link>
-            <category>Dice</category>
             <category>FIXED</category>
+            <category>Dice</category>
             <pubDate>Fri, 05 Aug 2022 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note success&#34;&gt;&lt;p&gt;&lt;strong&gt;Midido&lt;/strong&gt;&lt;br&gt;简单实现用lua输出midi的库。&lt;/p&gt;
 &lt;/div&gt;
@@ -65,10 +65,10 @@
 &lt;p&gt;最初是一个设想，毕竟我是写音乐的，主要负责作曲编曲，鸽了快一年后很多粉丝不耐烦了，于是我开始整一些或许大学用得上的东西^比如一个bot ，高考那几天突发奇想，我或许可以教粉丝朋友一起写音乐？那就先从midi序列开始吧！&lt;del&gt;（也可以名正言顺咕咕咕，同时压榨劳动力）&lt;/del&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;2-一些教训&#34;&gt;&lt;a href=&#34;#2-一些教训&#34; class=&#34;headerlink&#34; title=&#34;2.一些教训&#34;&gt;&lt;/a&gt;2.一些教训&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;1.之前试过onebot ZBP插件里的timidity，也是手搓midi，但是仍然需要安装ffmpeg和timidity环境，且受到一定的系统环境影响——尽管成功写出了midi文件，但是对于其他那些使用非Windows系统（大家其实更愿意用Macbook）的人（主要是我的作曲家编曲家朋友）来说安装十分困难。&lt;br&gt;zbp关于midi的插件介绍：&lt;br&gt;&lt;img data-src=&#34;https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-07-30/1659158099-11773-5d706d6c091bc400.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;1.之前试过onebot ZBP插件里的timidity，也是手搓midi，但是仍然需要安装ffmpeg和timidity环境，且受到一定的系统环境影响——尽管成功写出了midi文件，但是对于其他那些使用非Windows系统（大家其实更愿意用Macbook）的人（主要是我的作曲家编曲家朋友）来说安装十分困难。&lt;br&gt;zbp关于midi的插件介绍：&lt;br&gt;&lt;img src=&#34;https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-07-30/1659158099-11773-5d706d6c091bc400.jpg&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;2.于是我开始注意到简化使用指令的重要性，并在此机缘巧合下找到了 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYXV0b3BpYW5vLmNuLw==&#34;&gt;AutoPiano&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt;。&lt;br&gt;我并不在意它的关于编写输出音乐的任何逻辑或是别的什么，我找到了站长，并向他提出了几个问题——就比如，键盘谱是如何想出来的。&lt;br&gt;下图为孤勇者唱谱：&lt;br&gt;&lt;img data-src=&#34;https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-07-30/1659157938-716855-img20220730131141.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;2.于是我开始注意到简化使用指令的重要性，并在此机缘巧合下找到了 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYXV0b3BpYW5vLmNuLw==&#34;&gt;AutoPiano&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt;。&lt;br&gt;我并不在意它的关于编写输出音乐的任何逻辑或是别的什么，我找到了站长，并向他提出了几个问题——就比如，键盘谱是如何想出来的。&lt;br&gt;下图为孤勇者唱谱：&lt;br&gt;&lt;img src=&#34;https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-07-30/1659157938-716855-img20220730131141.jpg&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;3.综上，这未尝不是一个很好的开端，至少我明白了手搓midi的原理，以及一些更切合实际的东西，就比如简化指令。&lt;/p&gt;
