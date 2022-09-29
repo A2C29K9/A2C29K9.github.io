@@ -109,6 +109,7 @@ deploy:
   branch: gh-pages
   message: '简律纯又又又又熬夜了'
 
+## RSS导出
 feed:
     limit: 20
     order_by: "-date"
@@ -140,3 +141,14 @@ live2d:
     show: true
   rect:
     opacity:0.7
+
+## 阅读时间计算
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: true
+  awl: 4
+  wpm: 275
+  suffix: "mins."

@@ -44,6 +44,7 @@ scheme: Pisces
 # Dark Mode
 darkmode: true
 
+
 # ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
@@ -53,7 +54,7 @@ favicon:
   medium: /images/favicon-32x32-next.png
   apple_touch_icon: /images/apple-touch-icon-next.png
   safari_pinned_tab: /images/logo.svg
-  android_manifest: /manifest.json
+  #android_manifest: /manifest.json
 
 # Custom Logo (Warning: Do not support scheme Mist)
 custom_logo: #/uploads/custom-logo.jpg
@@ -66,8 +67,9 @@ custom_logo: #/uploads/custom-logo.jpg
 creative_commons:
   license: by-nc-sa
   sidebar: true
-  post: true
+  post: false
   language:
+
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -83,14 +85,14 @@ menu:
   #tags: /tags/ || fa fa-tags
   #categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
-  schedule: /schedule/ || fa fa-calendar
+  #schedule: /schedule/ || fa fa-calendar
   sitemap: /feed.json || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
-  badges: true
+  badges: false
 
 
 # ---------------------------------------------------------------
@@ -183,7 +185,7 @@ chat:
   service: chatra
   #service: tidio
   icon: fa fa-comment # Icon name in Font Awesome, set false to disable icon.
-  text: Chat # Button text, change it as you wish.
+  text: 来嗑瓜子？ # Button text, change it as you wish.
 
 
 # ---------------------------------------------------------------
@@ -192,11 +194,11 @@ chat:
 # ---------------------------------------------------------------
 
 # Show multilingual switcher in footer.
-language_switcher: true
+language_switcher: false
 
 footer:
   # Specify the year when the site was setup. If not defined, current year will be used.
-  since: 2018
+  #since: 2020
 
   # Icon between year and copyright info.
   icon:
@@ -208,7 +210,7 @@ footer:
     color: "#ff0000"
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
-  copyright: Hsiang Nianian
+  copyright:
 
   # Powered by Hexo & NexT
   powered: true
@@ -253,7 +255,7 @@ symbols_count_time:
   item_text_total: true
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
-tag_icon: true
+tag_icon: false
 
 # Donate (Sponsor) settings
 # Front-matter variable (unsupport animation).
@@ -278,16 +280,17 @@ follow_me:
   RSS: /rss.xml || fa fa-rss
   API: /feed.json || fa fa-cubes
   Atom: /atom.xml || fa fa-atom
+
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
-  enable: true
+  enable: false
   title: # Custom header, leave empty to use the default one
   display_in_home: false
   params:
     maxCount: 5
     #PPMixingRate: 0.0
-    isDate: true
+    #isDate: false
     #isImage: false
     #isExcerpt: false
 
@@ -319,13 +322,13 @@ tagcloud:
 # Google Calendar
 # Share your recent schedule to others via calendar page.
 calendar:
-  calendar_id: hsiangnianian@gmail.com # Your Google account E-Mail
-  api_key: 'AIzaSyAeLGpN96pWfRw6hokqp0r6IBcROHK8KIs'
+  calendar_id: <required> # Your Google account E-Mail
+  api_key: <required>
   orderBy: startTime
-  showLocation: true
+  showLocation: false
   offsetMax: 72 # Time Range
   offsetMin: 4 # Time Range
-  showDeleted: true
+  showDeleted: false
   singleEvents: true
   maxResults: 250
 
@@ -346,7 +349,7 @@ text_align:
   mobile: justify
 
 # Reduce padding / margin indents on devices with narrow width.
-mobile_layout_economy: true
+mobile_layout_economy: false
 
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
 android_chrome_color: "#222"
@@ -396,7 +399,7 @@ bookmark:
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
   enable: false
-  permalink: https://github.com/cypress0522
+  permalink: https://github.com/yourname
   title: Follow me on GitHub
 
 
@@ -413,7 +416,7 @@ github_banner:
 # ---------------------------------------------------------------
 
 font:
-  enable: true
+  enable: false
 
   # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
   host:
@@ -498,12 +501,12 @@ math:
   # Default (false) will load mathjax / katex script on demand.
   # That is it only render those page which has `mathjax: true` in front-matter.
   # If you set it to true, it will load mathjax / katex srcipt EVERY PAGE.
-  every_page: true
+  every_page: false
 
   mathjax:
     enable: true
     # Available values: none | ams | all
-    tags: all
+    tags: ams
 
   katex:
     enable: true
@@ -516,7 +519,7 @@ pjax: true
 
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
 # For more information: https://fancyapps.com/fancybox/
-fancybox: true
+fancybox: false
 
 # A JavaScript library for zooming images like Medium.
 # Warning: Do not enable both `fancybox` and `mediumzoom`.
@@ -525,23 +528,23 @@ mediumzoom: false
 
 # Vanilla JavaScript plugin for lazyloading images.
 # For more information: https://apoorv.pro/lozad.js/demo/
-lazyload: true
+lazyload: false
 
 # Pangu Support
 # For more information: https://github.com/vinta/pangu.js
 # Server-side plugin: https://github.com/next-theme/hexo-pangu
-pangu: true
+pangu: false
 
 # Quicklink Support
 # For more information: https://getquick.link
 # Front-matter variable (unsupport home archive).
 quicklink:
-  enable: true
+  enable: false
 
   # Home page and archive page can be controlled through home and archive options below.
   # This configuration item is independent of `enable`.
-  home: true
-  archive: true
+  home: false
+  archive: false
 
   # Default (true) will initialize quicklink after the load event fires.
   delay: true
@@ -582,7 +585,7 @@ comments:
 # Disqus
 # For more information: https://disqus.com
 disqus:
-  enable: true
+  enable: false
   shortname: cypress-github-io
   count: true
 
@@ -612,19 +615,19 @@ livere_uid: # <your_uid>
 # Gitalk
 # For more information: https://gitalk.github.io
 gitalk:
-  enable: false
-  github_id: # GitHub repo owner
-  repo: # Repository name to store issues
-  client_id: # GitHub Application Client ID
-  client_secret: # GitHub Application Client Secret
-  admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  enable: true
+  github_id: cypress0522 # GitHub repo owner
+  repo: cypress0522.github.io # Repository name to store issues
+  client_id: cfef1f6c1295644402b7 # GitHub Application Client ID
+  client_secret: 7e17bdc083ac49295c1a520d634334c3a2f62d82 # GitHub Application Client Secret
+  admin_user: cypress0522 # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # When the official proxy is not available, you can change it to your own proxy address
   proxy: https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token # This is official proxy adress
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
-  language:
+  language: zh-CN
 
 # Utterances
 # For more information: https://utteranc.es
@@ -708,7 +711,7 @@ firestore:
 # Show Views / Visitors of the website / page with busuanzi.
 # For more information: http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
-  enable: true
+  enable: false
   total_visitors: true
   total_visitors_icon: fa fa-user
   total_views: true
@@ -787,7 +790,7 @@ note:
 # Tabs tag
 tabs:
   transition:
-    tabs: true
+    tabs: false
     labels: true
 
 # PDF tag
@@ -801,7 +804,7 @@ pdf:
 
 # Mermaid tag
 mermaid:
-  enable: true
+  enable: false
   # Available themes: default | dark | forest | neutral
   theme: forest
 
@@ -814,7 +817,7 @@ mermaid:
 # For more information: https://animate.style
 motion:
   enable: true
-  async: true
+  async: false
   transition:
     # All available transition variants: https://theme-next.js.org/animate/
     post_block: fadeIn
