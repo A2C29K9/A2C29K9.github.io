@@ -5,8 +5,8 @@
     <link href="https://cypress.github.io" />
     <updated>2022-08-16T16:00:00.000Z</updated>
     <category term="徐州站" />
-    <category term="FIXED" />
     <category term="Dice" />
+    <category term="FIXED" />
     <category term="AI" />
     <category term="颜色" />
     <entry>
@@ -1013,13 +1013,7 @@
  &lt;/tr&gt;
 &lt;/table&gt;
 
-&lt;script src=&#34;https://utteranc.es/client.js&#34;
-        repo=&#34;cypress0522/cypress0522.github.io&#34;
-        issue-term=&#34;pathname&#34;
-        theme=&#34;github-light&#34;
-        crossorigin=&#34;anonymous&#34;
-        async&gt;
-&lt;/script&gt;</content>
+</content>
         <category term="颜色" />
         <updated>2022-08-15T16:00:00.000Z</updated>
     </entry>
@@ -1213,8 +1207,8 @@
 &lt;p&gt;脚本将会在简化指令版写完发布，愿大家都能名正言顺的咕咕咕，也愿大家都热爱生活，热爱音乐！&lt;/p&gt;
 &lt;/blockquote&gt;
 </content>
-        <category term="FIXED" />
         <category term="Dice" />
+        <category term="FIXED" />
         <updated>2022-08-04T16:00:00.000Z</updated>
     </entry>
     <entry>

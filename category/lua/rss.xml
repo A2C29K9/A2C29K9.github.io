@@ -8,8 +8,8 @@
         <pubDate>Wed, 17 Aug 2022 00:00:00 +0800</pubDate>
         <lastBuildDate>Wed, 17 Aug 2022 00:00:00 +0800</lastBuildDate>
         <category>徐州站</category>
-        <category>FIXED</category>
         <category>Dice</category>
+        <category>FIXED</category>
         <category>AI</category>
         <category>颜色</category>
         <item>
@@ -1018,13 +1018,7 @@
  &lt;/tr&gt;
 &lt;/table&gt;
 
-&lt;script src=&#34;https://utteranc.es/client.js&#34;
-        repo=&#34;cypress0522/cypress0522.github.io&#34;
-        issue-term=&#34;pathname&#34;
-        theme=&#34;github-light&#34;
-        crossorigin=&#34;anonymous&#34;
-        async&gt;
-&lt;/script&gt; ]]></description>
+ ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://cypress.github.io/2022/08/15/table-module/</guid>
@@ -1149,8 +1143,8 @@
             <guid isPermalink="true">https://cypress.github.io/2022/08/05/Midido/</guid>
             <title>Midido 一个更非人性化的手搓midi库</title>
             <link>https://cypress.github.io/2022/08/05/Midido/</link>
-            <category>FIXED</category>
             <category>Dice</category>
+            <category>FIXED</category>
             <pubDate>Fri, 05 Aug 2022 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note success&#34;&gt;&lt;p&gt;&lt;strong&gt;Midido&lt;/strong&gt;&lt;br&gt;简单实现用lua输出midi的库。&lt;/p&gt;
 &lt;/div&gt;

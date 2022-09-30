@@ -8,8 +8,8 @@
         <pubDate>Tue, 16 Aug 2022 00:00:00 +0800</pubDate>
         <lastBuildDate>Tue, 16 Aug 2022 00:00:00 +0800</lastBuildDate>
         <category>徐州站</category>
-        <category>FIXED</category>
         <category>Dice</category>
+        <category>FIXED</category>
         <category>AI</category>
         <category>颜色</category>
         <item>
@@ -973,13 +973,7 @@
  &lt;/tr&gt;
 &lt;/table&gt;
 
-&lt;script src=&#34;https://utteranc.es/client.js&#34;
-        repo=&#34;cypress0522/cypress0522.github.io&#34;
-        issue-term=&#34;pathname&#34;
-        theme=&#34;github-light&#34;
-        crossorigin=&#34;anonymous&#34;
-        async&gt;
-&lt;/script&gt; ]]></description>
+ ]]></description>
         </item>
     </channel>
 </rss>
