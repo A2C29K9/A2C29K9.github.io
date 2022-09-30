@@ -10,8 +10,8 @@
         <category>徐州站</category>
         <category>Dice</category>
         <category>FIXED</category>
-        <category>AI</category>
         <category>颜色</category>
+        <category>AI</category>
         <item>
             <guid isPermalink="true">https://cypress.github.io/2022/08/05/Midido/</guid>
             <title>Midido 一个更非人性化的手搓midi库</title>
