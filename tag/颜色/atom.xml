@@ -5,15 +5,15 @@
     <link href="https://cypress.github.io" />
     <updated>2022-08-15T16:00:00.000Z</updated>
     <category term="徐州站" />
-    <category term="Dice" />
     <category term="FIXED" />
-    <category term="颜色" />
+    <category term="Dice" />
     <category term="AI" />
+    <category term="颜色" />
     <entry>
         <id>https://cypress.github.io/2022/08/16/lua-colors.howto/</id>
         <title>lua-colors</title>
         <link rel="alternate" href="https://cypress.github.io/2022/08/16/lua-colors.howto/"/>
-        <content type="html">&lt;div class=&#34;note primary&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/cypress0522/lua-colors&#34;&gt;&lt;img src=&#34;/img/colors.png&#34; alt=&#34;lua-colors&#34;&gt;&lt;/a&gt;&lt;br&gt;&lt;strong&gt;lua-colors&lt;/strong&gt;&lt;/p&gt;
+        <content type="html">&lt;div class=&#34;note primary&#34;&gt;&lt;p&gt;&lt;strong&gt;lua-colors&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;用lua解释色彩原理.&lt;/p&gt;
 &lt;/blockquote&gt;

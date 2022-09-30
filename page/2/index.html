@@ -317,7 +317,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-09-21 21:46:26" itemprop="dateModified" datetime="2022-09-21T21:46:26+08:00">2022-09-21</time>
+        <time title="修改时间：2022-10-01 00:54:44" itemprop="dateModified" datetime="2022-10-01T00:54:44+08:00">2022-10-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -386,16 +386,6 @@
 <h3 id="5-第三次测试"><a href="#5-第三次测试" class="headerlink" title="5.第三次测试"></a>5.第三次测试</h3><p>一切顺利，这时候我们再输入正确的指令来试试抓取报错<br><img src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-28/1653713588-190887-7b41211a21a97483.png"><br>因为这次输入了参数，即 <code>#basicFunction:tryCatch myDiary.txt</code>等效于 <code>#basicFunction:read_file myDiary.txt</code>，所以顺理成章的返回了里面的文本内容。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>附上tryCatch函数的内容，如下:</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-----------------------------------------------------[15]:</span></span><br><span class="line"><span class="comment">-- 功能：监听错误报告如有则反馈</span></span><br><span class="line"><span class="comment">-- 参数：函数名</span></span><br><span class="line"><span class="comment">-- 返回：错误信息</span></span><br><span class="line"><span class="comment">-- 说明：lua有两个函数可以捕获异常，分别是pcall(fun[,arg1,...])和xpcall(fun,errfun,[,arg1,...])，对比这两个函数,xpcall多了异常处理，这里仅采用pcall()做示例</span></span><br><span class="line">tryCatch = <span class="function"><span class="keyword">function</span><span class="params">(fun,arg1,arg2,arg3,arg4,arg5)</span></span></span><br><span class="line">  <span class="keyword">local</span> ret,errMessage=<span class="built_in">pcall</span>(fun,arg1,arg2,arg3,arg4,arg5);</span><br><span class="line">  wrong=ret <span class="keyword">and</span> <span class="string">&quot;false&quot;</span> <span class="keyword">or</span> <span class="string">&quot;true&quot;</span></span><br><span class="line">  <span class="comment">--print(&quot;是否错误:\n&quot;..错误..&quot; \n\n出错信息:\n&quot; .. (errMessage or &quot;无&quot;));</span></span><br><span class="line">  <span class="keyword">if</span> wrong==<span class="string">&quot;true&quot;</span> <span class="keyword">then</span><span class="comment">--错误提示</span></span><br><span class="line">    <span class="keyword">local</span> ret,errMessage=<span class="built_in">pcall</span>(fun,arg1,arg2,arg3,arg4,arg5)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;\n错误详情：\n&quot;</span>..errMessage</span><br><span class="line">  <span class="keyword">else</span><span class="comment">--无错误正常执行</span></span><br><span class="line">    ret,back=<span class="built_in">pcall</span>(fun,arg1,arg2,arg3,arg4,arg5);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;没有错误发生，返回值如下:\n&quot;</span>..back</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
-
-<script src="https://utteranc.es/client.js"
-        repo="cypress0522/cypress0522.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-
       
     </div>
 
@@ -452,7 +442,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-06-21 15:37:15" itemprop="dateModified" datetime="2022-06-21T15:37:15+08:00">2022-06-21</time>
+        <time title="修改时间：2022-10-01 01:00:55" itemprop="dateModified" datetime="2022-10-01T01:00:55+08:00">2022-10-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -509,13 +499,7 @@
 
 <p>好的，目前你已经完成了三分之二了！<br>接下来让我们完成最后一步操作。</p>
 <h3 id="安装库"><a href="#安装库" class="headerlink" title="安装库"></a>安装库</h3><p>1.下载<span class="exturl" data-url="aHR0cHM6Ly9naXJodWIuY29tL2N5cHJlc3MwNTIy">catchError<i class="fa fa-external-link-alt"></i></span><br>2.将lua库丢进<code>Diceki\lua\</code>文件夹下<br>3.在聊天窗口使用<code>.system load</code>命令</p>
-<script src="https://utteranc.es/client.js"
-        repo="cypress0522/cypress0522.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
+
       
     </div>
 
@@ -572,7 +556,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-06-19 19:01:53" itemprop="dateModified" datetime="2022-06-19T19:01:53+08:00">2022-06-19</time>
+        <time title="修改时间：2022-10-01 01:01:19" itemprop="dateModified" datetime="2022-10-01T01:01:19+08:00">2022-10-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -618,13 +602,7 @@
 </div>
 
 <h2 id="一些记录"><a href="#一些记录" class="headerlink" title="一些记录"></a>一些记录</h2><h3 id="灵感"><a href="#灵感" class="headerlink" title="灵感"></a>灵感</h3><p>其实也没有什么灵感，莹莹和我说按照自己风格来，那么我就尽量写的悲伤一点吧。</p>
-<script src="https://utteranc.es/client.js"
-        repo="cypress0522/cypress0522.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
+
       
     </div>
 
@@ -772,7 +750,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-06-21 15:23:39" itemprop="dateModified" datetime="2022-06-21T15:23:39+08:00">2022-06-21</time>
+        <time title="修改时间：2022-10-01 01:01:07" itemprop="dateModified" datetime="2022-10-01T01:01:07+08:00">2022-10-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -852,13 +830,7 @@
 <h2 id="关于5-8更新内容的示例"><a href="#关于5-8更新内容的示例" class="headerlink" title="关于5.8更新内容的示例"></a>关于5.8更新内容的示例</h2><p>5.8重点更新了记录的查看方式，新增了 <code>start_crrt</code>配置。</p>
 <p>使用命令 <code>#setUserConf &lt;骰娘QQ&gt; start_crrt &lt;值&gt; </code>进行更改，其更改将会改变 <code>#help log</code>的返回内容：<br><code>start_crrt</code> 默认为0，这时查看日志会显示最新的一条。<br><img src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-07/1651953020-849510-29e7e2d45c34a60b.png"><br>当 <code>start_crrt</code>修改为1至5范围内的数字，会显示最近的2至6条记录。<br><img src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-07/1651953344-615701-574c97559bc3ae34.png"><br>设置范围6至30时会显示对应数量的记录，但不是在群里，bot会私发给指令发出者。<br><img src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-07/1651953608-811583-315f836bf1e21646.png"><br><img src="https://dice-forum.s3.ap-northeast-1.amazonaws.com/2022-05-07/1651953634-841540-1a024626f1fb6728.png"></p>
 <h2 id="如何安装使用？"><a href="#如何安装使用？" class="headerlink" title="如何安装使用？"></a>如何安装使用？</h2><p>1.解压安装包<br>2.将安装包内文件与文件夹全部放入plugin文件夹<br>3.使用命令<code>.system load</code></p>
-<script src="https://utteranc.es/client.js"
-        repo="cypress0522/cypress0522.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
+
       
     </div>
 
@@ -915,7 +887,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-06-21 16:07:20" itemprop="dateModified" datetime="2022-06-21T16:07:20+08:00">2022-06-21</time>
+        <time title="修改时间：2022-10-01 01:00:42" itemprop="dateModified" datetime="2022-10-01T01:00:42+08:00">2022-10-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1203,13 +1175,7 @@
 <h4 id="gt-FUNCTION-INDEX-amp-LIST"><a href="#gt-FUNCTION-INDEX-amp-LIST" class="headerlink" title="&gt; FUNCTION INDEX&amp;LIST:"></a>&gt; FUNCTION INDEX&amp;LIST:</h4><p>[1]table_draw(tab) LINE:48<br>[2]num_or_string(x) LINE:55<br>[3]getAtQQ(str) LINE:67<br>[4]write_file(path, text) LINE:79<br>[5]read_file(path) LINE:88<br>[6]filter_spec_chars(s) LINE:103<br>[7]getFileName(path) LINE:133<br>[8]getFileName2(path) LINE:140<br>[9]utfstrlen(str) LINE:147<br>[10]MD5(str) LINE:168<br>[11]table_exists(tables,value) LINE:395<br>[12]encodeBase64(source_str) LINE:408<br>[13]string.split(str, delimiter) LINE:443<br>[14]string.count(str) LINE:460<br>[15]string.width(str) LINE:470<br>[16]string.tocenter(str, len, filledChar) LINE:479<br>[17]string.toleft(str, len, filledChar) LINE:511<br>[18]string.toright(str, len, filledChar) LINE:540<br>[19]string.ltrim(str) LINE:573<br>[20]string.rtrim(str) LINE:577<br>[21]string.trim(str) LINE:581<br>[22]ranStr(num) LINE:588<br>[23]tryCatch(fun) LINE:604<br>[24]bubbleSort(tab) LINE:620<br>[25]弃用 LINE:646<br>[26]sortTable_delRepeat(tab) LINE:653<br>[27-1]Round(num, i) LINE:672<br>[27-2]Round2(num, i) LINE:681<br>[28]Multiply(num1,num2) LINE:702<br>[29]Divide(denominator,numerator) LINE:718<br>[30-1]Ceil(num) LINE:734<br>[30-2]Ceil2(num) LINE:753<br>[31]unicode2Chinese(uni) LINE:765<br>[32]stamp2Time(Stamp) LINE:782<br>[33]Match(msg,num) LINE:789<br>[34-1]fitemSort(rest) LINE:798<br>[34-2]ffitemSort(rest) LINE:809</p>
 <h3 id="在lua编写过程中使用"><a href="#在lua编写过程中使用" class="headerlink" title="在lua编写过程中使用"></a>在lua编写过程中使用</h3><p>由于时间来不及，在lua中使用的教程与进阶用法将会在日后补齐。<br><strong>to be…</strong></p>
 <h3 id="一些实例"><a href="#一些实例" class="headerlink" title="一些实例"></a>一些实例</h3><p><strong>getAtQQ</strong>的使用：<span class="exturl" data-url="aHR0cHM6Ly9mb3J1bS5rb2tvbmEudGVjaC9kLzExNDY=">【指令脚本】爬/丢/赞<i class="fa fa-external-link-alt"></i></span><br><strong>tryCatch</strong>的使用：<span class="exturl" data-url="aHR0cHM6Ly9mb3J1bS5rb2tvbmEudGVjaC9kLzExNjg=">【指令脚本/思想】巴拉巴拉骰娘自检和偷懒自定义报错什么的<i class="fa fa-external-link-alt"></i></span></p>
-<script src="https://utteranc.es/client.js"
-        repo="cypress0522/cypress0522.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
+
       
     </div>
 
