@@ -82,8 +82,8 @@ creative_commons:
 menu:
   home: / || fa fa-home
   about: /about/ || fa fa-user
-  #tags: /tags/ || fa fa-tags
-  #categories: /categories/ || fa fa-th
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
   #schedule: /schedule/ || fa fa-calendar
   sitemap: /feed.json || fa fa-sitemap
@@ -198,7 +198,7 @@ language_switcher: true
 
 footer:
   # Specify the year when the site was setup. If not defined, current year will be used.
-  #since: 2020
+  since: 2018
 
   # Icon between year and copyright info.
   icon:
