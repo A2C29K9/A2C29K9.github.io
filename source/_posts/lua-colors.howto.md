@@ -8,7 +8,6 @@ tags:
 ---
 
 {% note primary%}
-[![lua-colors](/img/colors.png)](https://github.com/cypress0522/lua-colors)
 **lua-colors**
 > 用lua解释色彩原理.
 {% endnote %}

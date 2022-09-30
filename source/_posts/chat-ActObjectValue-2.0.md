@@ -37,11 +37,3 @@ return load("return "..string.gsub(msg.fromMsg,2))()
 1.下载[catchError](https://girhub.com/cypress0522)
 2.将lua库丢进`Diceki\lua\`文件夹下
 3.在聊天窗口使用`.system load`命令
-
-<script src="https://utteranc.es/client.js"
-        repo="cypress0522/cypress0522.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>

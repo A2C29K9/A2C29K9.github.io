@@ -141,11 +141,3 @@ getRootList = function(msg)
 
 end
 ```
-
-<script src="https://utteranc.es/client.js"
-        repo="cypress0522/cypress0522.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>

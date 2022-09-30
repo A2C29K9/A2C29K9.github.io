@@ -41,7 +41,7 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode.zh-Hans
 ***
 
 ## 三、准备
-1.暂时用了手册内色子整理的常见报错信息说明[^1]。
+1.暂时用了手册内色子整理的常见报错信息说明。
 ```lua
 module '%s' not found:
 	no field package.preload['%s']
@@ -85,12 +85,4 @@ invalid option '%s'
 ```
 
 ## 四、引用清单
-[^1]：https://v2docs.kokona.tech/zh/latest/Develop_Manual.html#id22
-
-<script src="https://utteranc.es/client.js"
-        repo="cypress0522/cypress0522.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
+1. https://v2docs.kokona.tech/zh/latest/Develop_Manual.html#id22

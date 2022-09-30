@@ -69,10 +69,3 @@ Am和弦：
 ## 五、最后
 > 脚本将会在简化指令版写完发布，愿大家都能名正言顺的咕咕咕，也愿大家都热爱生活，热爱音乐！
 
-<script src="https://utteranc.es/client.js"
-        repo="cypress0522/cypress0522.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>

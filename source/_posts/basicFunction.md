@@ -405,11 +405,3 @@ return bubbleSort(tab)`
 ### 一些实例
 **getAtQQ**的使用：[【指令脚本】爬/丢/赞](https://forum.kokona.tech/d/1146)
 **tryCatch**的使用：[【指令脚本/思想】巴拉巴拉骰娘自检和偷懒自定义报错什么的](https://forum.kokona.tech/d/1168)
-
-<script src="https://utteranc.es/client.js"
-        repo="cypress0522/cypress0522.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>

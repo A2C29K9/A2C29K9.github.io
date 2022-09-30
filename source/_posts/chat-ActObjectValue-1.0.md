@@ -77,11 +77,3 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-Hans
 1.解压安装包
 2.将安装包内文件与文件夹全部放入plugin文件夹
 3.使用命令`.system load`
-
-<script src="https://utteranc.es/client.js"
-        repo="cypress0522/cypress0522.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
