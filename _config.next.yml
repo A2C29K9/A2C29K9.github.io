@@ -142,7 +142,7 @@ social:
   GitHub: https://github.com/cypress0522 || fab fa-github
   E-Mail: mailto:hsiangnianian@outlook.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
-  #Google: https://plus.google.com/yourname || fab fa-google
+  Google: https://plus.google.com/hsiangnianian || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
   #FB Page: https://www.facebook.com/yourname || fab fa-facebook
   #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
@@ -153,7 +153,7 @@ social:
 social_icons:
   enable: true
   icons_only: false
-  transition: false
+  transition: true
 
 # Blog rolls
 links_settings:
@@ -194,7 +194,7 @@ chat:
 # ---------------------------------------------------------------
 
 # Show multilingual switcher in footer.
-language_switcher: false
+language_switcher: true
 
 footer:
   # Specify the year when the site was setup. If not defined, current year will be used.
@@ -278,7 +278,7 @@ follow_me:
   #Telegram: https://t.me/channel_name || fab fa-telegram
   #WeChat: /images/wechat_channel.jpg || fab fa-weixin
   RSS: /rss.xml || fa fa-rss
-  API: /feed.json || fa fa-cubes
+  API: /api || fa fa-cubes
   Atom: /atom.xml || fa fa-atom
 
 # Related popular posts
