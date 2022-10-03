@@ -1559,6 +1559,14 @@ pre code {
   margin: 0;
   padding: 0;
 }
+.recent_posts_li {
+  text-align: cengter;
+  display: block;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .sidebar-dimmer {
   display: none;
 }
@@ -3117,7 +3125,7 @@ hr {
   transition: all 0.2s ease-in-out;
 }
 .links-of-author a::before {
-  background: #ffb41d;
+  background: #697e30;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
