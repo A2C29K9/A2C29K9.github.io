@@ -9,7 +9,6 @@
     <category term="Dice" />
     <category term="AI" />
     <category term="颜色" />
-    <category term="Dice!" />
     <entry>
         <id>https://cypress.github.io/2022/10/03/wiki-of-Midido/</id>
         <title>wiki of Midido</title>
@@ -26,7 +25,7 @@
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;script data-pjax src=&#34;/lib/hbe.js&#34;&gt;&lt;/script&gt;&lt;link href=&#34;/css/hbe.style.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34;&gt;</content>
-        <category term="Dice!" />
+        <category term="Dice" />
         <updated>2022-10-03T15:07:27.000Z</updated>
     </entry>
     <entry>
