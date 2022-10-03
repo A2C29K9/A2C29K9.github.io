@@ -1015,6 +1015,7 @@ pre code {
   border-top: 3px solid transparent;
   flex-grow: 1;
   list-style-type: none;
+  transition: all 0.2s ease-out;
 }
 @media (max-width: 413px) {
   .post-body .tabs ul.nav-tabs li.tab,
@@ -1186,6 +1187,10 @@ pre code {
 .post-body .note.danger h5,
 .post-body .note.danger h6 {
   color: #d9534f;
+}
+.mermaid {
+  margin-bottom: 20px;
+  text-align: center;
 }
 .pagination .prev,
 .pagination .next,
@@ -3125,7 +3130,7 @@ hr {
   transition: all 0.2s ease-in-out;
 }
 .links-of-author a::before {
-  background: #4aff3b;
+  background: #ff2558;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
