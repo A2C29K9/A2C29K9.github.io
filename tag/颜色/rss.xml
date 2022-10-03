@@ -8,10 +8,11 @@
         <pubDate>Tue, 16 Aug 2022 00:00:00 +0800</pubDate>
         <lastBuildDate>Tue, 16 Aug 2022 00:00:00 +0800</lastBuildDate>
         <category>徐州站</category>
+        <category>FIXED</category>
         <category>Dice</category>
         <category>AI</category>
-        <category>FIXED</category>
         <category>颜色</category>
+        <category>Dice!</category>
         <item>
             <guid isPermalink="true">https://cypress.github.io/2022/08/16/lua-colors.howto/</guid>
             <title>lua-colors</title>
