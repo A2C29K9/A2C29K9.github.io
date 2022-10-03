@@ -61,6 +61,12 @@ writer:save_MIDI('test',getDiceQQ().."\\plugin\\Midido\\project")
 ## 剖析、分解示例脚本
 
 通过运行上述脚本，我们已经知晓了MIDI 文件构建的最基本步骤：
+    
+    1. 创建通道音轨.
+    2. 设置音轨音符.
+    3. 写入通道音轨.
+    4. 写文件并导出.
+
 ```mermaid
 graph TB
     id1["require ('Midido')"]==> |创建| id2["通道音轨(Track)"]
