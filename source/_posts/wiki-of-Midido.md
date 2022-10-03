@@ -34,7 +34,7 @@ local Midido = require ('Midido')
 新建 `test.lua`文件，将下面的代码复制粘贴进去，保存，随后使用 `.system load`命令重载。
 在重载时 `test.lua`会被执行，生成 `test.mid`文件。
 
-```lua
+```lua title="test.lua"
 local Midido = require ('Midido')
 local Track = Midido.Track
 local NoteEvent = Midido.NoteEvent
@@ -53,9 +53,21 @@ track:add_events(NoteEvent.new({pitch = notes, sequential = true}))
 local writer = Writer.new(track)
 
 -- 在`Midido\project\`内生成一个名为《C Major Scale》的MIDI文件
-writer:save_MIDI('C Major Scale',getDiceQQ().."\\plugin\\Midido\\project")
+writer:save_MIDI('test',getDiceQQ().."\\plugin\\Midido\\project")
 ```
 
 > 由于代码中已经有一些注释，因此不需要对其再进行解释说明。 这是 MIDI 文件构建的基本步骤。 有一个更复杂的例子可以在 Writing Stairway to Heaven 中看到。 有关它的进一步说明，请查看 类 页面。
+
+## 剖析、分解示例脚本
+
+通过运行上述脚本，我们已经知晓了MIDI 文件构建的最基本步骤：
+```mermaid
+graph TB
+    id["require ('Midido')"]--> |创建| id2("通道音轨(Track)")
+    id2["通道音轨(Track)"]--> |直接添加音符| id3["NoteEvent.new"]
+    id2["通道音轨(Track)"]--> |存入notes表| id4["notes = {...}"]--> |添加表| id3{"NoteEvent.new"}
+    id3["NoteEvent.new"]--> |遍历音轨| id5["Writer.new(track)"]
+    id5["Writer.new(track)"]--> |写文MIDI文件| id6["writer:save_MIDI(name,path)"]
+```
 
 > to be...
