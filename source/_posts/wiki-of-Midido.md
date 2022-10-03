@@ -63,11 +63,12 @@ writer:save_MIDI('test',getDiceQQ().."\\plugin\\Midido\\project")
 通过运行上述脚本，我们已经知晓了MIDI 文件构建的最基本步骤：
 ```mermaid
 graph TB
-    id["require ('Midido')"]--> |创建| id2("通道音轨(Track)")
-    id2["通道音轨(Track)"]--> |直接添加音符| id3["NoteEvent.new"]
-    id2["通道音轨(Track)"]--> |存入notes表| id4["notes = {...}"]--> |添加表| id3{"NoteEvent.new"}
-    id3["NoteEvent.new"]--> |遍历音轨| id5["Writer.new(track)"]
-    id5["Writer.new(track)"]--> |写文MIDI文件| id6["writer:save_MIDI(name,path)"]
+    id["require ('Midido')"]==> |创建| id2("通道音轨(Track)")
+    id2["通道音轨(Track)"]==> |直接添加音符| id3["NoteEvent.new"]
+    id2["通道音轨(Track)"]==> |存入notes表| id4["notes = {...}"]
+    id4["notes = {...}"]==> |添加表| id3{"NoteEvent.new"}
+    id3["NoteEvent.new"]==> |遍历音轨| id5["Writer.new(track)"]
+    id5["Writer.new(track)"]==> |写文MIDI文件| id6["writer:save_MIDI(name,path)"]
 ```
 
 > to be...
