@@ -1,0 +1,72 @@
+{% macro render(display_toc) %}
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+    {%- set display_toc = page.toc.enable and display_toc %}
+    {%- if display_toc %}
+      {%- set toc = toc(page.content, {class: 'nav', list_number: page.toc.number, max_depth: page.toc.max_depth}) %}
+      {%- set display_toc = toc.length > 1 and display_toc %}
+    {%- endif %}
+	{# recent posts #}
+{% if theme.recent_posts %}
+  <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.recent_posts_layout  }}">
+    <div class="links-of-blogroll-title">
+      <!-- modify icon to fire by szw -->
+      <i class="fa fa-history fa-{{ theme.recent_posts_icon | lower }}" aria-hidden="true"></i>
+      {{ theme.recent_posts_title }}
+    </div>
+    <ul class="links-of-blogroll-list">
+      {% set posts = site.posts.sort('-date') %}
+      {% for post in posts.slice('0', '5') %}
+        <li class="recent_posts_li">
+          <a href="{{ url_for(post.path) }}" title="{{ post.title }}" target="_blank">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+
+    <div class="sidebar-inner {% if display_toc %}sidebar-nav-active sidebar-toc-active{% else %}sidebar-overview-active{% endif %}">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          {{ __('sidebar.toc') }}
+        </li>
+        <li class="sidebar-nav-overview">
+          {{ __('sidebar.overview') }}
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+          {%- if display_toc %}
+            <div class="post-toc animated">{{ toc }}</div>
+          {%- endif %}
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          {{ partial('_partials/sidebar/site-overview.njk', {}, {cache: theme.cache.enable}) }}
+
+          {{- next_inject('sidebar') }}
+        </div>
+      </div>
+	  
+		<div id="music163player">
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28578763&auto=1&height=66"></iframe>
+		</div>
+		
+      {%- if theme.back2top.enable and theme.back2top.sidebar %}
+        <div class="back-to-top animated" role="button" aria-label="{{ __('accessibility.back_to_top') }}">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+      {%- endif %}
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+{% endmacro %}
