@@ -57,3 +57,5 @@ writer:save_MIDI('C Major Scale',getDiceQQ().."\\plugin\\Midido\\project")
 ```
 
 > 由于代码中已经有一些注释，因此不需要对其再进行解释说明。 这是 MIDI 文件构建的基本步骤。 有一个更复杂的例子可以在 Writing Stairway to Heaven 中看到。 有关它的进一步说明，请查看 类 页面。
+
+> to be...
