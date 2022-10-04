@@ -25,11 +25,6 @@ top: 2
 
 {% btn https://github.com/cypress0522/cypress0522.github.io/releases/download/Midido-code/Midido-v1.0.0.zip, 点击下载Midido-v1.0.0, download fa-lg fa-fw %}
 
-你可以在下面的两个地址里下载到Midido扩展库:
-
-1. 论坛的Midido帖子:[https://forum.kokona.tech/d/1255](https://forum.kokona.tech/d/1255)
-2. 原帖:[https://cypress0522.github.io/2022/10/03/wiki-of-Midido/](https://cypress0522.github.io/2022/10/03/wiki-of-Midido/) 密码:`wiki-of-Midido`
-
 那么在使用前，你需要将脚本全部解压至 `DiceQQ\plugin\` 目录下，或者 `Diceki\lua\` 也可以，但这边特别推荐放在 `DiceQQ\plugin\` 目录下，因为这涉及到生成文件的路径问题，同时本教程的示例代码也是根据 `DiceQQ\plugin\` 目录来编写的。
 
 调用：
@@ -245,4 +240,4 @@ DiceQQ
 
 ---
 
-Lastest Edit:2022/10/04 11:00 by 简律纯
+Lastest Edit:2022/10/04 12:11 by 简律纯
