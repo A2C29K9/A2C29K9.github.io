@@ -61,7 +61,7 @@ local writer = Writer.new(track)
 writer:save_MIDI('test1',getDiceQQ().."\\plugin\\Midido\\project")
 ```
 
-> 由于代码中已经有一些注释，因此不需要对其再进行解释说明。 这是 MIDI 文件构建的基本步骤。
+> ~~由于代码中已经有一些注释，因此不需要对其再进行解释说明。 这是 MIDI 文件构建的基本步骤。~~
 
 ## 3. 剖析、分解示例脚本
 
@@ -145,6 +145,7 @@ graph TB
 > 将这些音的指定音名存入一个表。
 
 > #### Q1: 可以填入那些音名？
+>
 > #### A1: 在 `Constans.lua` 第36-49行定义了可以使用的音名写法:
 
 > ```lua
@@ -165,6 +166,7 @@ graph TB
 > ```
 
 > #### Q2: 为什么存入表内？
+>
 > #### A2: 目的当然是为了方便以及偷懒，但从lua编写角度来说，这主要是因为 `NoteEvent.new()` 可以将表作为第一个参数使用。下面我将会介绍 `NoteEvent.new()`。
 
 > `NoteEvent.new(fields)`
