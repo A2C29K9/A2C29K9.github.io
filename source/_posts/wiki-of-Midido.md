@@ -57,7 +57,7 @@ track:add_events(NoteEvent.new({pitch = notes, sequential = true}))
 -- 遍历音轨
 local writer = Writer.new(track)
 
--- 在`Midido\project\`内生成一个名为《C Major Scale》的MIDI文件
+-- 在`Midido\project\`内生成一个名为《test1》的 MIDI 文件
 writer:save_MIDI('test1',getDiceQQ().."\\plugin\\Midido\\project")
 ```
 
