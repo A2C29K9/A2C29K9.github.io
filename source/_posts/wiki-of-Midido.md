@@ -58,7 +58,7 @@ track:add_events(NoteEvent.new({pitch = notes, sequential = true}))
 local writer = Writer.new(track)
 
 -- 在`Midido\project\`内生成一个名为《test1》的 MIDI 文件
-writer:save_MIDI('test1',getDiceQQ().."\\plugin\\Midido\\project")
+writer:save_MIDI('test1',getDiceDir().."\\plugin\\Midido\\project")
 ```
 
 > ~~由于代码中已经有一些注释，因此不需要对其再进行解释说明。 这是 MIDI 文件构建的基本步骤。~~
