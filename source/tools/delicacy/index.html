@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<title>今天吃啥呀？www.dkewl.com</title>
+<meta name="keywords" content="今天吃啥呀" />
+<meta name="description" content="【今天吃啥呀】" />
+<link rel="Shortcut Icon" href="ic.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="img/eat-min.css">
+</head>
+<body>
+<div class="logo"><img src="img/logo.png" /></div>
+<div id="wrapper">
+  <h1 style="color:#FF9733" id="what"></h1>
+  </h1>
+  <input type="button" value="开始" id="start" />
+</div>
+<textarea rows="9" cols="53" id="list" style="display:none">水车小屋 韩料 家常菜 快餐 胖哥俩 海底捞 捞王 凑凑 烤鱼 好德火锅 汉堡 蛋包饭 粤菜 肯德基 麦当劳 东北菜 麻辣烫 阿香米线 山居爷爷 小龙虾</textarea>
+<footer>
+    <div class="copyright">
+        <p>baka~<a href="https://www.github.com/cypress0522/" target="_blank">Hsiang Nianian</a> - <a href="https://cypress0522.github.io/ssJSKFJDJ" target="_blank">ssJSKFJDJ</a></p>
+        <span class="cp">Copyright &copy; 2018-<script type="text/javascript">copyright=new Date();update=copyright.getFullYear();document.write(""+ update + "");</script> Hsiang Nianian, All Rights Reserved.</span>
+    </div>
+</footer>
+<script type='text/javascript' src='img/jquery-1.11.1.min.js'></script>
+<script>
+    $(function () {
+    var run = 0,
+        timer;
+
+    $("#start").click(function () {
+        var list = $("#list").val().replace(/ +/g, " ").replace(/^ | $/g, "").split(" ");
+        if (!run) {
+            $(this).val("停止");
+            timer = setInterval(function () {
+                var r = Math.ceil(Math.random() * list.length),
+                    food = list[r - 1];
+                $("#what").html(food);
+                var rTop = Math.ceil(Math.random() * $(document).height()),
+                    rLeft = Math.ceil(Math.random() * ($(document).width() - 50)),
+                    rSize = Math.ceil(Math.random() * (37 - 14) + 14);
+                $("<span class='temp'></span>").html(food).hide().css({
+                    "top": rTop,
+                    "left": rLeft,
+                    "color": "rgba(0,0,0,." + Math.random() + ")",
+                    "fontSize": rSize + "px"
+                }).appendTo("body").fadeIn("slow", function () {
+                    $(this).fadeOut("slow", function () {
+                        $(this).remove();
+                    });
+                });
+            }, 50);
+            run = 1;
+        } else {
+            $(this).val("不行，换一个");
+            clearInterval(timer);
+            run = 0;
+        };
+    });
+
+    document.onkeydown = function enter(e) {
+        var e = e || event;
+        if (e.keyCode == 13) $("#start").trigger("click");
+    };
+});
+  
+          $i = 0;
+        $('#start').click(function(){
+            $i++;
+            if($i >=10 ){
+                $('#start').hide();
+        $('#what').html('这么挑？饿着吧！');
+            }
+        })
+</script>
+
+<script type="text/javascript">
+  window.onload = function(){
+    showTime();
+  }
+  function showTime(){
+    var now=new Date(); 
+    var year= now.getFullYear(); 
+    document.getElementById("show").innerHTML=""+year;
+    t=setTimeout('showTime()',1000)
+  }
+</script>
+<!--pb-->
+<script>
+    document.oncontextmenu = function (event){
+    if(window.event){
+    event = window.event;
+    }try{
+    var the = event.srcElement;
+    if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+    return false;
+    }
+    return true;
+    }catch (e){
+    return false;
+    }
+    }
+</script>
+<script>
+    document.onkeydown = function(){
+
+    if(window.event && window.event.keyCode == 123) {
+        alert("Hi,欢迎来到3600网址导航！");
+        event.keyCode=0;
+        event.returnValue=false;
+    }
+    if(window.event && window.event.keyCode == 13) {
+        window.event.keyCode = 505;
+    }
+    if(window.event && window.event.keyCode == 8) {
+        alert(str+"\n请使用Del键进行字符的删除操作！");
+        window.event.returnValue=false;
+    }
+    }
+</script>
+<script type="text/javascript">
+  	if (self == top) {
+	    var theBody = document.getElementsByTagName('body')[0];
+	    theBody.style.display = "block";
+	} else {
+	    top.location = self.location;
+	}
+</script>
+
+</body>
+</html>
