@@ -1,0 +1,29 @@
+
+#menu{
+width: 0;
+overflow: hidden;
+box-shadow: 0 1px 1px #888,1px 0 1px #ccc;
+position: absolute;
+z-index:99999;
+background: #ffffff;
+color:#000;
+}
+.menu{
+padding: 10px;
+}
+.menu:hover{
+	background: #27D974;
+	color:#ffffff
+}
+#popover{
+            display: none;
+            position: fixed;
+            width: 300px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            margin-left: -150px;
+            margin-top: -100px;
+            padding: 10px;
+            
+}	
