@@ -1,0 +1,16 @@
+{
+    "mod":"monster contract",
+    "author":"简律纯",
+    "ver":"1.0.0",
+    "dice_build":615,
+    "repo":"",
+	"pkg":"https://ghproxy.com/https://github.com/cypress0522/mod-repo/releases/download/monster-contract/monster-contract100.zip",
+    "brief":"魔物契约mod",
+    "comment":"",
+    "helpdoc":{
+        "签订魔物":"【魔物契约 - monster contract】\n【签订魔物】一切魔幻的开始~冒险者，快来认领你的魔物吧~", 
+        "魔物取名":"【魔物契约 - monster contract】\n【魔物取名[名字]】给你的魔物起一个响亮的名字。", 
+        "魔物状态":"【魔物契约 - monster contract】\n【魔物状态[年龄|饱食度|清洁度|默契度]】查看魔物的一些数据。",
+        "魔物探索":"【魔物契约 - monster contract】\n【魔物探索】每天只能探索一次哦。"
+    }
+}
