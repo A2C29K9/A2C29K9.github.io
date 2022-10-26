@@ -1,9 +1,8 @@
 {
     "mod":"monster contract",
     "author":"简律纯",
-    "ver":"1.0.0",
+    "ver":"1.0.1",
     "dice_build":615,
-    "repo":"",
 	"pkg":"https://ghproxy.com/https://github.com/cypress0522/mod-repo/releases/download/monster-contract/monster-contract100.zip",
     "brief":"魔物契约mod",
     "comment":"",
