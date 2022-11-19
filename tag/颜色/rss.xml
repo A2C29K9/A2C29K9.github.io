@@ -5,8 +5,8 @@
         <link>https://hsiang-nianian.netlify.app</link>
         <description>今天浇水了吗？</description>
         <language>zh-CN</language>
-        <pubDate>Tue, 16 Aug 2022 00:00:00 +0800</pubDate>
-        <lastBuildDate>Tue, 16 Aug 2022 00:00:00 +0800</lastBuildDate>
+        <pubDate>Tue, 16 Aug 2022 00:00:00 +0000</pubDate>
+        <lastBuildDate>Tue, 16 Aug 2022 00:00:00 +0000</lastBuildDate>
         <category>徐州站</category>
         <category>Dice</category>
         <category>教程</category>
@@ -18,7 +18,7 @@
             <title>lua-colors</title>
             <link>https://hsiang-nianian.netlify.app/2022/08/16/lua-colors.howto/</link>
             <category>颜色</category>
-            <pubDate>Tue, 16 Aug 2022 00:00:00 +0800</pubDate>
+            <pubDate>Tue, 16 Aug 2022 00:00:00 +0000</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note primary&#34;&gt;&lt;p&gt;&lt;strong&gt;lua-colors&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;用lua解释色彩原理.&lt;/p&gt;

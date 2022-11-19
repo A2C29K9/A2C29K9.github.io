@@ -5,8 +5,8 @@
         <link>https://hsiang-nianian.netlify.app</link>
         <description>今天浇水了吗？</description>
         <language>zh-CN</language>
-        <pubDate>Fri, 05 Aug 2022 00:00:00 +0800</pubDate>
-        <lastBuildDate>Fri, 05 Aug 2022 00:00:00 +0800</lastBuildDate>
+        <pubDate>Fri, 05 Aug 2022 00:00:00 +0000</pubDate>
+        <lastBuildDate>Fri, 05 Aug 2022 00:00:00 +0000</lastBuildDate>
         <category>徐州站</category>
         <category>Dice</category>
         <category>教程</category>
@@ -19,7 +19,7 @@
             <link>https://hsiang-nianian.netlify.app/2022/08/05/Midido/</link>
             <category>Dice</category>
             <category>FIXED</category>
-            <pubDate>Fri, 05 Aug 2022 00:00:00 +0800</pubDate>
+            <pubDate>Fri, 05 Aug 2022 00:00:00 +0000</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note success&#34;&gt;&lt;p&gt;&lt;strong&gt;Midido&lt;/strong&gt;&lt;br&gt;简单实现用lua输出midi的库。&lt;/p&gt;
 &lt;/div&gt;
 
@@ -93,7 +93,7 @@
             <title>改写print</title>
             <link>https://hsiang-nianian.netlify.app/2022/08/05/print-fixed/</link>
             <category>FIXED</category>
-            <pubDate>Fri, 05 Aug 2022 00:00:00 +0800</pubDate>
+            <pubDate>Fri, 05 Aug 2022 00:00:00 +0000</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note success&#34;&gt;&lt;p&gt;&lt;strong&gt;print fixed&lt;/strong&gt;&lt;br&gt;简单实现改写print，将print内容写入文件生成日志。&lt;/p&gt;
 &lt;/div&gt;
 

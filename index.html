@@ -317,7 +317,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-11-19 00:00:00 / 修改时间：09:49:54" itemprop="dateCreated datePublished" datetime="2022-11-19T00:00:00+08:00">2022-11-19</time>
+      <time title="创建时间：2022-11-19 00:00:00 / 修改时间：02:04:43" itemprop="dateCreated datePublished" datetime="2022-11-19T00:00:00+00:00">2022-11-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -341,14 +341,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>757</span>
+      <span>1.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -363,19 +363,19 @@
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="Lua原生函数load的继承性"><a href="#Lua原生函数load的继承性" class="headerlink" title="Lua原生函数load的继承性"></a><strong>Lua原生函数load的继承性</strong></h2><p>这篇帖子是没有学习目标的，并且更适合有<strong>Lua编写基础</strong>的人观看。<br><del>今天就是想不明不白的开始。</del><br>关于 <code>load</code>，如果看过<span class="exturl" data-url="aHR0cHM6Ly9mb3J1bS5rb2tvbmEudGVjaC9kLzEzODY=">【指令脚本/抛砖引玉】Load: 在聊天窗口使用lua<i class="fa fa-external-link-alt"></i></span> 那么你或许会对它熟悉一些，此函数是 <code>lua 5.1</code>就有的东西，作用是加载一个数据块。下面是现今的<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVhLm9yZy9tYW51YWwvNS4yL21hbnVhbC5odG1sI3BkZi1sb2Fk">官方5.2 manual<i class="fa fa-external-link-alt"></i></span>给出的关于它的介绍：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">load (ld [, source [, mode [, env]]])</span><br><span class="line">Loads a chunk.</span><br><span class="line"></span><br><span class="line">If is a string, the chunk is this string. If is a function, calls it repeatedly to get the chunk pieces. Each call to must return a string that concatenates with previous results. A return of an empty string, nil, or no value signals the end of the chunk. ldldloadld</span><br><span class="line"></span><br><span class="line">If there are no syntactic errors, returns the compiled chunk as a function; otherwise, returns nil plus the error message.</span><br><span class="line"></span><br><span class="line">If the resulting function has upvalues, the first upvalue is set to the value of , if that parameter is given, or to the value of the global environment. (When you load a main chunk, the resulting function will always have exactly one upvalue, the variable (see §2.2). When you load a binary chunk created from a function (see string.dump), the resulting function can have arbitrary upvalues.) env_ENV</span><br><span class="line"></span><br><span class="line">source is used as the source of the chunk for error messages and debug information (see §4.9). When absent, it defaults to , if is a string, or to &quot;&quot; otherwise. ldld&#x3D;(load)</span><br><span class="line"></span><br><span class="line">The string controls whether the chunk can be text or binary (that is, a precompiled chunk). It may be the string &quot;&quot; (only binary chunks), &quot;&quot; (only text chunks), or &quot;&quot; (both binary and text). The default is &quot;&quot;.modebtbtbt</span><br></pre></td></tr></table></figure>
-
+<p>load (ld [, source [, mode [, env]]])<br>Loads a chunk.</p>
+<p>If is a string, the chunk is this string. If is a function, calls it repeatedly to get the chunk pieces. Each call to must return a string that concatenates with previous results. A return of an empty string, nil, or no value signals the end of the chunk. ldldloadld</p>
+<p>If there are no syntactic errors, returns the compiled chunk as a function; otherwise, returns nil plus the error message.</p>
+<p>If the resulting function has upvalues, the first upvalue is set to the value of , if that parameter is given, or to the value of the global environment. (When you load a main chunk, the resulting function will always have exactly one upvalue, the variable (see §2.2). When you load a binary chunk created from a function (see string.dump), the resulting function can have arbitrary upvalues.) env_ENV</p>
+<p>source is used as the source of the chunk for error messages and debug information (see §4.9). When absent, it defaults to , if is a string, or to “” otherwise. ldld=(load)</p>
+<p>The string controls whether the chunk can be text or binary (that is, a precompiled chunk). It may be the string “” (only binary chunks), “” (only text chunks), or “” (both binary and text). The default is “”.modebtbtbt</p>
 <blockquote>
 <p>什么意思？</p>
 </blockquote>
 <p>坦白来说，<strong>就是从字符串或者函数中加载一个代码块为方法并返回。</strong>——应该不难理解吧？</p>
 <p>但你需要明白以下几点：</p>
-<blockquote>
 <ol>
 <li><code>load()</code>返回的是函数,需要调用的话,还需要加括号。</li>
-</ol>
-</blockquote>
-<ol start="2">
 <li>5.1.x版本 <code>load</code>方法为 <code>load(func[,chunkname])</code>从函数中加载，<code>loadstring(str[,chunkname])</code>从字符串中加载</li>
 <li>5.3.x版本为 <code>load (chunk [, chunkname [, mode [, env]]])</code><br><code>chunk</code>为函数或字符串<br><code>mode</code>为加载模式:”t”文本样式,”b”二进制样式,”bt”二进制和文本模式.<br><code>env</code>代码块需要的参数</li>
 </ol>
@@ -448,14 +448,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-10-03 23:07:27" itemprop="dateCreated datePublished" datetime="2022-10-03T23:07:27+08:00">2022-10-03</time>
+      <time title="创建时间：2022-10-03 23:07:27" itemprop="dateCreated datePublished" datetime="2022-10-03T23:07:27+00:00">2022-10-03</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-11-19 09:45:21" itemprop="dateModified" datetime="2022-11-19T09:45:21+08:00">2022-11-19</time>
+        <time title="修改时间：2022-11-19 02:04:43" itemprop="dateModified" datetime="2022-11-19T02:04:43+00:00">2022-11-19</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -558,14 +558,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-08-17 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-17T00:00:00+08:00">2022-08-17</time>
+      <time title="创建时间：2022-08-17 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-17T00:00:00+00:00">2022-08-17</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-10-01 00:52:05" itemprop="dateModified" datetime="2022-10-01T00:52:05+08:00">2022-10-01</time>
+        <time title="修改时间：2022-11-19 02:04:43" itemprop="dateModified" datetime="2022-11-19T02:04:43+00:00">2022-11-19</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -697,14 +697,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-08-16 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-16T00:00:00+08:00">2022-08-16</time>
+      <time title="创建时间：2022-08-16 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-16T00:00:00+00:00">2022-08-16</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-10-01 01:17:36" itemprop="dateModified" datetime="2022-10-01T01:17:36+08:00">2022-10-01</time>
+        <time title="修改时间：2022-11-19 02:04:43" itemprop="dateModified" datetime="2022-11-19T02:04:43+00:00">2022-11-19</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1754,14 +1754,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-08-15 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-15T00:00:00+08:00">2022-08-15</time>
+      <time title="创建时间：2022-08-15 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-15T00:00:00+00:00">2022-08-15</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-10-01 00:57:51" itemprop="dateModified" datetime="2022-10-01T00:57:51+08:00">2022-10-01</time>
+        <time title="修改时间：2022-11-19 02:04:43" itemprop="dateModified" datetime="2022-11-19T02:04:43+00:00">2022-11-19</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1967,14 +1967,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-08-05 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-05T00:00:00+08:00">2022-08-05</time>
+      <time title="创建时间：2022-08-05 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-05T00:00:00+00:00">2022-08-05</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-10-01 00:59:02" itemprop="dateModified" datetime="2022-10-01T00:59:02+08:00">2022-10-01</time>
+        <time title="修改时间：2022-11-19 02:04:43" itemprop="dateModified" datetime="2022-11-19T02:04:43+00:00">2022-11-19</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -2135,14 +2135,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-08-05 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-05T00:00:00+08:00">2022-08-05</time>
+      <time title="创建时间：2022-08-05 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-05T00:00:00+00:00">2022-08-05</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-10-03 23:09:57" itemprop="dateModified" datetime="2022-10-03T23:09:57+08:00">2022-10-03</time>
+        <time title="修改时间：2022-11-19 02:04:43" itemprop="dateModified" datetime="2022-11-19T02:04:43+00:00">2022-11-19</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -2240,14 +2240,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-08-04 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-04T00:00:00+08:00">2022-08-04</time>
+      <time title="创建时间：2022-08-04 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-04T00:00:00+00:00">2022-08-04</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-10-01 00:59:54" itemprop="dateModified" datetime="2022-10-01T00:59:54+08:00">2022-10-01</time>
+        <time title="修改时间：2022-11-19 02:04:43" itemprop="dateModified" datetime="2022-11-19T02:04:43+00:00">2022-11-19</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -2349,14 +2349,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-08-03 13:39:34" itemprop="dateCreated datePublished" datetime="2022-08-03T13:39:34+08:00">2022-08-03</time>
+      <time title="创建时间：2022-08-03 13:39:34" itemprop="dateCreated datePublished" datetime="2022-08-03T13:39:34+00:00">2022-08-03</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-10-01 00:54:59" itemprop="dateModified" datetime="2022-10-01T00:54:59+08:00">2022-10-01</time>
+        <time title="修改时间：2022-11-19 02:04:43" itemprop="dateModified" datetime="2022-11-19T02:04:43+00:00">2022-11-19</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -2502,14 +2502,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-07-14 00:00:00" itemprop="dateCreated datePublished" datetime="2022-07-14T00:00:00+08:00">2022-07-14</time>
+      <time title="创建时间：2022-07-14 00:00:00" itemprop="dateCreated datePublished" datetime="2022-07-14T00:00:00+00:00">2022-07-14</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-10-01 01:00:17" itemprop="dateModified" datetime="2022-10-01T01:00:17+08:00">2022-10-01</time>
+        <time title="修改时间：2022-11-19 02:04:43" itemprop="dateModified" datetime="2022-11-19T02:04:43+00:00">2022-11-19</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -2636,14 +2636,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">21k</span>
+    <span title="站点总字数">22k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">19 分钟</span>
+    <span title="站点阅读时长">20 分钟</span>
   </span>
 </div>
   <div class="powered-by"><span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL2N5cHJlc3MwNTIy">Hsiang Nianian</span> & <span class="exturl" data-url="aHR0cHM6Ly9jeXByZXNzMDUyMi5naXRodWIuaW8vc3NKU0tGSkRK">ssJSKFJDJ.</span>
