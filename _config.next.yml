@@ -166,7 +166,8 @@ links:
   ssJSKFJDJ: https://ssjskfjdj.netlify.app
   asr-036: https://asr-036.netlify.app
   c2xj3xp5x: https://c2xj3xp5x.netlify.app
-
+  FragmentXwords: https://fragmentxwords.github.io
+  
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
 toc:
@@ -286,7 +287,7 @@ follow_me:
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
-  enable: true
+  enable: false
   title: # Custom header, leave empty to use the default one
   display_in_home: false
   params:
