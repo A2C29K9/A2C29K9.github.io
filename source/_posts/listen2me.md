@@ -5,7 +5,7 @@ categories:
  - [技术,Lua]
  - [音乐,作曲]
 tags:
- - Dice!
+ - Dice
 ---
 
 {% note success %}
