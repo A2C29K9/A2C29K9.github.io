@@ -46,13 +46,13 @@ The string controls whether the chunk can be text or binary (that is, a precompi
 1. 在 `DiceQQ\plugin\`下新建 `test.lua`。
 2. 在 `DiceQQ\plugin\test.lua`内写上如下代码：
 
-```lua title="test.lua"
+```lua test.lua
 msg_order={["@"]="main"}
 local main = function(msg) return load(msg.fromMsg:sub(2))() end
 ```
 
-3. 对骰娘发送 `.system load`命令重载。
-4. 对骰娘发送 `@return msg.fromQQ`，你将会收到自己的QQ。
+1. 对骰娘发送 `.system load`命令重载。
+2. 对骰娘发送 `@return msg.fromQQ`，你将会收到自己的QQ。
 
 其实到这里就是[【指令脚本/抛砖引玉】Load: 在聊天窗口使用lua](https://forum.kokona.tech/d/1386) 的全部内容了。下面进入正题。
 因为昨天，哦不，今天凌晨喝的有点多，又很奇怪的是我醒的特别早，我大概五点就醒了，然后开始敲代码，也许是酒精的作用吧，我对krypton进行了如下无厘头测试：
