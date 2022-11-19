@@ -5,15 +5,183 @@
         <link>https://hsiang-nianian.netlify.app</link>
         <description>今天浇水了吗？</description>
         <language>zh-CN</language>
-        <pubDate>Mon, 03 Oct 2022 23:07:27 +0000</pubDate>
-        <lastBuildDate>Mon, 03 Oct 2022 23:07:27 +0000</lastBuildDate>
+        <pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate>
+        <lastBuildDate>Sun, 20 Nov 2022 00:00:00 +0000</lastBuildDate>
         <category>徐州站</category>
         <category>Dice</category>
         <category>教程</category>
         <category>FIXED</category>
         <category>AI</category>
-        <category>Dice!</category>
         <category>颜色</category>
+        <item>
+            <guid isPermalink="true">https://hsiang-nianian.netlify.app/2022/11/20/listen2me/</guid>
+            <title>listen2me</title>
+            <link>https://hsiang-nianian.netlify.app/2022/11/20/listen2me/</link>
+            <category>Dice</category>
+            <pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate>
+            <description><![CDATA[ &lt;div class=&#34;note success&#34;&gt;&lt;h3 id=&#34;listen2me&#34;&gt;&lt;a href=&#34;#listen2me&#34; class=&#34;headerlink&#34; title=&#34;listen2me&#34;&gt;&lt;/a&gt;&lt;strong&gt;listen2me&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;使用mml作曲。&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/cypress0522/listen2me/commits/Windows-Version&#34;&gt;&lt;img src=&#34;https://img.shields.io/github/last-commit/cypress0522/listen2me&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://github.com/cypress0522/listen2me/issues&#34;&gt;&lt;img src=&#34;https://img.shields.io/github/issues/cypress0522/listen2me&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://github.com/cypress0522/listen2me/pulls&#34;&gt;&lt;img src=&#34;https://img.shields.io/github/issues-pr/cypress0522/listen2me&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://github.com/cypress0522/listen2me/releases&#34;&gt;&lt;img src=&#34;https://img.shields.io/github/v/release/cypress0522/listen2me?include_prereleases&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://github.com/cypress0522/listen2me/releases/download/v1.0.8/listen2me_v1.0.8.zip&#34;&gt;&lt;img src=&#34;https://img.shields.io/github/downloads/cypress0522/listen2me/total.svg&#34; alt=&#34;download&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;此分支为Windows版本。&lt;/p&gt;
+&lt;p&gt;listen2me是为Dice!编写的Lua脚本，用于mml(Music Macro Language)作曲试听。&lt;/p&gt;
+&lt;p&gt;如果在使用过程中遇到了困难，欢迎到原仓库提交&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2N5cHJlc3MwNTIyL2xpc3RlbjJtZS9pc3N1ZXMvbmV3&#34;&gt;issue&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt;；如果在使用过程中修改出更有意思的玩法，也欢迎到原仓库提交&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2N5cHJlc3MwNTIyL2xpc3RlbjJtZS9wdWxscw==&#34;&gt;PR&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt;。&lt;/p&gt;
+&lt;figure class=&#34;highlight json&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;&amp;quot;mod&amp;quot;&lt;/span&gt;:&lt;span class=&#34;string&#34;&gt;&amp;quot;listen2me&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;&amp;quot;author&amp;quot;&lt;/span&gt;:&lt;span class=&#34;string&#34;&gt;&amp;quot;简律纯&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;&amp;quot;ver&amp;quot;&lt;/span&gt;:&lt;span class=&#34;string&#34;&gt;&amp;quot;2.1.0&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;&amp;quot;dice_build&amp;quot;&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;612&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;&amp;quot;brief&amp;quot;&lt;/span&gt;:&lt;span class=&#34;string&#34;&gt;&amp;quot;使用mml作曲&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;&amp;quot;comment&amp;quot;&lt;/span&gt;:&lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;&amp;quot;helpdoc&amp;quot;&lt;/span&gt;:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;attr&#34;&gt;&amp;quot;listen2me&amp;quot;&lt;/span&gt;:&lt;span class=&#34;string&#34;&gt;&amp;quot;【listen2me[Windows]】\n使用mml语言进行作曲\nhttps://github.com/cypress0522/listen2me&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;attr&#34;&gt;&amp;quot;loopstraining&amp;quot;&lt;/span&gt;:&lt;span class=&#34;string&#34;&gt;&amp;quot;基于listen2me的听音训练娱乐模块&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Windows 版本&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Linux 版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;安装&#34;&gt;&lt;a href=&#34;#安装&#34; class=&#34;headerlink&#34; title=&#34;安装&#34;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Dice版本2.6.5beta12(624+)以上安装方法:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 &lt;code&gt;./DiceQQ/conf/mod/source.list&lt;/code&gt;文件内（没有mod文件夹和这文件就新建）输入 &lt;code&gt;https://ssjskfjdj.netlify.app/Module/&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;.system load&lt;/code&gt;命令重载bot，这样做的目的是为了让步骤1里的远程地址生效。&lt;/li&gt;
+&lt;li&gt;对bot发送 &lt;code&gt;.mod get listen2me&lt;/code&gt;命令，等待安装。&lt;/li&gt;
+&lt;li&gt;回到第二步，这样做的目的是为了让mod被加载。&lt;/li&gt;
+&lt;li&gt;Enjoy Your Self!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Dice版本2.6.4b(612+)以上安装方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;浏览器访问 &lt;code&gt;https://github.com/ssJSKFJDJ/listen2me&lt;/code&gt;并点击绿色按钮 &lt;code&gt;Code&lt;/code&gt;下的 &lt;code&gt;Download Zip&lt;/code&gt;按钮下载仓库压缩包。&lt;/li&gt;
+&lt;li&gt;解压压缩包，将里面的文件和文件夹全部丢进 &lt;code&gt;./DiceQQ/mod/&lt;/code&gt;文件夹内。&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;.system load&lt;/code&gt;命令重载。&lt;/li&gt;
+&lt;li&gt;Enjoy Your Self!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;配置&#34;&gt;&lt;a href=&#34;#配置&#34; class=&#34;headerlink&#34; title=&#34;配置&#34;&gt;&lt;/a&gt;配置&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;/script/mml2mid.lua&#34;&gt;使用功能模块前先根据注释内容修改合适的配置&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;--------------------settings---------------------&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Settings = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    _FRAMWORK = &lt;span class=&#34;string&#34;&gt;&amp;quot;Gocq&amp;quot;&lt;/span&gt;, &lt;span class=&#34;comment&#34;&gt;-- &amp;quot;Mirai&amp;quot;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;-- 框架名称,必填,可选参数:&amp;#x27;Mirai&amp;#x27;或&amp;#x27;Gocq&amp;#x27;(默认).&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    _ONEFILE = &lt;span class=&#34;string&#34;&gt;&amp;quot;xx&amp;quot;&lt;/span&gt;, &lt;span class=&#34;comment&#34;&gt;-- os.date(&amp;quot;%A&amp;quot;),&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;-- 是否将每次的乐谱记录在同一个文件内.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    _WARNING = &lt;span class=&#34;number&#34;&gt;18&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;-- 音频文件过多报警上限,未填时默认18&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    _AUTOCLR = &lt;span class=&#34;number&#34;&gt;21&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;-- 音频文件自动清理，未填时默认21&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    _SUBNAME = &lt;span class=&#34;string&#34;&gt;&amp;quot;.mp3&amp;quot;&lt;/span&gt;, &lt;span class=&#34;comment&#34;&gt;-- &amp;quot;.wav&amp;quot;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;-- 规定输出格式,填写mp3时需要安装ffmpeg.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    _UPLOAD = &lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt;, &lt;span class=&#34;comment&#34;&gt;-- false,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;-- 是否在发出语音同时上传mid文件(仅限Gocq).&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;-- 对应下参数_APIPORT.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    _APIPORT = &lt;span class=&#34;number&#34;&gt;15700&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;-- nil&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;-- Gocq 本地 API 端口,填nil时将自动搜寻,若报错请自行填入.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h1 id=&#34;指令&#34;&gt;&lt;a href=&#34;#指令&#34; class=&#34;headerlink&#34; title=&#34;指令&#34;&gt;&lt;/a&gt;指令&lt;/h1&gt;&lt;p&gt;一般指令格式:&lt;code&gt;l2m&amp;gt;[opt=clr|mml|...]&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;清理缓存&lt;br&gt;成功执行一次mml命令后会在 &lt;code&gt;./project/&lt;/code&gt;生成这几样东西:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;fileName.mid&lt;/li&gt;
+&lt;li&gt;fileName.mml&lt;/li&gt;
+&lt;li&gt;fileName.mp3|wav&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这些就是所谓的缓存，一次生成三个，因此才有了 &lt;code&gt;_WARNING&lt;/code&gt;和 &lt;code&gt;_AUTOCLR&lt;/code&gt;配置——但要注意的是，这些配置的存在只是为了那些不会主动的清理的人罢了，如果你比较勤快那么我想除了添加 &lt;code&gt;_ONEFILE&lt;/code&gt;配置项外，你一定会经常使用 &lt;code&gt;l2m&amp;gt;clr&lt;/code&gt;指令去清理这些缓存的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;生成曲谱&lt;br&gt;指令格式:&lt;code&gt;l2m&amp;gt;[mml]&lt;/code&gt;，由于mml语法过于繁琐因此在这里不一一赘述，只是做几个示例，日后会写专门的文档系统介绍此功能模块的mml语法。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;单轨示例&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;l2m&amp;gt;A cdefgab&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;多轨示例&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;l2m&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;A l8d+&amp;gt;d+d+d+d4&amp;lt;a+4&amp;gt;cc&amp;lt;a+g+a+2d+&amp;gt;d+d+d+d4.&amp;lt;a+b+2g+4a+4d+&amp;gt;d+d+fd4&amp;lt;a+4&amp;gt;cl16d+f8.d+&amp;lt;a+4.&amp;amp;a+gfl8d+&amp;gt;d+d+gfd+dl16&amp;lt;a+&amp;gt;d+4.&amp;amp;d+cdd+8dd+8.&amp;lt;a+8&amp;gt;fgf2gg8.fd+f8cd+4&amp;amp;d+&amp;lt;a+8&amp;gt;gg8.fd+f8d+&amp;lt;a+4.&amp;amp;a+&amp;gt;gg8.fd+f8cd+4d+d+8dd8.cc8.&amp;lt;a+a+8.&amp;gt;cd+g+8.g8.fd+f8cd+4&amp;amp;d+&amp;lt;a+8&amp;gt;dd8d+8f&amp;lt;a+8ga+8&amp;gt;f8d+d+8.&amp;lt;a+a+8g+gg+8&amp;gt;d+d+2&amp;lt;a+a+8g+gg+8&amp;gt;ff4.&amp;amp;fd+8d+8df8d+2.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;B &amp;#x2F;*M 0  *&amp;#x2F;  &amp;lt;c8g8&amp;gt;d+4&amp;lt;&amp;lt;g8&amp;gt;d8a+4&amp;#x2F;*M 1  *&amp;#x2F;  &amp;lt;g+8&amp;gt;d+8&amp;lt;a+4&amp;gt;d+4d4&amp;#x2F;*M 2  *&amp;#x2F;  c8g8&amp;gt;d+4&amp;lt;&amp;lt;g8&amp;gt;d8a+4&amp;#x2F;*M 3  *&amp;#x2F;  &amp;lt;g+8&amp;gt;d+8&amp;gt;c8&amp;lt;d+8&amp;lt;g+8&amp;gt;d+8&amp;lt;a+8b8&amp;#x2F;*M 4  *&amp;#x2F;  &amp;gt;c8g8&amp;gt;d+8&amp;lt;g8&amp;lt;g8&amp;gt;d8a+8d8&amp;#x2F;*M 5  *&amp;#x2F;  &amp;lt;g+8&amp;gt;d+8&amp;lt;a+4&amp;gt;d+8a+8d4&amp;#x2F;*M 6  *&amp;#x2F;  c8g8&amp;gt;d+8&amp;lt;g8&amp;lt;g8&amp;gt;d8a+8d8&amp;#x2F;*M 7  *&amp;#x2F;  &amp;lt;g+8&amp;gt;d+8&amp;gt;c8.&amp;lt;&amp;lt;a+16b4g+4&amp;#x2F;*M 8  *&amp;#x2F;  a+8&amp;gt;f8a+4&amp;lt;&amp;lt;a+2&amp;#x2F;*M 9  *&amp;#x2F;  &amp;gt;g+8&amp;gt;d+8&amp;gt;c8&amp;lt;d+8&amp;lt;g+8&amp;gt;d8a+8d8&amp;#x2F;*M 10 *&amp;#x2F;  &amp;lt;g8&amp;gt;d+8a+8d+8c8g8&amp;gt;d8d+8&amp;#x2F;*M 11 *&amp;#x2F;  &amp;lt;&amp;lt;f8&amp;gt;g8&amp;gt;d+8&amp;lt;g+8&amp;lt;a+8&amp;gt;f8&amp;gt;d8&amp;lt;a+8&amp;#x2F;*M 12 *&amp;#x2F;  &amp;lt;d+8a+8&amp;gt;d+8&amp;lt;a+8&amp;gt;c+8&amp;lt;a+8&amp;gt;c+8&amp;lt;&amp;lt;a+8&amp;#x2F;*M 13 *&amp;#x2F;  &amp;gt;g+8&amp;gt;d+8&amp;gt;c8&amp;lt;d+8&amp;lt;g+8&amp;gt;d8a+8d8&amp;#x2F;*M 14 *&amp;#x2F;  &amp;lt;g8&amp;gt;d8.&amp;lt;g8.&amp;gt;c4&amp;lt;d8d+8&amp;#x2F;*M 15 *&amp;#x2F;  f8&amp;gt;c8g+8c8&amp;lt;g8&amp;gt;d+8a+8d+8&amp;#x2F;*M 16 *&amp;#x2F;  &amp;lt;g+8&amp;gt;d+8&amp;gt;c8&amp;lt;d+16.&amp;lt;&amp;lt;a+32o4d2&amp;#x2F;*M 17 *&amp;#x2F;  &amp;lt;&amp;lt;d+16a+16&amp;gt;g16g+16a+8.&amp;lt;d+4.&amp;amp;d+16d+8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;音源&#34;&gt;&lt;a href=&#34;#音源&#34; class=&#34;headerlink&#34; title=&#34;音源&#34;&gt;&lt;/a&gt;音源&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9tdXNlc2NvcmUub3JnL3poLWhhbnMvJWU3JTk0JWE4JWU2JTg4JWI3JWU2JTg5JThiJWU1JTg2JThjL3NvdW5kZm9udC0lZTklOWYlYjMlZTglODklYjIlZTUlYmElOTM=&#34;&gt;Musescore&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; 提供的三个常见音色库&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;FluidR3_GM.sf2 (未压缩大小 141 MB)&lt;br&gt;下载 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5tdXNlc2NvcmUub3JnL2Rvd25sb2FkL2ZsdWlkLXNvdW5kZm9udC50YXIuZ3o=&#34;&gt;Fluid-soundfont.tar.gz&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;GeneralUser_GS_1.44-MuseScore.sf2 (未压缩大小 29.8 MB)&lt;br&gt;下载 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5zY2hyaXN0aWFuY29sbGlucy5jb20vc291bmRmb250cy9HZW5lcmFsVXNlcl9HU18xLjQ0LU11c2VTY29yZS56aXA=&#34;&gt;GeneralUser_GS_1.44-MuseScore.zip&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; (承蒙 S. Christian Collins 而提供)&lt;/li&gt;
+&lt;li&gt;TimGM6mb.sf2 (未压缩大小 5.7 MB)&lt;br&gt;下载 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL21zY29yZS5zdm4uc291cmNlZm9yZ2UubmV0L3ZpZXd2Yy9tc2NvcmUvdHJ1bmsvbXNjb3JlL3NoYXJlL3NvdW5kL1RpbUdNNm1iLnNmMg==&#34;&gt;modified TimGM6mb.sf2&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; (承蒙 Tim Brechbill 而提供)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL0ZsdWlkU3ludGgvZmx1aWRzeW50aC93aWtpL1NvdW5kRm9udA==&#34;&gt;FluidSynth&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; 提供的音源下载网站&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucG9seXBob25lLXNvdW5kZm9udHMuY29tL2Rvd25sb2FkLXNvdW5kZm9udHM=&#34;&gt;Polyphone Soundfont Collection&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; - A collection of Soundfonts on the Polyphone website&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5oYW1tZXJzb3VuZC5uZXQv&#34;&gt;Hammersound&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; - A nice resource for downloading free SoundFont instrument files.&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5wZXJzb25hbGNvcHkuY29tL3NmYXJrZm9udHMxLmh0bQ==&#34;&gt;Magic Sound Font, version 2.0&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; (68 MB)&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5hcmFjaG5vc29mdC5jb20vbWFpbi9kb3dubG9hZC5waHA/aWQ9c291bmRmb250LXNmMg==&#34;&gt;Arachno SoundFont, version 1.0&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; (148MB)&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3NvdXJjZWZvcmdlLm5ldC9wL21zY29yZS9jb2RlL0hFQUQvdHJlZS90cnVuay9tc2NvcmUvc2hhcmUvc291bmQvVGltR002bWIuc2YyP2Zvcm1hdD1yYXc=&#34;&gt;TimGM6mb&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; (6 MB)&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;ZnRwOi8vZnRwLm9zdW9zbC5vcmcvcHViL211c2VzY29yZS9zb3VuZGZvbnQvTXVzZVNjb3JlX0dlbmVyYWwvTXVzZVNjb3JlX0dlbmVyYWwuc2Yy&#34;&gt;MuseScore_General.sf2&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; (208 MB)&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL21pZGthci5jb20vc291bmRmb250cy8=&#34;&gt;Timbres Of Heaven GM_GS_XG_SFX V 3.4&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; (246 MB)&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2Z0cC5vc3Vvc2wub3JnL3B1Yi9tdXNlc2NvcmUvc291bmRmb250L1NvbmF0aW5hX1N5bXBob25pY19PcmNoZXN0cmFfU0YyLnppcA==&#34;&gt;Sonatina Symphonic Orchestra&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; (503 MB uncompressed)&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zaXRlcy5nb29nbGUuY29tL3ZpZXcvaGVkLXNvdW5kcy9hZWdlYW4tc3ltcGhvbmljLW9yY2hlc3RyYQ==&#34;&gt;Aegean Symphonic Orchestra v2.5 universal&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; (350 MB)&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zaXRlcy5nb29nbGUuY29tL3ZpZXcvaGVkLXNvdW5kcy9zYWxhbWFuZGVyLWM1LWxpZ2h0&#34;&gt;Salamander C5 Light&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; (25 MB)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;参考&#34;&gt;&lt;a href=&#34;#参考&#34; class=&#34;headerlink&#34; title=&#34;参考&#34;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2hwYy5qcC9+bW1sMm1pZA==&#34;&gt;http://hpc.jp/~mml2mid&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9tYW4uYXJjaGxpbnV4Lm9yZy9tYW4vdGltaWRpdHkuY2ZnLjU=&#34;&gt;https://man.archlinux.org/man/timidity.cfg.5&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9tYW4uYXJjaGxpbnV4Lm9yZy9tYW4vY29tbXVuaXR5L3RpbWlkaXR5KysvdGltaWRpdHkuMS5lbg==&#34;&gt;https://man.archlinux.org/man/community/timidity++/timidity.1.en&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;日志&#34;&gt;&lt;a href=&#34;#日志&#34; class=&#34;headerlink&#34; title=&#34;日志&#34;&gt;&lt;/a&gt;日志&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;此日志写的比工程文件要晚那么一点。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;details&gt;
+&lt;summary&gt;2022年11月20日 开了一个新的坑——听音练习。&lt;/summary&gt;
+&lt;h5&gt;新增&lt;/h5&gt;
+1.&lt;i&gt;loopstraining&lt;/i&gt;新增听音练习娱乐模块。
+&lt;h5&gt;改动&lt;/h5&gt;
+1.&lt;i&gt;mml2mid.lua&lt;/i&gt;将所有的局部变量名称首字母大写。
+&lt;/details&gt;
+
+
+&lt;details&gt;
+&lt;summary&gt;2022年10月29日 发现了几个bug，更新了readme。&lt;/summary&gt;
+&lt;h5&gt;issue&lt;/h5&gt;
+1.&lt;i&gt;mml2mid.lua&lt;/i&gt;&lt;b&gt;timidity&lt;/b&gt;线程问题，速度过快会导致timidity错误。
+&lt;h5&gt;新增&lt;/h5&gt;
+1.&lt;i&gt;readme.md&lt;/i&gt;新增指令介绍。
+&lt;/details&gt;
+
+
+&lt;details&gt;
+&lt;summary&gt;2022年10月13日 完善Gocq上传群文件机制。&lt;/summary&gt;
+&lt;h5&gt;新增&lt;/h5&gt;
+1.&lt;i&gt;mml2mid.lua&lt;/i&gt;&lt;b&gt;_UPLOAD&lt;/b&gt;与&lt;b&gt;_APIPORT&lt;/b&gt;完善，预期功能已实现。
+&lt;h5&gt;改动&lt;/h5&gt;
+1.&lt;i&gt;mml2mid.lua&lt;/i&gt;原本注释的&lt;b&gt;_WARNING&lt;/b&gt;配置项现已恢复原有功能。
+&lt;br/&gt;
+2.&lt;i&gt;mml2mid.lua&lt;/i&gt;配置项&lt;b&gt;_AUTOCLR&lt;/b&gt;默认上限提高。
+&lt;/details&gt;
+
+
+&lt;details&gt;
+&lt;summary&gt;2022年10月11日 新增配置项。&lt;/summary&gt;
+&lt;h5&gt;新增&lt;/h5&gt;
+1.&lt;i&gt;mml2mid.lua&lt;/i&gt;新增&lt;b&gt;_UPLOAD&lt;/b&gt;与&lt;b&gt;_APIPORT&lt;/b&gt;配置，详细使用说明见脚本。
+&lt;/details&gt;
+
+
+&lt;details&gt;
+&lt;summary&gt;2022年10月9日 实现了timidity.cfg的自动写入。&lt;/summary&gt;
+&lt;h5&gt;新增&lt;/h5&gt;
+1. &lt;i&gt;mml2mid.lua&lt;/i&gt; 新增了对&lt;i&gt;timidity&lt;/i&gt;音源的检测。
+&lt;br/&gt;
+2.&lt;i&gt;mml2mid.lua&lt;/i&gt; 新增&lt;i&gt;_FRAMWORK&lt;/i&gt;配置项，判断框架类型。
+&lt;br/&gt;
+3.&lt;i&gt;mml2mid.lua&lt;/i&gt; 新增mml语法报错检测和输出(如果你看得懂那会很有帮助就是了)。
+&lt;h5&gt;修复&lt;/h5&gt;
+1. 修复了因&lt;i&gt;timidity.cfg&lt;/i&gt;参数&lt;b&gt;dir&lt;/b&gt;固定而无法输出有声音的音频问题。
+&lt;/details&gt;
+
+
+&lt;details&gt;
+&lt;summary&gt;2022年10月8日 初步框架版本编写完毕。&lt;/summary&gt;
+&lt;h5&gt;新增&lt;/h5&gt;
+1. &lt;i&gt;mml2mid.lua&lt;/i&gt; 新增一些配置项。
+&lt;br/&gt;
+2. 新增了对 &lt;i&gt;timidity.cfg&lt;/i&gt; 的查询功能。
+&lt;h5&gt;删减&lt;/h5&gt;
+1. 改动了部分语法。
+&lt;/details&gt;
+
+
+&lt;details&gt;
+&lt;summary&gt;2022年10月2日 准备套壳，已经实现mml转mid，mid转wav，下一阶段将会编写脚本使其脚本化。&lt;/summary&gt;
+&lt;h5&gt;新增&lt;/h5&gt;
+1. 添加&lt;i&gt;timidity&lt;/i&gt;，放弃了原本直接发送&lt;i&gt;midi&lt;/i&gt;序列的方式(这样&lt;i&gt;Go-cqhttp&lt;/i&gt;会发不出语音)，在发送语音前会对&lt;i&gt;*.mid&lt;/i&gt;文件进行转码再发送。
+&lt;h5&gt;修复&lt;/h5&gt;
+1. 修复了一些bug。
+&lt;/details&gt;
+
+
+&lt;p&gt;2022年11月20日02点00分&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://hsiang-nianian.netlify.app/2022/10/03/wiki-of-Midido/</guid>
             <title>wiki of Midido</title>
