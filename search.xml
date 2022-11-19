@@ -3,7 +3,7 @@
   <entry>
     <title>listen2me</title>
     <url>/2022/11/20/listen2me/</url>
-    <content><![CDATA[<div class="note success"><h3 id="listen2me"><a href="#listen2me" class="headerlink" title="listen2me"></a><strong>listen2me</strong></h3><p>使用mml作曲。</p>
+    <content><![CDATA[<div class="note success"><h1 id="listen2me"><a href="#listen2me" class="headerlink" title="listen2me"></a><strong>listen2me</strong></h1><p>使用mml作曲。</p>
 </div>
 
 <p><a href="https://github.com/cypress0522/listen2me/commits/Windows-Version"><img src="https://img.shields.io/github/last-commit/cypress0522/listen2me"></a><a href="https://github.com/cypress0522/listen2me/issues"><img src="https://img.shields.io/github/issues/cypress0522/listen2me"></a><a href="https://github.com/cypress0522/listen2me/pulls"><img src="https://img.shields.io/github/issues-pr/cypress0522/listen2me"></a><a href="https://github.com/cypress0522/listen2me/releases"><img src="https://img.shields.io/github/v/release/cypress0522/listen2me?include_prereleases"></a><a href="https://github.com/cypress0522/listen2me/releases/download/v1.0.8/listen2me_v1.0.8.zip"><img src="https://img.shields.io/github/downloads/cypress0522/listen2me/total.svg" alt="download"></a></p>
@@ -16,7 +16,7 @@
 <li><input checked="" disabled="" type="checkbox"> Windows 版本</li>
 <li><input disabled="" type="checkbox"> Linux 版本</li>
 </ul>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
 <li><p>Dice版本2.6.5beta12(624+)以上安装方法:</p>
 <ol>
 <li>在 <code>./DiceQQ/conf/mod/source.list</code>文件内（没有mod文件夹和这文件就新建）输入 <code>https://ssjskfjdj.netlify.app/Module/</code>。</li>
@@ -35,10 +35,10 @@
 </ol>
 </li>
 </ul>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p><a href="/script/mml2mid.lua">使用功能模块前先根据注释内容修改合适的配置</a></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p><a href="/script/mml2mid.lua">使用功能模块前先根据注释内容修改合适的配置</a></p>
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="comment">--------------------settings---------------------</span></span><br><span class="line">Settings = &#123;</span><br><span class="line">    _FRAMWORK = <span class="string">&quot;Gocq&quot;</span>, <span class="comment">-- &quot;Mirai&quot;,</span></span><br><span class="line">    <span class="comment">-- 框架名称,必填,可选参数:&#x27;Mirai&#x27;或&#x27;Gocq&#x27;(默认).</span></span><br><span class="line"></span><br><span class="line">    _ONEFILE = <span class="string">&quot;xx&quot;</span>, <span class="comment">-- os.date(&quot;%A&quot;),</span></span><br><span class="line">    <span class="comment">-- 是否将每次的乐谱记录在同一个文件内.</span></span><br><span class="line"></span><br><span class="line">    _WARNING = <span class="number">18</span>,</span><br><span class="line">    <span class="comment">-- 音频文件过多报警上限,未填时默认18</span></span><br><span class="line"></span><br><span class="line">    _AUTOCLR = <span class="number">21</span>,</span><br><span class="line">    <span class="comment">-- 音频文件自动清理，未填时默认21</span></span><br><span class="line"></span><br><span class="line">    _SUBNAME = <span class="string">&quot;.mp3&quot;</span>, <span class="comment">-- &quot;.wav&quot;,</span></span><br><span class="line">    <span class="comment">-- 规定输出格式,填写mp3时需要安装ffmpeg.</span></span><br><span class="line"></span><br><span class="line">    _UPLOAD = <span class="literal">false</span>, <span class="comment">-- false,</span></span><br><span class="line">    <span class="comment">-- 是否在发出语音同时上传mid文件(仅限Gocq).</span></span><br><span class="line">    <span class="comment">-- 对应下参数_APIPORT.</span></span><br><span class="line"></span><br><span class="line">    _APIPORT = <span class="number">15700</span> <span class="comment">-- nil</span></span><br><span class="line">    <span class="comment">-- Gocq 本地 API 端口,填nil时将自动搜寻,若报错请自行填入.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><p>一般指令格式:<code>l2m&gt;[opt=clr|mml|...]</code></p>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p>一般指令格式:<code>l2m&gt;[opt=clr|mml|...]</code></p>
 <ul>
 <li><p>清理缓存<br>成功执行一次mml命令后会在 <code>./project/</code>生成这几样东西:</p>
 <ol>
@@ -61,7 +61,7 @@
 
 </li>
 </ul>
-<h1 id="音源"><a href="#音源" class="headerlink" title="音源"></a>音源</h1><blockquote>
+<h2 id="音源"><a href="#音源" class="headerlink" title="音源"></a>音源</h2><blockquote>
 <p><span class="exturl" data-url="aHR0cHM6Ly9tdXNlc2NvcmUub3JnL3poLWhhbnMvJWU3JTk0JWE4JWU2JTg4JWI3JWU2JTg5JThiJWU1JTg2JThjL3NvdW5kZm9udC0lZTklOWYlYjMlZTglODklYjIlZTUlYmElOTM=">Musescore<i class="fa fa-external-link-alt"></i></span> 提供的三个常见音色库</p>
 </blockquote>
 <ul>
@@ -84,12 +84,12 @@
 <li><span class="exturl" data-url="aHR0cHM6Ly9zaXRlcy5nb29nbGUuY29tL3ZpZXcvaGVkLXNvdW5kcy9hZWdlYW4tc3ltcGhvbmljLW9yY2hlc3RyYQ==">Aegean Symphonic Orchestra v2.5 universal<i class="fa fa-external-link-alt"></i></span> (350 MB)</li>
 <li><span class="exturl" data-url="aHR0cHM6Ly9zaXRlcy5nb29nbGUuY29tL3ZpZXcvaGVkLXNvdW5kcy9zYWxhbWFuZGVyLWM1LWxpZ2h0">Salamander C5 Light<i class="fa fa-external-link-alt"></i></span> (25 MB)</li>
 </ul>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><span class="exturl" data-url="aHR0cDovL2hwYy5qcC9+bW1sMm1pZA==">http://hpc.jp/~mml2mid<i class="fa fa-external-link-alt"></i></span></li>
 <li><span class="exturl" data-url="aHR0cHM6Ly9tYW4uYXJjaGxpbnV4Lm9yZy9tYW4vdGltaWRpdHkuY2ZnLjU=">https://man.archlinux.org/man/timidity.cfg.5<i class="fa fa-external-link-alt"></i></span></li>
 <li><span class="exturl" data-url="aHR0cHM6Ly9tYW4uYXJjaGxpbnV4Lm9yZy9tYW4vY29tbXVuaXR5L3RpbWlkaXR5KysvdGltaWRpdHkuMS5lbg==">https://man.archlinux.org/man/community/timidity++/timidity.1.en<i class="fa fa-external-link-alt"></i></span></li>
 </ul>
-<h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><blockquote>
+<h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><blockquote>
 <p>此日志写的比工程文件要晚那么一点。</p>
 </blockquote>
 <hr>
