@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Cypress - 小柏树 • Posts by &#34;ai&#34; tag</title>
-        <link>https://cypress.github.io</link>
+        <link>https://hsiang-nianian.netlify.app</link>
         <description>今天浇水了吗？</description>
         <language>zh-CN</language>
         <pubDate>Wed, 06 Jul 2022 00:00:00 +0800</pubDate>
@@ -14,9 +14,9 @@
         <category>AI</category>
         <category>颜色</category>
         <item>
-            <guid isPermalink="true">https://cypress.github.io/2022/07/06/ai-reply/</guid>
+            <guid isPermalink="true">https://hsiang-nianian.netlify.app/2022/07/06/ai-reply/</guid>
             <title>在dice里关于ai的应用</title>
-            <link>https://cypress.github.io/2022/07/06/ai-reply/</link>
+            <link>https://hsiang-nianian.netlify.app/2022/07/06/ai-reply/</link>
             <category>Dice</category>
             <category>AI</category>
             <pubDate>Wed, 06 Jul 2022 00:00:00 +0800</pubDate>

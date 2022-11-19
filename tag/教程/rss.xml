@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Cypress - 小柏树 • Posts by &#34;教程&#34; tag</title>
-        <link>https://cypress.github.io</link>
+        <link>https://hsiang-nianian.netlify.app</link>
         <description>今天浇水了吗？</description>
         <language>zh-CN</language>
         <pubDate>Sat, 19 Nov 2022 00:00:00 +0800</pubDate>
@@ -14,9 +14,9 @@
         <category>AI</category>
         <category>颜色</category>
         <item>
-            <guid isPermalink="true">https://cypress.github.io/2022/11/19/Lua%E5%8E%9F%E7%94%9F%E5%87%BD%E6%95%B0load%E7%9A%84%E7%BB%A7%E6%89%BF/</guid>
+            <guid isPermalink="true">https://hsiang-nianian.netlify.app/2022/11/19/Lua%E5%8E%9F%E7%94%9F%E5%87%BD%E6%95%B0load%E7%9A%84%E7%BB%A7%E6%89%BF/</guid>
             <title>【抛砖引玉】Lua原生函数load的继承性</title>
-            <link>https://cypress.github.io/2022/11/19/Lua%E5%8E%9F%E7%94%9F%E5%87%BD%E6%95%B0load%E7%9A%84%E7%BB%A7%E6%89%BF/</link>
+            <link>https://hsiang-nianian.netlify.app/2022/11/19/Lua%E5%8E%9F%E7%94%9F%E5%87%BD%E6%95%B0load%E7%9A%84%E7%BB%A7%E6%89%BF/</link>
             <category>教程</category>
             <pubDate>Sat, 19 Nov 2022 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;Lua原生函数load的继承性&#34;&gt;&lt;a href=&#34;#Lua原生函数load的继承性&#34; class=&#34;headerlink&#34; title=&#34;Lua原生函数load的继承性&#34;&gt;&lt;/a&gt;&lt;strong&gt;Lua原生函数load的继承性&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;这篇帖子是没有学习目标的，并且更适合有&lt;strong&gt;Lua编写基础&lt;/strong&gt;的人观看。&lt;br&gt;&lt;del&gt;今天就是想不明不白的开始。&lt;/del&gt;&lt;br&gt;关于 &lt;code&gt;load&lt;/code&gt;，如果看过&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9mb3J1bS5rb2tvbmEudGVjaC9kLzEzODY=&#34;&gt;【指令脚本/抛砖引玉】Load: 在聊天窗口使用lua&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt; 那么你或许会对它熟悉一些，此函数是 &lt;code&gt;lua 5.1&lt;/code&gt;就有的东西，作用是加载一个数据块。下面是现今的&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubHVhLm9yZy9tYW51YWwvNS4yL21hbnVhbC5odG1sI3BkZi1sb2Fk&#34;&gt;官方5.2 manual&lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&lt;/span&gt;给出的关于它的介绍：&lt;/p&gt;
