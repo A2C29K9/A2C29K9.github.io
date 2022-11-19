@@ -9,7 +9,6 @@ keywords: 博客文章密码
 password: wiki-of-Midido
 abstract: 密码：才不会告诉你是wiki-of-Midido呢！
 message:  输入密码，查看文章
-top: 2
 ---
 # Midido User wiki
 
