@@ -9,7 +9,7 @@ tags:
 ---
 
 {% note success %}
-### **listen2me**
+# **listen2me**
 使用mml作曲。
 {% endnote %}
 
@@ -39,7 +39,7 @@ listen2me是为Dice!编写的Lua脚本，用于mml(Music Macro Language)作曲�
 - [X] Windows 版本
 - [ ] Linux 版本
 
-# 安装
+## 安装
 
 - Dice版本2.6.5beta12(624+)以上安装方法:
 
@@ -55,7 +55,7 @@ listen2me是为Dice!编写的Lua脚本，用于mml(Music Macro Language)作曲�
   3. 使用 `.system load`命令重载。
   4. Enjoy Your Self!
 
-# 配置
+## 配置
 
 [使用功能模块前先根据注释内容修改合适的配置](/script/mml2mid.lua)
 
@@ -86,7 +86,7 @@ Settings = {
 }
 ```
 
-# 指令
+## 指令
 
 一般指令格式:`l2m>[opt=clr|mml|...]`
 
@@ -116,7 +116,7 @@ Settings = {
   B /*M 0  */  <c8g8>d+4<<g8>d8a+4/*M 1  */  <g+8>d+8<a+4>d+4d4/*M 2  */  c8g8>d+4<<g8>d8a+4/*M 3  */  <g+8>d+8>c8<d+8<g+8>d+8<a+8b8/*M 4  */  >c8g8>d+8<g8<g8>d8a+8d8/*M 5  */  <g+8>d+8<a+4>d+8a+8d4/*M 6  */  c8g8>d+8<g8<g8>d8a+8d8/*M 7  */  <g+8>d+8>c8.<<a+16b4g+4/*M 8  */  a+8>f8a+4<<a+2/*M 9  */  >g+8>d+8>c8<d+8<g+8>d8a+8d8/*M 10 */  <g8>d+8a+8d+8c8g8>d8d+8/*M 11 */  <<f8>g8>d+8<g+8<a+8>f8>d8<a+8/*M 12 */  <d+8a+8>d+8<a+8>c+8<a+8>c+8<<a+8/*M 13 */  >g+8>d+8>c8<d+8<g+8>d8a+8d8/*M 14 */  <g8>d8.<g8.>c4<d8d+8/*M 15 */  f8>c8g+8c8<g8>d+8a+8d+8/*M 16 */  <g+8>d+8>c8<d+16.<<a+32o4d2/*M 17 */  <<d+16a+16>g16g+16a+8.<d+4.&d+16d+8
   ```
 
-# 音源
+## 音源
 
 > [Musescore](https://musescore.org/zh-hans/%e7%94%a8%e6%88%b7%e6%89%8b%e5%86%8c/soundfont-%e9%9f%b3%e8%89%b2%e5%ba%93) 提供的三个常见音色库
 
@@ -140,13 +140,13 @@ Settings = {
 * [Aegean Symphonic Orchestra v2.5 universal](https://sites.google.com/view/hed-sounds/aegean-symphonic-orchestra) (350 MB)
 * [Salamander C5 Light](https://sites.google.com/view/hed-sounds/salamander-c5-light) (25 MB)
 
-# 参考
+## 参考
 
 - [http://hpc.jp/~mml2mid](http://hpc.jp/~mml2mid)
 - [https://man.archlinux.org/man/timidity.cfg.5](https://man.archlinux.org/man/timidity.cfg.5)
 - [https://man.archlinux.org/man/community/timidity++/timidity.1.en](https://man.archlinux.org/man/community/timidity++/timidity.1.en)
 
-# 日志
+## 日志
 
 > 此日志写的比工程文件要晚那么一点。
 
