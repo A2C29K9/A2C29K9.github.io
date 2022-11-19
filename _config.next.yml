@@ -284,14 +284,14 @@ follow_me:
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
-  enable: false
+  enable: true
   title: # Custom header, leave empty to use the default one
   display_in_home: false
   params:
     maxCount: 5
     #PPMixingRate: 0.0
-    #isDate: false
-    #isImage: false
+    isDate: true
+    isImage: true
     #isExcerpt: false
 
 # Post edit
@@ -399,7 +399,7 @@ bookmark:
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
   enable: false
-  permalink: https://github.com/yourname
+  permalink: https://github.com/cypress0522
   title: Follow me on GitHub
 
 
