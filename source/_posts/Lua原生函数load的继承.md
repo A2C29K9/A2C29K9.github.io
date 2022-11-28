@@ -1,5 +1,5 @@
 ---
-title: 【抛砖引玉】Lua原生函数load的继承性
+title: Lua原生函数load的继承性
 date: 2022-11-19
 categories:
  - [技术,Lua]
@@ -12,7 +12,7 @@ tags:
 ~~今天就是想不明不白的开始。~~
 关于 `load`，如果看过[【指令脚本/抛砖引玉】Load: 在聊天窗口使用lua](https://forum.kokona.tech/d/1386) 那么你或许会对它熟悉一些，此函数是 `lua 5.1`就有的东西，作用是加载一个数据块。下面是现今的[官方5.2 manual](https://www.lua.org/manual/5.2/manual.html#pdf-load)给出的关于它的介绍：
 
-
+```
 load (ld [, source [, mode [, env]]])
 Loads a chunk.
 
@@ -25,6 +25,7 @@ If the resulting function has upvalues, the first upvalue is set to the value of
 source is used as the source of the chunk for error messages and debug information (see §4.9). When absent, it defaults to , if is a string, or to "" otherwise. ldld=(load)
 
 The string controls whether the chunk can be text or binary (that is, a precompiled chunk). It may be the string "" (only binary chunks), "" (only text chunks), or "" (both binary and text). The default is "".modebtbtbt
+```
 
 > 什么意思？
 
