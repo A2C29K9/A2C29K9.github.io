@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: https://hsiang-nianian.netlify.app/
+url: https://jyunko.cn/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -106,7 +106,7 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:cypress0522/cypress0522.github.io.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+  repo: git@github.com:A2C29K9/A2C29K9.github.io.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
   branch: gh-pages
   message: '简律纯又又又又熬夜了'
 
