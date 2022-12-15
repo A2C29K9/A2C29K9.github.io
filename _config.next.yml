@@ -139,7 +139,7 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  GitHub: https://github.com/cypress0522 || fab fa-github
+  GitHub: https://github.com/A2C29K9 || fab fa-github
   E-Mail: mailto:hsiangnianian@outlook.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   Google: https://plus.google.com/hsiangnianian || fab fa-google
@@ -301,7 +301,7 @@ related_posts:
 # Easily browse and edit blog source code online.
 post_edit:
   enable: true
-  url: https://github.com/cypress0522/cypress0522.github.io/tree/master/source/ # Link for view source
+  url: https://github.com/A2C29K9/A2C29K9.github.io/tree/master/source/ # Link for view source
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/ # Link for fork & edit
 
 # Show previous post and next post in post footer if exists
@@ -402,7 +402,7 @@ bookmark:
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
   enable: false
-  permalink: https://github.com/cypress0522
+  permalink: https://github.com/A2C29K9
   title: Follow me on GitHub
 
 
@@ -619,11 +619,11 @@ livere_uid: # <your_uid>
 # For more information: https://gitalk.github.io
 gitalk:
   enable: true
-  github_id: cypress0522 # GitHub repo owner
-  repo: cypress0522.github.io # Repository name to store issues
+  github_id: A2C29K9 # GitHub repo owner
+  repo: A2C29K9.github.io # Repository name to store issues
   client_id: cfef1f6c1295644402b7 # GitHub Application Client ID
   client_secret: 7e17bdc083ac49295c1a520d634334c3a2f62d82 # GitHub Application Client Secret
-  admin_user: cypress0522 # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  admin_user: A2C29K9 # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # When the official proxy is not available, you can change it to your own proxy address
   proxy: https://shielded-brushlands-08810.herokuapp.com/https://github.com/login/oauth/access_token # This is official proxy adress
