@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://hsiang-nianian.netlify.app</id>
+    <id>https://jyunko.cn</id>
     <title>Cypress - 小柏树 • Posts by &#34;颜色&#34; tag</title>
-    <link href="https://hsiang-nianian.netlify.app" />
+    <link href="https://jyunko.cn" />
     <updated>2022-08-16T00:00:00.000Z</updated>
     <category term="徐州站" />
     <category term="Dice" />
@@ -11,9 +11,9 @@
     <category term="AI" />
     <category term="颜色" />
     <entry>
-        <id>https://hsiang-nianian.netlify.app/2022/08/16/lua-colors.howto/</id>
+        <id>https://jyunko.cn/2022/08/16/lua-colors.howto/</id>
         <title>lua-colors</title>
-        <link rel="alternate" href="https://hsiang-nianian.netlify.app/2022/08/16/lua-colors.howto/"/>
+        <link rel="alternate" href="https://jyunko.cn/2022/08/16/lua-colors.howto/"/>
         <content type="html">&lt;div class=&#34;note primary&#34;&gt;&lt;p&gt;&lt;strong&gt;lua-colors&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;用lua解释色彩原理.&lt;/p&gt;

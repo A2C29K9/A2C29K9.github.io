@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://hsiang-nianian.netlify.app</id>
+    <id>https://jyunko.cn</id>
     <title>Cypress - 小柏树 • Posts by &#34;音乐&#34; category</title>
-    <link href="https://hsiang-nianian.netlify.app" />
+    <link href="https://jyunko.cn" />
     <updated>2022-11-20T00:00:00.000Z</updated>
     <category term="徐州站" />
     <category term="Dice" />
@@ -11,9 +11,9 @@
     <category term="AI" />
     <category term="颜色" />
     <entry>
-        <id>https://hsiang-nianian.netlify.app/2022/11/20/listen2me/</id>
+        <id>https://jyunko.cn/2022/11/20/listen2me/</id>
         <title>listen2me</title>
-        <link rel="alternate" href="https://hsiang-nianian.netlify.app/2022/11/20/listen2me/"/>
+        <link rel="alternate" href="https://jyunko.cn/2022/11/20/listen2me/"/>
         <content type="html">&lt;div class=&#34;note success&#34;&gt;&lt;h1 id=&#34;listen2me&#34;&gt;&lt;a href=&#34;#listen2me&#34; class=&#34;headerlink&#34; title=&#34;listen2me&#34;&gt;&lt;/a&gt;&lt;strong&gt;listen2me&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;使用mml作曲。&lt;/p&gt;
 &lt;/div&gt;
 
@@ -179,9 +179,9 @@
         <updated>2022-11-20T00:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://hsiang-nianian.netlify.app/2022/06/17/2022%E5%B9%B47%E6%9C%8816%E6%97%A5%E6%B1%9F%E6%B7%AETho-%E5%BE%90%E5%B7%9E%E7%AB%99/</id>
+        <id>https://jyunko.cn/2022/06/17/2022%E5%B9%B47%E6%9C%8816%E6%97%A5%E6%B1%9F%E6%B7%AETho-%E5%BE%90%E5%B7%9E%E7%AB%99/</id>
         <title>2022年7月16日江淮Tho 徐州站</title>
-        <link rel="alternate" href="https://hsiang-nianian.netlify.app/2022/06/17/2022%E5%B9%B47%E6%9C%8816%E6%97%A5%E6%B1%9F%E6%B7%AETho-%E5%BE%90%E5%B7%9E%E7%AB%99/"/>
+        <link rel="alternate" href="https://jyunko.cn/2022/06/17/2022%E5%B9%B47%E6%9C%8816%E6%97%A5%E6%B1%9F%E6%B7%AETho-%E5%BE%90%E5%B7%9E%E7%AB%99/"/>
         <content type="html">&lt;div class=&#34;note primary&#34;&gt;&lt;p&gt;&lt;strong&gt;PRIMARY&lt;/strong&gt;&lt;br&gt;第二次当越共，曲子在写啦在写啦…&lt;/p&gt;
 &lt;/div&gt;
 
