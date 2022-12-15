@@ -20,7 +20,7 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-Hans
 _basicFunction_ 的定位非常清晰，那就是作为脚本制作者的配置扩展，通过在lua脚本中 `require "basicFunction"`使用其中的函数。
 
 ## 下载
-[basicFunction-alpha(2).zip](https://github.com/cypress0522/cypress0522.github.io/releases/tag/basicFunction)
+[basicFunction-alpha(2).zip](https://github.com/A2C29K9/A2C29K9.github.io/releases/tag/basicFunction)
 
 ## 最后
  衷心希望大家指正其中的错误和不足，促使 _basicFunction_ 不断进步完善

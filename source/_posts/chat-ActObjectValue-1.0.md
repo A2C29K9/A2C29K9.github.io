@@ -15,7 +15,7 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-Hans
 
 {% note warning %}
 **WARNING**
-1.0已不再更新，或许你可以期待一下[**2.0**](https://cypress0522.github.io/2022/06/18/chat-ActObjectValue-2.0)？
+1.0已不再更新，或许你可以期待一下[**2.0**](https://A2C29K9.github.io/2022/06/18/chat-ActObjectValue-2.0)？
 {% endnote %}
 
 ### 基本信息
@@ -30,7 +30,7 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-Hans
 > 关键词：`#set` `#get` `#help log` `#help chataov`
 
 ## 下载
-[chat-ActObjectValue.zip](https://github.com/cypress0522/cypress0522.github.io/releases/tag/chat-ActObjectValue)
+[chat-ActObjectValue.zip](https://github.com/A2C29K9/A2C29K9.github.io/releases/tag/chat-ActObjectValue)
 
 ## 简介
 在测试时总会遇到要重置或获取或设置某个用户配置的情况，但苦于没有这方面的指令，所以写了一个，目前可以在聊天窗口中设置用户全局配置或当日配置。

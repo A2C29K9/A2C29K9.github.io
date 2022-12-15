@@ -22,7 +22,7 @@ message:  输入密码，查看文章
 
 ## 1. 开始，安装和调用
 
-{% btn https://github.com/cypress0522/cypress0522.github.io/releases/download/Midido-code/Midido-v1.0.0.zip, 点击下载Midido-v1.0.0, download fa-lg fa-fw %}
+{% btn https://github.com/A2C29K9/A2C29K9.github.io/releases/download/Midido-code/Midido-v1.0.0.zip, 点击下载Midido-v1.0.0, download fa-lg fa-fw %}
 
 那么在使用前，你需要将脚本全部解压至 `DiceQQ\plugin\` 目录下，或者 `Diceki\lua\` 也可以，但这边特别推荐放在 `DiceQQ\plugin\` 目录下，因为这涉及到生成文件的路径问题，同时本教程的示例代码也是根据 `DiceQQ\plugin\` 目录来编写的。
 

@@ -34,6 +34,6 @@ return load("return "..string.gsub(msg.fromMsg,2))()
 接下来让我们完成最后一步操作。
 
 ### 安装库
-1.下载[catchError](https://girhub.com/cypress0522)
+1.下载[catchError](https://girhub.com/A2C29K9)
 2.将lua库丢进`Diceki\lua\`文件夹下
 3.在聊天窗口使用`.system load`命令

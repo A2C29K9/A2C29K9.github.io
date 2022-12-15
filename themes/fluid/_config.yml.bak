@@ -434,10 +434,10 @@ footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
   content: '
-    <a href="https://cypress0522.github.io" target="_blank" rel="nofollow noopener"><span>简律纯</span></a>
+    <a href="https://A2C29K9.github.io" target="_blank" rel="nofollow noopener"><span>简律纯</span></a>
     <i class="iconfont icon-love"></i>
     <a href="http://music.163.com/artist?id=34150114&userid=2092303272" target="_blank" rel="nofollow noopener"><span>音乐 </span></a>
-     <a href="https://github.com/cypress0522" target="_blank" rel="nofollow noopener"><span>技术 </span></a>
+     <a href="https://github.com/A2C29K9" target="_blank" rel="nofollow noopener"><span>技术 </span></a>
       <a href="http://124.223.221.189/?tag=%e6%97%a5%e8%ae%b0" target="_blank" rel="nofollow noopener"><span>与碎碎念 </span></a>
     <div style="font-size: 0.85rem">
       <span id="timeDate">载入天数...</span>
@@ -477,7 +477,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: https://cdn.jsdelivr.net/gh/cypress0522/img@main/2022/08/03/default.png
+  banner_img: https://cdn.jsdelivr.net/gh/A2C29K9/img@main/2022/08/03/default.png
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -969,7 +969,7 @@ about:
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
-    - { class: "iconfont icon-github-fill", link: "https://github.com/cypress0522", tip: "GitHub" }
+    - { class: "iconfont icon-github-fill", link: "https://github.com/A2C29K9", tip: "GitHub" }
 
 
 #---------------------------
@@ -1018,9 +1018,9 @@ links:
       avatar: "/img/favicon.png"
     }
     - {
-      title: "cypress0522 Repo",
-      intro: "cypress0522 GitHub 仓库",
-      link: "https://github.com/cypress0522/cypress0522.github.io",
+      title: "A2C29K9 Repo",
+      intro: "A2C29K9 GitHub 仓库",
+      link: "https://github.com/A2C29K9/A2C29K9.github.io",
       avatar: "/img/favicon.png"
     }
     - {
@@ -1044,8 +1044,8 @@ links:
   # Custom content at the bottom of the links
   custom:
     enable: true
-    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：Cypress - 琴谱上的残缺页</li><li>简介：小柏树</li><li>链接：https://cypress0522.github.io</li><li>图片：https://cypress0522.github.io/img/avatar.png</li></ul><script src="https://utteranc.es/client.js"
-        repo="cypress0522/cypress0522.github.io"
+    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：Cypress - 琴谱上的残缺页</li><li>简介：小柏树</li><li>链接：https://A2C29K9.github.io</li><li>图片：https://A2C29K9.github.io/img/avatar.png</li></ul><script src="https://utteranc.es/client.js"
+        repo="A2C29K9/A2C29K9.github.io"
         issue-term="pathname"
         theme="github-light"
         crossorigin="anonymous"

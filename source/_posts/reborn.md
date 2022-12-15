@@ -33,10 +33,10 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-Hans
 ta说这似乎没什么用，于是我便突发奇想昨天晚上熬夜整了个重开模拟器。
 
 ## 效果图
-![](https://cdn.jsdelivr.net/gh/cypress0522/img@main/2022/06/24/49e9f345b9e057b6.png)
+![](https://cdn.jsdelivr.net/gh/A2C29K9/img@main/2022/06/24/49e9f345b9e057b6.png)
 
 ## 下载
-[reborn v1.2 fix.zip](https://github.com/cypress0522/cypress0522.github.io/releases/tag/reborn)
+[reborn v1.2 fix.zip](https://github.com/A2C29K9/A2C29K9.github.io/releases/tag/reborn)
 
 ## 后记
 {% codeblock lang:lua %}

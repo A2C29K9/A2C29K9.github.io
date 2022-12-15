@@ -6,7 +6,7 @@ hide: true
 
 {% note warning %}
 **WARNING**
-这是关于[__chat-ActObjectValue__](https://cypress0522.github.io/2022/06/11/chat-ActObjectValue/)的隐藏更新页面，你不应该在这里进行任何操作！
+这是关于[__chat-ActObjectValue__](https://A2C29K9.github.io/2022/06/11/chat-ActObjectValue/)的隐藏更新页面，你不应该在这里进行任何操作！
 {% endnote %}
 
 ## 1.0数组写法
