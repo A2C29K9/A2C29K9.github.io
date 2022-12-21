@@ -85,7 +85,7 @@ menu:
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
-  #schedule: /schedule/ || fa fa-calendar
+  schedule: /schedule/ || fa fa-calendar
   sitemap: /feed.json || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
 
@@ -621,8 +621,8 @@ gitalk:
   enable: true
   github_id: A2C29K9 # GitHub repo owner
   repo: A2C29K9.github.io # Repository name to store issues
-  client_id: cfef1f6c1295644402b7 # GitHub Application Client ID
-  client_secret: 7e17bdc083ac49295c1a520d634334c3a2f62d82 # GitHub Application Client Secret
+  client_id: 06006b4ac2b5e6c6f429 # GitHub Application Client ID
+  client_secret: fccc2f4eb69eaa6d0e362a8972e6091eed838abb # GitHub Application Client Secret
   admin_user: A2C29K9 # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # When the official proxy is not available, you can change it to your own proxy address
