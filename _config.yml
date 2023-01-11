@@ -4,7 +4,7 @@
 
 # Site
 title: Cypress - 小柏树
-subtitle: 🌳💕🎁✔
+subtitle: some pages
 description: '今天浇水了吗？'
 keywords:
 author: 简律纯
@@ -106,7 +106,7 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:A2C29K9/A2C29K9.github.io.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+  repo: git@github.com:HsaingNianian/HsaingNianian.github.io.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
   branch: gh-pages
   message: '简律纯又又又又熬夜了'
 
@@ -182,4 +182,3 @@ encrypt:
 recent_posts_title: 近期文章
 recent_posts_layout: block
 recent_posts: true
-
